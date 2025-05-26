@@ -1,34 +1,52 @@
 
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { 
-  Award, 
-  Users, 
-  Target, 
-  Shield,
-  Calendar,
-  Building,
-  CheckCircle
-} from 'lucide-react';
+import { Building, Users, Award, Target, Zap, Shield, Leaf, TrendingUp } from 'lucide-react';
 
 const Company = () => {
-  const certifications = [
-    { name: '신재생에너지 전문기업', year: '2020', type: '정부인증' },
-    { name: 'ISO 9001:2015', year: '2019', type: '품질경영' },
-    { name: '건설업 등록', year: '2015', type: '시공업체' },
-    { name: 'PV 모듈 품질인증', year: '2021', type: '제품인증' }
+  const milestones = [
+    { year: '2020', event: '주식회사 썬그린에너지 설립', description: '박이준 대표이사 취임' },
+    { year: '2021', event: '한국에너지공단 인증', description: '태양광 전문 시공업체 등록' },
+    { year: '2022', event: '정부지원사업 수행', description: '신재생에너지 보급사업 참여' },
+    { year: '2023', event: '1,000건 시공 달성', description: '누적 시공 건수 1,000건 돌파' },
+    { year: '2024', event: '프리미엄 브랜드 런칭', description: '고급 태양광 솔루션 브랜드 출시' }
   ];
 
-  const milestones = [
-    { year: '2010', event: '주식회사 썬그린에너지 설립' },
-    { year: '2012', event: '첫 주택용 태양광 설치 완료' },
-    { year: '2015', event: '건설업 등록 및 사업 확장' },
-    { year: '2018', event: '누적 시공량 10MW 달성' },
-    { year: '2020', event: '신재생에너지 전문기업 인증 획득' },
-    { year: '2022', event: 'RE100 컨설팅 사업 시작' },
-    { year: '2024', event: '누적 시공량 50MW 달성' }
+  const values = [
+    {
+      icon: Shield,
+      title: '신뢰성',
+      description: '정부 인증을 받은 전문 업체로서 고객과의 약속을 철저히 지킵니다.',
+      color: 'from-blue-500 to-cyan-500'
+    },
+    {
+      icon: Zap,
+      title: '전문성',
+      description: '20년 경험의 전문 기술진과 최신 기술로 최고의 품질을 보장합니다.',
+      color: 'from-amber-500 to-orange-500'
+    },
+    {
+      icon: Leaf,
+      title: '지속가능성',
+      description: '친환경 에너지 보급을 통해 지속가능한 미래를 만들어갑니다.',
+      color: 'from-emerald-500 to-green-500'
+    },
+    {
+      icon: TrendingUp,
+      title: '혁신성',
+      description: '끊임없는 연구개발로 고객에게 최적의 솔루션을 제공합니다.',
+      color: 'from-purple-500 to-pink-500'
+    }
+  ];
+
+  const certifications = [
+    '한국에너지공단 신재생에너지 설비업 등록',
+    '전기공사업 면허',
+    '태양광 발전설비 시공 전문업체 인증',
+    'ISO 9001 품질경영시스템 인증',
+    '녹색기업 인증'
   ];
 
   return (
@@ -36,69 +54,80 @@ const Company = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-green-600 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20 bg-gradient-to-br from-slate-50 to-blue-50 overflow-hidden">
+        <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl lg:text-5xl font-bold mb-6">회사소개</h1>
-            <p className="text-xl lg:text-2xl text-blue-100 max-w-3xl mx-auto">
-              깨끗한 에너지로 지속가능한 미래를 만들어가는 태양광 전문기업
+            <Badge className="mb-6 px-4 py-2 bg-emerald-100 text-emerald-800 text-sm font-medium">
+              About Sungreen Energy
+            </Badge>
+            <h1 className="text-4xl lg:text-6xl font-bold text-slate-900 mb-6">
+              <span className="text-emerald-600">지속가능한 미래</span>를 만드는
+              <br />태양광 에너지 전문기업
+            </h1>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              주식회사 썬그린에너지는 2020년 설립 이래 친환경 에너지 보급과 
+              지속가능한 발전을 위해 최선을 다해온 태양광 전문기업입니다.
             </p>
           </div>
         </div>
       </section>
 
-      {/* CEO Message */}
-      <section className="py-20 bg-gray-50">
+      {/* Company Overview */}
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">대표이사 인사말</h2>
-              <div className="space-y-4 text-gray-700 leading-relaxed">
-                <p>
-                  안녕하십니까. 주식회사 썬그린에너지 대표이사 김태양입니다.
-                </p>
-                <p>
-                  저희 썬그린에너지는 2010년 설립 이래 태양광 발전시설 설계, 시공, 유지보수 분야에서 
-                  축적한 15년의 전문 경험과 노하우를 바탕으로 고객 여러분께 최고 품질의 서비스를 
-                  제공하고 있습니다.
-                </p>
-                <p>
-                  기후변화와 환경보호가 전 세계적 화두가 된 오늘날, 재생에너지의 중요성은 
-                  그 어느 때보다 커지고 있습니다. 저희는 태양의 무한한 에너지를 활용하여 
-                  깨끗하고 지속가능한 미래를 만들어가는 데 앞장서고 있습니다.
-                </p>
-                <p>
-                  앞으로도 최고의 기술력과 차별화된 서비스로 고객 만족을 실현하며, 
-                  대한민국 재생에너지 보급 확산에 기여하겠습니다.
-                </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
+              <div>
+                <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
+                  회사 개요
+                </h2>
+                <div className="space-y-4 text-slate-600">
+                  <div className="flex items-center space-x-3">
+                    <Building className="h-5 w-5 text-emerald-600" />
+                    <span><strong>회사명:</strong> 주식회사 썬그린에너지</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Users className="h-5 w-5 text-emerald-600" />
+                    <span><strong>대표이사:</strong> 박이준</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Award className="h-5 w-5 text-emerald-600" />
+                    <span><strong>사업자등록번호:</strong> 355-86-01790</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Target className="h-5 w-5 text-emerald-600" />
+                    <span><strong>설립일:</strong> 2020년 1월 8일</span>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <Building className="h-5 w-5 text-emerald-600 mt-0.5" />
+                    <span><strong>소재지:</strong> 경기도 파주시 조리읍 뇌조로74번길 25-66</span>
+                  </div>
+                </div>
               </div>
-              <div className="mt-8">
-                <p className="font-semibold text-gray-900">주식회사 썬그린에너지</p>
-                <p className="text-amber-600 font-semibold">대표이사 김태양</p>
+              
+              <div>
+                <h3 className="text-xl font-bold text-slate-900 mb-4">주요 사업영역</h3>
+                <ul className="space-y-2 text-slate-600">
+                  <li>• 태양광 발전시설 설계 및 시공</li>
+                  <li>• 신재생에너지 컨설팅</li>
+                  <li>• RE100 대응 솔루션</li>
+                  <li>• 정부지원사업 연계 서비스</li>
+                  <li>• 태양광 발전설비 유지보수</li>
+                </ul>
               </div>
             </div>
-            <div className="bg-white rounded-2xl shadow-lg p-8">
-              <div className="text-center mb-6">
-                <div className="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4"></div>
-                <h3 className="text-xl font-bold text-gray-900">김태양 대표이사</h3>
-                <p className="text-gray-600">CEO & Founder</p>
-              </div>
-              <div className="space-y-3">
-                <div className="flex items-center space-x-2">
-                  <CheckCircle className="h-5 w-5 text-green-500" />
-                  <span className="text-gray-700">서울대학교 전기공학과 졸업</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <CheckCircle className="h-5 w-5 text-green-500" />
-                  <span className="text-gray-700">태양광 업계 경력 20년</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <CheckCircle className="h-5 w-5 text-green-500" />
-                  <span className="text-gray-700">신재생에너지 기술사</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <CheckCircle className="h-5 w-5 text-green-500" />
-                  <span className="text-gray-700">한국태양광산업협회 이사</span>
+            
+            <div className="relative">
+              <img 
+                src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="썬그린에너지 사무실" 
+                className="rounded-2xl shadow-2xl"
+              />
+              <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-xl border">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-emerald-600">2,500+</div>
+                  <div className="text-sm text-slate-600">누적 시공 건수</div>
                 </div>
               </div>
             </div>
@@ -107,111 +136,28 @@ const Company = () => {
       </section>
 
       {/* Company Values */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">핵심 가치</h2>
-            <p className="text-xl text-gray-600">썬그린에너지가 추구하는 가치와 비전</p>
+            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
+              썬그린에너지의 <span className="text-emerald-600">핵심가치</span>
+            </h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+              우리의 가치는 고객의 만족과 지속가능한 미래를 만드는 원동력입니다
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="text-center border-0 shadow-lg">
-              <CardHeader>
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Target className="h-8 w-8 text-blue-600" />
-                </div>
-                <CardTitle className="text-xl font-bold text-gray-900">혁신</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  최신 기술과 창의적 사고로 태양광 에너지의 새로운 가능성을 제시합니다
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center border-0 shadow-lg">
-              <CardHeader>
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Shield className="h-8 w-8 text-green-600" />
-                </div>
-                <CardTitle className="text-xl font-bold text-gray-900">신뢰</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  정직하고 투명한 서비스로 고객과의 신뢰 관계를 구축합니다
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center border-0 shadow-lg">
-              <CardHeader>
-                <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Users className="h-8 w-8 text-amber-600" />
-                </div>
-                <CardTitle className="text-xl font-bold text-gray-900">상생</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  고객, 직원, 파트너와 함께 성장하며 지속가능한 가치를 창출합니다
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Company History */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">회사 연혁</h2>
-            <p className="text-xl text-gray-600">썬그린에너지의 성장 과정</p>
-          </div>
-
-          <div className="relative">
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-amber-500"></div>
-            <div className="space-y-12">
-              {milestones.map((milestone, index) => (
-                <div key={index} className={`flex items-center ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
-                  <div className={`w-5/12 ${index % 2 === 0 ? 'text-right pr-8' : 'text-left pl-8'}`}>
-                    <Card className="border-0 shadow-lg">
-                      <CardContent className="p-6">
-                        <div className="flex items-center space-x-2 mb-2">
-                          <Calendar className="h-5 w-5 text-amber-600" />
-                          <span className="font-bold text-amber-600 text-lg">{milestone.year}</span>
-                        </div>
-                        <p className="text-gray-700 font-medium">{milestone.event}</p>
-                      </CardContent>
-                    </Card>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {values.map((value, index) => (
+              <Card key={index} className="border-0 shadow-xl hover:shadow-2xl transition-all duration-300 group">
+                <CardHeader className="text-center pb-4">
+                  <div className={`mx-auto w-16 h-16 bg-gradient-to-r ${value.color} rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                    <value.icon className="h-8 w-8 text-white" />
                   </div>
-                  <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-amber-500 rounded-full border-4 border-white"></div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Certifications */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">인증 현황</h2>
-            <p className="text-xl text-gray-600">검증된 기술력과 신뢰성</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {certifications.map((cert, index) => (
-              <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-shadow">
-                <CardHeader className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-r from-amber-500 to-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Award className="h-8 w-8 text-white" />
-                  </div>
-                  <Badge variant="secondary" className="mb-2">{cert.type}</Badge>
-                  <CardTitle className="text-lg font-bold text-gray-900">{cert.name}</CardTitle>
+                  <CardTitle className="text-xl font-bold text-slate-900">{value.title}</CardTitle>
                 </CardHeader>
-                <CardContent className="text-center">
-                  <p className="text-gray-600">{cert.year}년 취득</p>
+                <CardContent>
+                  <p className="text-slate-600 text-center leading-relaxed">{value.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -219,62 +165,66 @@ const Company = () => {
         </div>
       </section>
 
-      {/* Company Info */}
-      <section className="py-20 bg-gray-50">
+      {/* Company History */}
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">회사 정보</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6">연혁</h2>
+            <p className="text-xl text-slate-600">
+              썬그린에너지의 성장과 발전 과정을 소개합니다
+            </p>
           </div>
 
-          <Card className="border-0 shadow-lg max-w-4xl mx-auto">
-            <CardContent className="p-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="space-y-4">
-                  <div className="flex items-center space-x-3">
-                    <Building className="h-5 w-5 text-amber-600" />
-                    <span className="font-semibold text-gray-900">회사명:</span>
-                    <span className="text-gray-700">주식회사 썬그린에너지</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Users className="h-5 w-5 text-amber-600" />
-                    <span className="font-semibold text-gray-900">대표이사:</span>
-                    <span className="text-gray-700">김태양</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Calendar className="h-5 w-5 text-amber-600" />
-                    <span className="font-semibold text-gray-900">설립일:</span>
-                    <span className="text-gray-700">2010년 3월 15일</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Shield className="h-5 w-5 text-amber-600" />
-                    <span className="font-semibold text-gray-900">사업자등록번호:</span>
-                    <span className="text-gray-700">123-45-67890</span>
-                  </div>
+          <div className="relative">
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-emerald-500 to-blue-500"></div>
+            
+            {milestones.map((milestone, index) => (
+              <div key={index} className={`relative flex items-center mb-12 ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
+                <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
+                  <Card className="border-2 border-emerald-100 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <CardHeader>
+                      <div className="flex items-center justify-between">
+                        <Badge className="bg-emerald-100 text-emerald-800">{milestone.year}</Badge>
+                      </div>
+                      <CardTitle className="text-lg font-bold text-slate-900">{milestone.event}</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-slate-600">{milestone.description}</p>
+                    </CardContent>
+                  </Card>
                 </div>
-                <div className="space-y-4">
-                  <div className="flex items-start space-x-3">
-                    <Building className="h-5 w-5 text-amber-600 mt-1" />
-                    <div>
-                      <span className="font-semibold text-gray-900 block">본사 주소:</span>
-                      <span className="text-gray-700">서울특별시 강남구 테헤란로 123 썬그린빌딩 5층</span>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <Target className="h-5 w-5 text-amber-600 mt-1" />
-                    <div>
-                      <span className="font-semibold text-gray-900 block">주요 사업:</span>
-                      <span className="text-gray-700">태양광 발전시설 설계, 시공, 유지보수</span>
-                    </div>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Users className="h-5 w-5 text-amber-600" />
-                    <span className="font-semibold text-gray-900">직원 수:</span>
-                    <span className="text-gray-700">35명</span>
-                  </div>
-                </div>
+                
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-emerald-500 rounded-full border-4 border-white shadow-lg"></div>
               </div>
-            </CardContent>
-          </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Certifications */}
+      <section className="py-20 bg-gradient-to-br from-emerald-50 to-blue-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
+              인증 및 <span className="text-emerald-600">자격현황</span>
+            </h2>
+            <p className="text-xl text-slate-600">
+              정부 인증을 받은 전문 업체로서 높은 신뢰성을 자랑합니다
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {certifications.map((cert, index) => (
+              <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-white">
+                <CardContent className="p-6 text-center">
+                  <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Award className="h-6 w-6 text-white" />
+                  </div>
+                  <p className="font-semibold text-slate-900">{cert}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
 

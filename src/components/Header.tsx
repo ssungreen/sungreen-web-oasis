@@ -20,30 +20,30 @@ const Header = () => {
   const isActive = (href: string) => location.pathname === href;
 
   return (
-    <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+    <header className="bg-white/95 backdrop-blur-md shadow-lg border-b border-slate-200/50 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="bg-gradient-to-r from-amber-500 to-green-500 p-2 rounded-lg">
-              <Sun className="h-6 w-6 text-white" />
+          <Link to="/" className="flex items-center space-x-3 group">
+            <div className="bg-gradient-to-r from-amber-500 to-emerald-500 p-3 rounded-xl group-hover:scale-110 transition-transform duration-300 shadow-lg">
+              <Sun className="h-7 w-7 text-white" />
             </div>
             <div className="flex flex-col">
-              <span className="font-bold text-xl text-gray-900">썬그린에너지</span>
-              <span className="text-xs text-gray-600">Sungreen Energy</span>
+              <span className="font-bold text-2xl text-slate-900 group-hover:text-emerald-600 transition-colors">썬그린에너지</span>
+              <span className="text-xs text-slate-600 font-medium">Sungreen Energy</span>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex space-x-1">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
-                className={`text-sm font-medium transition-colors duration-200 ${
+                className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
                   isActive(item.href)
-                    ? 'text-amber-600 border-b-2 border-amber-600 pb-1'
-                    : 'text-gray-700 hover:text-amber-600'
+                    ? 'text-emerald-600 bg-emerald-50 border-b-2 border-emerald-600'
+                    : 'text-slate-700 hover:text-emerald-600 hover:bg-slate-50'
                 }`}
               >
                 {item.name}
@@ -57,6 +57,7 @@ const Header = () => {
               variant="ghost"
               size="sm"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="p-2"
             >
               {isMobileMenuOpen ? (
                 <X className="h-6 w-6" />
@@ -70,15 +71,15 @@ const Header = () => {
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white/95 backdrop-blur-md border-t border-slate-200/50 rounded-b-xl shadow-xl">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`block px-3 py-2 text-base font-medium transition-colors duration-200 ${
+                  className={`block px-4 py-3 text-base font-medium rounded-lg transition-all duration-200 ${
                     isActive(item.href)
-                      ? 'text-amber-600 bg-amber-50'
-                      : 'text-gray-700 hover:text-amber-600 hover:bg-gray-50'
+                      ? 'text-emerald-600 bg-emerald-50'
+                      : 'text-slate-700 hover:text-emerald-600 hover:bg-slate-50'
                   }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
