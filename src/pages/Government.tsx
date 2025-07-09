@@ -79,7 +79,7 @@ const Government = () => {
       image: 'https://images.unsplash.com/photo-1581092795442-beb3b8f887df?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
     },
     {
-      id: 'ecovillage',
+      id: 'eco-village',
       title: '에너지자립마을지원사업',
       subtitle: 'ECO-VILLAGE SUPPORT PROJECT',
       description: '에너지자립마을에 대한 정보를 확인하세요',
@@ -218,8 +218,8 @@ const Government = () => {
                       className={`w-full bg-gradient-to-r ${program.color} hover:opacity-90 text-white font-semibold py-3 text-lg transition-all duration-300`}
                       asChild
                     >
-                      <Link to="/contact">
-                        상담 신청하기
+                      <Link to={`/government/${program.id}`}>
+                        자세히 보기
                         <ArrowRight className="ml-2 h-5 w-5" />
                       </Link>
                     </Button>

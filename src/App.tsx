@@ -14,6 +14,10 @@ import Business from "./pages/Business";
 import Cases from "./pages/Cases";
 import RE100 from "./pages/RE100";
 import Government from "./pages/Government";
+import HousingSupport from "./pages/HousingSupport";
+import BuildingSupport from "./pages/BuildingSupport";
+import FusionSupport from "./pages/FusionSupport";
+import EcoVillageSupport from "./pages/EcoVillageSupport";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
@@ -36,6 +40,10 @@ const App = () => (
           <Route path="/cases" element={<Cases />} />
           <Route path="/re100" element={<RE100 />} />
           <Route path="/government" element={<Government />} />
+          <Route path="/government/housing" element={<HousingSupport />} />
+          <Route path="/government/building" element={<BuildingSupport />} />
+          <Route path="/government/fusion" element={<FusionSupport />} />
+          <Route path="/government/eco-village" element={<EcoVillageSupport />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
