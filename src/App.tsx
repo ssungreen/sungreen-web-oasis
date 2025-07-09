@@ -11,6 +11,10 @@ import History from "./pages/History";
 import Certifications from "./pages/Certifications";
 import Location from "./pages/Location";
 import Business from "./pages/Business";
+import OpportunityIncome from "./pages/OpportunityIncome";
+import LeadingBusiness from "./pages/LeadingBusiness";
+import BusinessRPS from "./pages/BusinessRPS";
+import BusinessRE100 from "./pages/BusinessRE100";
 import Cases from "./pages/Cases";
 import RE100 from "./pages/RE100";
 import Government from "./pages/Government";
@@ -37,6 +41,10 @@ const App = () => (
           <Route path="/certifications" element={<Certifications />} />
           <Route path="/location" element={<Location />} />
           <Route path="/business" element={<Business />} />
+          <Route path="/business/opportunity-income" element={<OpportunityIncome />} />
+          <Route path="/business/leading" element={<LeadingBusiness />} />
+          <Route path="/business/rps" element={<BusinessRPS />} />
+          <Route path="/business/re100" element={<BusinessRE100 />} />
           <Route path="/cases" element={<Cases />} />
           <Route path="/re100" element={<RE100 />} />
           <Route path="/government" element={<Government />} />

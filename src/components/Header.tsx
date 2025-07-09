@@ -30,8 +30,14 @@ const Header = () => {
     { name: '에너지자립마을지원사업', href: '/government/eco-village' },
   ];
 
+  const businessSubMenu = [
+    { name: '기회소득마을사업', href: '/business/opportunity-income' },
+    { name: '선도사업', href: '/business/leading' },
+    { name: 'RPS사업', href: '/business/rps' },
+    { name: 'RE100사업', href: '/business/re100' },
+  ];
+
   const navigation = [
-    { name: '사업분야', href: '/business' },
     { name: '설치사례', href: '/cases' },
     { name: 'RE100 안내', href: '/re100' },
     { name: '문의하기', href: '/contact' },
@@ -40,6 +46,7 @@ const Header = () => {
   const isActive = (href: string) => location.pathname === href;
   const isCompanyActive = () => companySubMenu.some(item => isActive(item.href));
   const isGovernmentActive = () => governmentSubMenu.some(item => isActive(item.href)) || location.pathname === '/government';
+  const isBusinessActive = () => businessSubMenu.some(item => isActive(item.href)) || location.pathname === '/business';
 
   return (
     <header className="bg-white/95 backdrop-blur-md shadow-lg border-b border-slate-200/50 sticky top-0 z-50">
@@ -72,6 +79,48 @@ const Header = () => {
                     <div className="w-80 p-4 bg-white shadow-lg border border-slate-200 rounded-lg z-50">
                       <div className="grid gap-3">
                         {companySubMenu.map((item) => (
+                          <NavigationMenuLink key={item.name} asChild>
+                            <Link
+                              to={item.href}
+                              className={`block p-3 rounded-lg transition-colors ${
+                                isActive(item.href)
+                                  ? 'bg-emerald-50 text-emerald-600'
+                                  : 'hover:bg-slate-50 text-slate-700'
+                              }`}
+                            >
+                              <div className="font-medium">{item.name}</div>
+                            </Link>
+                          </NavigationMenuLink>
+                        ))}
+                      </div>
+                    </div>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
+                    isBusinessActive()
+                      ? 'text-emerald-600 bg-emerald-50'
+                      : 'text-slate-700 hover:text-emerald-600 hover:bg-slate-50'
+                  }`}>
+                    사업분야
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <div className="w-80 p-4 bg-white shadow-lg border border-slate-200 rounded-lg z-50">
+                      <div className="grid gap-3">
+                        <NavigationMenuLink asChild>
+                          <Link
+                            to="/business"
+                            className={`block p-3 rounded-lg transition-colors ${
+                              location.pathname === '/business'
+                                ? 'bg-emerald-50 text-emerald-600'
+                                : 'hover:bg-slate-50 text-slate-700'
+                            }`}
+                          >
+                            <div className="font-medium">전체보기</div>
+                          </Link>
+                        </NavigationMenuLink>
+                        {businessSubMenu.map((item) => (
                           <NavigationMenuLink key={item.name} asChild>
                             <Link
                               to={item.href}
@@ -174,6 +223,36 @@ const Header = () => {
               <div className="space-y-1">
                 <div className="px-4 py-3 text-base font-bold text-slate-900">회사소개</div>
                 {companySubMenu.map((item) => (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    className={`block px-8 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
+                      isActive(item.href)
+                        ? 'text-emerald-600 bg-emerald-50'
+                        : 'text-slate-600 hover:text-emerald-600 hover:bg-slate-50'
+                    }`}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
+
+              {/* Business submenu */}
+              <div className="space-y-1">
+                <div className="px-4 py-3 text-base font-bold text-slate-900">사업분야</div>
+                <Link
+                  to="/business"
+                  className={`block px-8 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
+                    location.pathname === '/business'
+                      ? 'text-emerald-600 bg-emerald-50'
+                      : 'text-slate-600 hover:text-emerald-600 hover:bg-slate-50'
+                  }`}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  전체보기
+                </Link>
+                {businessSubMenu.map((item) => (
                   <Link
                     key={item.name}
                     to={item.href}
