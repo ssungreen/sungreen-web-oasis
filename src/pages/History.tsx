@@ -15,7 +15,8 @@ const History = () => {
         'RE100 컨설팅 서비스 확대',
         '기업 고객 전담팀 운영',
         '스마트 모니터링 시스템 고도화'
-      ]
+      ],
+      image: 'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
     },
     { 
       year: '2023', 
@@ -26,7 +27,8 @@ const History = () => {
         '기업 고객 전담팀 신설',
         'RE100 컨설팅 서비스 런칭',
         '우수 협력업체 네트워크 구축'
-      ]
+      ],
+      image: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
     },
     { 
       year: '2022', 
@@ -37,7 +39,8 @@ const History = () => {
         'AI 기반 발전량 예측 서비스 개시',
         '원격 관리 시스템 구축',
         '고객 만족도 98% 달성'
-      ]
+      ],
+      image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
     },
     { 
       year: '2021', 
@@ -48,7 +51,8 @@ const History = () => {
         'ISO 9001 품질경영시스템 인증',
         '누적 시공 1,000건 돌파',
         '24시간 A/S 서비스 체계 구축'
-      ]
+      ],
+      image: 'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
     },
     { 
       year: '2020', 
@@ -59,7 +63,8 @@ const History = () => {
         '대표이사 박이준 취임',
         '태양광 시공 사업 개시',
         '전문 기술진 확보'
-      ]
+      ],
+      image: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
     }
   ];
 
@@ -72,7 +77,7 @@ const History = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url(https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80)',
+            backgroundImage: 'url(https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80)',
           }}
         >
           <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 to-slate-700/60"></div>
@@ -111,7 +116,7 @@ const History = () => {
               <div key={index} className={`flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
                 <div className="w-1/2 px-8">
                   <img 
-                    src={`https://images.unsplash.com/photo-${index % 2 === 0 ? '1581092795' : '1581092918'}-81b91c00e9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80`}
+                    src={milestone.image}
                     alt={milestone.event}
                     className="rounded-2xl shadow-xl w-full"
                   />
