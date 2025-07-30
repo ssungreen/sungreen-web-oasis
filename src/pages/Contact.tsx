@@ -166,7 +166,8 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-900">본사 주소</h4>
-                      <p className="text-gray-600">서울특별시 강남구 테헤란로 123 썬그린빌딩 5층</p>
+                      <p className="text-gray-600">경기도 파주시 문산읍 당동리 산42-2</p>
+                      <p className="text-gray-600 text-sm">우편번호: 10929</p>
                     </div>
                   </div>
                   
@@ -176,7 +177,8 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-900">전화번호</h4>
-                      <p className="text-gray-600">02-1234-5678</p>
+                      <p className="text-gray-600">031-940-7690</p>
+                      <p className="text-gray-600">팩스: 031-940-7692</p>
                       <p className="text-sm text-gray-500">상담시간: 평일 09:00 ~ 18:00</p>
                     </div>
                   </div>
@@ -187,7 +189,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-900">이메일</h4>
-                      <p className="text-gray-600">info@sungreen.co.kr</p>
+                      <p className="text-gray-600">sungreen7690@gmail.com</p>
                     </div>
                   </div>
                   
