@@ -360,7 +360,7 @@ const Index = () => {
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="border-2 border-white text-white hover:bg-white hover:text-slate-900 px-10 py-6 text-lg font-semibold rounded-xl backdrop-blur-sm transition-all duration-300"
+                className="border-2 border-slate-200 text-slate-900 bg-white/90 hover:bg-white hover:text-slate-800 px-10 py-6 text-lg font-semibold rounded-xl backdrop-blur-sm transition-all duration-300"
               >
                 📞 전화상담: 031-940-7690
               </Button>
