@@ -75,7 +75,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-slate-800 mt-8 pt-8 text-center">
-          <p className="text-slate-400 text-sm">© 2024 주식회사 썬그린에너지. All rights reserved. | 사업자등록번호: 355-86-01790 | 대표: 박이순</p>
+          <p className="text-slate-400 text-sm">© 2025 주식회사 썬그린에너지. All rights reserved. | 사업자등록번호: 355-86-01790 | 대표: 박이순</p>
         </div>
       </div>
     </footer>;
