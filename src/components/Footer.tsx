@@ -1,10 +1,7 @@
-
 import { Sun, Phone, Mail, MapPin, Facebook, Instagram, Youtube } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
 const Footer = () => {
-  return (
-    <footer className="bg-slate-900 text-white">
+  return <footer className="bg-slate-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
@@ -68,10 +65,7 @@ const Footer = () => {
             <div className="bg-gradient-to-r from-amber-500 to-emerald-500 p-4 rounded-lg">
               <h5 className="font-semibold mb-2">무료 견적 상담</h5>
               <p className="text-sm text-white/90 mb-2">전문가와 1:1 상담받기</p>
-              <Link 
-                to="/contact" 
-                className="bg-white text-slate-900 px-4 py-2 rounded font-semibold text-sm hover:bg-slate-100 transition-colors inline-block"
-              >
+              <Link to="/contact" className="bg-white text-slate-900 px-4 py-2 rounded font-semibold text-sm hover:bg-slate-100 transition-colors inline-block">
                 상담 신청
               </Link>
             </div>
@@ -79,15 +73,9 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-slate-800 mt-8 pt-8 text-center">
-          <p className="text-slate-400 text-sm">
-            © 2024 주식회사 썬그린에너지. All rights reserved. | 
-            사업자등록번호: 355-86-01790 | 
-            대표: 박이준
-          </p>
+          <p className="text-slate-400 text-sm">© 2024 주식회사 썬그린에너지. All rights reserved. | 사업자등록번호: 355-86-01790 | 대표: 박이순</p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
