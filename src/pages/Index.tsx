@@ -1,95 +1,68 @@
-
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
-import { 
-  Sun, 
-  Zap, 
-  Leaf, 
-  Shield, 
-  Users, 
-  Award,
-  ArrowRight,
-  CheckCircle,
-  Building,
-  Home,
-  Factory,
-  TrendingUp,
-  Lightbulb,
-  Star,
-  Clock
-} from 'lucide-react';
-
+import { Sun, Zap, Leaf, Shield, Users, Award, ArrowRight, CheckCircle, Building, Home, Factory, TrendingUp, Lightbulb, Star, Clock } from 'lucide-react';
 const Index = () => {
-  const services = [
-    {
-      icon: Home,
-      title: '주택용 태양광',
-      description: '개인 주택을 위한 맞춤형 태양광 시스템 설계 및 시공',
-      features: ['무료 현장 조사', '맞춤 설계', '정부 보조금 지원'],
-      image: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
-    },
-    {
-      icon: Building,
-      title: '상업용 태양광',
-      description: '상업시설과 공공건물을 위한 대규모 태양광 발전시설',
-      features: ['대용량 시스템', '수익성 분석', 'ESG 경영 지원'],
-      image: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
-    },
-    {
-      icon: Factory,
-      title: 'RE100 컨설팅',
-      description: '기업의 재생에너지 100% 목표 달성을 위한 전문 컨설팅',
-      features: ['현황 진단', '로드맵 수립', '이행 관리'],
-      image: 'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
-    }
-  ];
-
-  const achievements = [
-    { number: '2,500+', label: '누적 시공 건수' },
-    { number: '80MW+', label: '총 설치 용량' },
-    { number: '99.8%', label: '고객 만족도' },
-    { number: '20년', label: '업계 경험' }
-  ];
-
-  const benefits = [
-    {
-      icon: TrendingUp,
-      title: '높은 투자 수익률',
-      description: '최신 고효율 모듈로 최대 20년 안정적 수익 보장'
-    },
-    {
-      icon: Lightbulb,
-      title: '스마트 모니터링',
-      description: '실시간 발전량 모니터링과 AI 기반 최적화'
-    },
-    {
-      icon: Star,
-      title: '프리미엄 품질',
-      description: '독일, 일본 최고급 부품만을 사용한 시공'
-    },
-    {
-      icon: Clock,
-      title: '신속한 시공',
-      description: '평균 3일 내 완공, 최소한의 생활 불편'
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-white">
+  const services = [{
+    icon: Home,
+    title: '주택용 태양광',
+    description: '개인 주택을 위한 맞춤형 태양광 시스템 설계 및 시공',
+    features: ['무료 현장 조사', '맞춤 설계', '정부 보조금 지원'],
+    image: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+  }, {
+    icon: Building,
+    title: '상업용 태양광',
+    description: '상업시설과 공공건물을 위한 대규모 태양광 발전시설',
+    features: ['대용량 시스템', '수익성 분석', 'ESG 경영 지원'],
+    image: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+  }, {
+    icon: Factory,
+    title: 'RE100 컨설팅',
+    description: '기업의 재생에너지 100% 목표 달성을 위한 전문 컨설팅',
+    features: ['현황 진단', '로드맵 수립', '이행 관리'],
+    image: 'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+  }];
+  const achievements = [{
+    number: '2,500+',
+    label: '누적 시공 건수'
+  }, {
+    number: '80MW+',
+    label: '총 설치 용량'
+  }, {
+    number: '99.8%',
+    label: '고객 만족도'
+  }, {
+    number: '20년',
+    label: '업계 경험'
+  }];
+  const benefits = [{
+    icon: TrendingUp,
+    title: '높은 투자 수익률',
+    description: '최신 고효율 모듈로 최대 20년 안정적 수익 보장'
+  }, {
+    icon: Lightbulb,
+    title: '스마트 모니터링',
+    description: '실시간 발전량 모니터링과 AI 기반 최적화'
+  }, {
+    icon: Star,
+    title: '프리미엄 품질',
+    description: '독일, 일본 최고급 부품만을 사용한 시공'
+  }, {
+    icon: Clock,
+    title: '신속한 시공',
+    description: '평균 3일 내 완공, 최소한의 생활 불편'
+  }];
+  return <div className="min-h-screen bg-white">
       <Header />
       
       {/* Hero Section - 더욱 임팩트 있게 */}
       <section className="relative min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-emerald-900 text-white overflow-hidden">
         {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
-          style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')"
-          }}
-        ></div>
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30" style={{
+        backgroundImage: "url('https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')"
+      }}></div>
         
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-blue-900/70 to-emerald-900/80"></div>
@@ -132,11 +105,7 @@ const Index = () => {
                   </Button>
                 </Link>
                 <Link to="/cases">
-                  <Button 
-                    variant="outline" 
-                    size="lg" 
-                    className="border-2 border-slate-200 text-slate-900 bg-white/90 hover:bg-white hover:text-slate-800 px-10 py-6 text-lg font-semibold rounded-xl backdrop-blur-sm transition-all duration-300"
-                  >
+                  <Button variant="outline" size="lg" className="border-2 border-slate-200 text-slate-900 bg-white/90 hover:bg-white hover:text-slate-800 px-10 py-6 text-lg font-semibold rounded-xl backdrop-blur-sm transition-all duration-300">
                     시공사례 보기
                   </Button>
                 </Link>
@@ -168,12 +137,10 @@ const Index = () => {
                   <p className="text-slate-300 text-lg">최고급 독일/일본 부품 사용</p>
                 </div>
                 <div className="grid grid-cols-2 gap-6">
-                  {achievements.map((item, index) => (
-                    <div key={index} className="text-center p-4 bg-white/5 rounded-xl border border-white/10">
+                  {achievements.map((item, index) => <div key={index} className="text-center p-4 bg-white/5 rounded-xl border border-white/10">
                       <div className="text-3xl font-bold text-amber-400 mb-1">{item.number}</div>
                       <div className="text-sm text-slate-300">{item.label}</div>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
               </div>
             </div>
@@ -194,8 +161,7 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {benefits.map((benefit, index) => (
-              <Card key={index} className="border-0 shadow-xl hover:shadow-2xl transition-all duration-300 group hover:-translate-y-2 bg-gradient-to-br from-white to-slate-50">
+            {benefits.map((benefit, index) => <Card key={index} className="border-0 shadow-xl hover:shadow-2xl transition-all duration-300 group hover:-translate-y-2 bg-gradient-to-br from-white to-slate-50">
                 <CardHeader className="text-center pb-4">
                   <div className="mx-auto w-20 h-20 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                     <benefit.icon className="h-10 w-10 text-white" />
@@ -205,8 +171,7 @@ const Index = () => {
                 <CardContent>
                   <p className="text-slate-600 text-center leading-relaxed">{benefit.description}</p>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -222,14 +187,9 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
-            {services.map((service, index) => (
-              <Card key={index} className="border-0 shadow-2xl hover:shadow-3xl transition-all duration-500 group overflow-hidden bg-white">
+            {services.map((service, index) => <Card key={index} className="border-0 shadow-2xl hover:shadow-3xl transition-all duration-500 group overflow-hidden bg-white">
                 <div className="relative h-64 overflow-hidden">
-                  <img 
-                    src={service.image} 
-                    alt={service.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
+                  <img src={service.image} alt={service.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                   <div className="absolute bottom-4 left-4">
                     <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg">
@@ -249,16 +209,13 @@ const Index = () => {
                 
                 <CardContent>
                   <ul className="space-y-3">
-                    {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center space-x-3">
+                    {service.features.map((feature, featureIndex) => <li key={featureIndex} className="flex items-center space-x-3">
                         <CheckCircle className="h-5 w-5 text-emerald-500 flex-shrink-0" />
                         <span className="text-slate-700 font-medium">{feature}</span>
-                      </li>
-                    ))}
+                      </li>)}
                   </ul>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
 
           <div className="text-center mt-16">
@@ -275,12 +232,9 @@ const Index = () => {
       {/* Why Choose Us Section - 더욱 임팩트 있게 */}
       <section className="py-24 bg-gradient-to-br from-slate-900 to-emerald-900 text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <div 
-            className="w-full h-full bg-cover bg-center"
-            style={{
-              backgroundImage: "url('https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')"
-            }}
-          ></div>
+          <div className="w-full h-full bg-cover bg-center" style={{
+          backgroundImage: "url('https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')"
+        }}></div>
         </div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -357,21 +311,13 @@ const Index = () => {
               </Button>
             </Link>
             <a href="tel:031-940-7690">
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="border-2 border-slate-200 text-slate-900 bg-white/90 hover:bg-white hover:text-slate-800 px-10 py-6 text-lg font-semibold rounded-xl backdrop-blur-sm transition-all duration-300"
-              >
-                📞 전화상담: 031-940-7690
-              </Button>
+              <Button variant="outline" size="lg" className="border-2 border-slate-200 text-slate-900 bg-white/90 hover:bg-white hover:text-slate-800 px-10 py-6 text-lg font-semibold rounded-xl backdrop-blur-sm transition-all duration-300">📞 전화상담: 031-944-0912</Button>
             </a>
           </div>
         </div>
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
