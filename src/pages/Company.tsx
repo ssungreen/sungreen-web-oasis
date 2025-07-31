@@ -191,10 +191,10 @@ const Company = () => {
                 <div className="w-1/2 px-8">
                   <img 
                     src={
-                      index === 0 ? 'https://images.unsplash.com/photo-1497436072909-f5e4be1713c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80' :
-                      index === 1 ? 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80' :
-                      index === 2 ? 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80' :
-                      index === 3 ? 'https://images.unsplash.com/photo-1581092918484-8313427143cc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80' :
+                      index === 0 ? 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80' :
+                      index === 1 ? 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80' :
+                      index === 2 ? 'https://images.unsplash.com/photo-1497436072909-f5e4be1713c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80' :
+                      index === 3 ? 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80' :
                       'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
                     } 
                     alt={milestone.event} 
