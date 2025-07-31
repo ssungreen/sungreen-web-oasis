@@ -1,22 +1,16 @@
-
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Badge } from '@/components/ui/badge';
 import { Building, Users, Target, Heart } from 'lucide-react';
-
 const Greeting = () => {
-  return (
-    <div className="min-h-screen bg-white">
+  return <div className="min-h-screen bg-white">
       <Header />
       
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: 'url(https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80)',
-          }}
-        >
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
+        backgroundImage: 'url(https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80)'
+      }}>
           <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 to-slate-700/60"></div>
         </div>
         
@@ -71,7 +65,7 @@ const Greeting = () => {
               
               <div className="bg-gradient-to-r from-emerald-50 to-blue-50 p-8 rounded-2xl border border-emerald-200">
                 <div className="text-right">
-                  <div className="text-2xl font-bold text-slate-900 mb-2">박이준</div>
+                  <div className="text-2xl font-bold text-slate-900 mb-2">박이순</div>
                   <div className="text-lg text-slate-600">주식회사 썬그린에너지 대표이사</div>
                 </div>
               </div>
@@ -79,11 +73,7 @@ const Greeting = () => {
             
             <div className="space-y-8">
               <div className="relative">
-                <img 
-                  src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                  alt="썬그린에너지 대표이사" 
-                  className="rounded-3xl shadow-2xl"
-                />
+                <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="썬그린에너지 대표이사" className="rounded-3xl shadow-2xl" />
               </div>
               
               <div className="grid grid-cols-2 gap-6">
@@ -114,8 +104,6 @@ const Greeting = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Greeting;
