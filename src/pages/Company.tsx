@@ -1,55 +1,69 @@
-
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Building, Users, Award, Target, Zap, Shield, Leaf, TrendingUp, MapPin, Phone, Mail, Factory, Calendar, CheckCircle } from 'lucide-react';
-
 const Company = () => {
-  const milestones = [
-    { year: '2024', event: '지속적 성장', description: '태양광 시공 누적 2,500건 달성 및 RE100 컨설팅 서비스 확대' },
-    { year: '2023', event: '사업 확장', description: '정부지원사업 대폭 확대 및 기업 고객 전담팀 신설' },
-    { year: '2022', event: '기술 혁신', description: '스마트 모니터링 시스템 도입 및 AI 기반 발전량 예측 서비스 개시' },
-    { year: '2021', event: '품질 인증', description: '한국에너지공단 우수 시공업체 선정 및 ISO 9001 품질경영시스템 인증' },
-    { year: '2020', event: '회사 설립', description: '주식회사 썬그린에너지 설립 (대표이사 박이순)' }
-  ];
-
-  const businessAreas = [
-    { title: '주택용 태양광', desc: '단독주택, 전원주택 맞춤형 태양광 시스템' },
-    { title: '상업용 태양광', desc: '공장, 창고, 상가 등 대용량 태양광 발전소' },
-    { title: 'RE100 컨설팅', desc: '기업의 재생에너지 100% 달성 지원' },
-    { title: '정부지원사업', desc: '신재생에너지 보급사업 연계 서비스' }
-  ];
-
-  const certifications = [
-    '신재생에너지설비 A/S지정 기술·전문인력 등록 확인서',
-    '중소기업확인서',
-    '전기공사업 등록증',
-    '건설업등록증',
-    '기술혁신형 중소기업확인서',
-    '표창장(우수기업 선정)',
-    'ISO 9001 품질경영시스템 인증'
-  ];
-
-  const companyStats = [
-    { number: '2,500+', label: '누적 시공건수', icon: Factory },
-    { number: '4년+', label: '사업 경력', icon: Calendar },
-    { number: '100%', label: '고객 만족도', icon: CheckCircle },
-    { number: '24시간', label: 'A/S 지원', icon: Shield }
-  ];
-
-  return (
-    <div className="min-h-screen bg-white">
+  const milestones = [{
+    year: '2024',
+    event: '지속적 성장',
+    description: '태양광 시공 누적 2,500건 달성 및 RE100 컨설팅 서비스 확대'
+  }, {
+    year: '2023',
+    event: '사업 확장',
+    description: '정부지원사업 대폭 확대 및 기업 고객 전담팀 신설'
+  }, {
+    year: '2022',
+    event: '기술 혁신',
+    description: '스마트 모니터링 시스템 도입 및 AI 기반 발전량 예측 서비스 개시'
+  }, {
+    year: '2021',
+    event: '품질 인증',
+    description: '한국에너지공단 우수 시공업체 선정 및 ISO 9001 품질경영시스템 인증'
+  }, {
+    year: '2020',
+    event: '회사 설립',
+    description: '주식회사 썬그린에너지 설립 (대표이사 박이순)'
+  }];
+  const businessAreas = [{
+    title: '주택용 태양광',
+    desc: '단독주택, 전원주택 맞춤형 태양광 시스템'
+  }, {
+    title: '상업용 태양광',
+    desc: '공장, 창고, 상가 등 대용량 태양광 발전소'
+  }, {
+    title: 'RE100 컨설팅',
+    desc: '기업의 재생에너지 100% 달성 지원'
+  }, {
+    title: '정부지원사업',
+    desc: '신재생에너지 보급사업 연계 서비스'
+  }];
+  const certifications = ['신재생에너지설비 A/S지정 기술·전문인력 등록 확인서', '중소기업확인서', '전기공사업 등록증', '건설업등록증', '기술혁신형 중소기업확인서', '표창장(우수기업 선정)', 'ISO 9001 품질경영시스템 인증'];
+  const companyStats = [{
+    number: '2,500+',
+    label: '누적 시공건수',
+    icon: Factory
+  }, {
+    number: '4년+',
+    label: '사업 경력',
+    icon: Calendar
+  }, {
+    number: '100%',
+    label: '고객 만족도',
+    icon: CheckCircle
+  }, {
+    number: '24시간',
+    label: 'A/S 지원',
+    icon: Shield
+  }];
+  return <div className="min-h-screen bg-white">
       <Header />
       
       {/* Hero Section */}
       <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: 'url(https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80)',
-          }}
-        >
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
+        backgroundImage: 'url(https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80)'
+      }}>
           <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 to-slate-700/60"></div>
         </div>
         
@@ -71,13 +85,11 @@ const Company = () => {
           
           {/* Company Stats */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-            {companyStats.map((stat, index) => (
-              <div key={index} className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+            {companyStats.map((stat, index) => <div key={index} className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
                 <stat.icon className="h-8 w-8 text-emerald-400 mx-auto mb-3" />
                 <div className="text-3xl font-bold text-white mb-1">{stat.number}</div>
                 <div className="text-sm text-slate-300">{stat.label}</div>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -137,11 +149,7 @@ const Company = () => {
             
             <div className="space-y-8">
               <div className="relative">
-                <img 
-                  src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                  alt="썬그린에너지 태양광 시설" 
-                  className="rounded-3xl shadow-2xl"
-                />
+                <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="썬그린에너지 태양광 시설" className="rounded-3xl shadow-2xl" />
                 <div className="absolute -bottom-8 -left-8 bg-gradient-to-r from-emerald-500 to-blue-500 p-8 rounded-2xl shadow-2xl text-white">
                   <div className="text-4xl font-bold">2020</div>
                   <div className="text-lg">설립년도</div>
@@ -151,15 +159,13 @@ const Company = () => {
               <div className="bg-white p-8 rounded-2xl shadow-xl border border-slate-200">
                 <h3 className="text-2xl font-bold text-slate-900 mb-6">주요 사업영역</h3>
                 <div className="grid grid-cols-1 gap-4">
-                  {businessAreas.map((area, index) => (
-                    <div key={index} className="flex items-start space-x-3 p-4 bg-slate-50 rounded-xl">
+                  {businessAreas.map((area, index) => <div key={index} className="flex items-start space-x-3 p-4 bg-slate-50 rounded-xl">
                       <div className="w-2 h-2 bg-emerald-500 rounded-full mt-2 flex-shrink-0"></div>
                       <div>
                         <div className="font-semibold text-slate-900">{area.title}</div>
                         <div className="text-sm text-slate-600">{area.desc}</div>
                       </div>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
               </div>
             </div>
@@ -181,14 +187,9 @@ const Company = () => {
           </div>
 
           <div className="space-y-12">
-            {milestones.map((milestone, index) => (
-              <div key={index} className={`flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
+            {milestones.map((milestone, index) => <div key={index} className={`flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
                 <div className="w-1/2 px-8">
-                  <img 
-                    src={`https://images.unsplash.com/photo-${index % 2 === 0 ? '1581092795' : '1581092918'}-81b91c00e9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80`}
-                    alt={milestone.event}
-                    className="rounded-2xl shadow-xl w-full"
-                  />
+                  <img src={`https://images.unsplash.com/photo-${index % 2 === 0 ? '1581092795' : '1581092918'}-81b91c00e9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80`} alt={milestone.event} className="rounded-2xl shadow-xl w-full" />
                 </div>
                 <div className="w-1/2 px-8">
                   <Card className="border-0 shadow-2xl bg-gradient-to-br from-white to-slate-50">
@@ -201,8 +202,7 @@ const Company = () => {
                     </CardContent>
                   </Card>
                 </div>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -220,8 +220,7 @@ const Company = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {certifications.map((cert, index) => (
-              <Card key={index} className="border-0 shadow-xl hover:shadow-2xl transition-all duration-300 group">
+            {certifications.map((cert, index) => <Card key={index} className="border-0 shadow-xl hover:shadow-2xl transition-all duration-300 group">
                 <CardContent className="p-8 text-center">
                   <div className="w-20 h-20 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                     <Award className="h-10 w-10 text-white" />
@@ -229,8 +228,7 @@ const Company = () => {
                   <h3 className="font-bold text-lg text-slate-900 mb-2">{cert}</h3>
                   <p className="text-sm text-slate-600">정부 공인 인증서</p>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -250,11 +248,7 @@ const Company = () => {
           <div className="bg-white rounded-3xl p-8 shadow-2xl">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
-                <img 
-                  src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                  alt="썬그린에너지 위치"
-                  className="rounded-2xl shadow-lg w-full"
-                />
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="썬그린에너지 위치" className="rounded-2xl shadow-lg w-full" />
               </div>
               <div className="space-y-6">
                 <div className="flex items-center space-x-4 p-4 bg-slate-50 rounded-xl">
@@ -275,7 +269,7 @@ const Company = () => {
                   <Mail className="h-6 w-6 text-emerald-600" />
                   <div>
                     <div className="font-semibold text-slate-900">E-MAIL</div>
-                    <div className="text-slate-700">info@sungreen.co.kr</div>
+                    <div className="text-slate-700">sungreen0912@gmail.com</div>
                   </div>
                 </div>
               </div>
@@ -285,8 +279,6 @@ const Company = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Company;
