@@ -193,12 +193,12 @@ const Company = () => {
                     src={
                       index === 0 ? 'https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80' :
                       index === 1 ? 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80' :
-                      index === 2 ? 'https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80' :
+                      index === 2 ? 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80' :
                       index === 3 ? 'https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80' :
                       'https://images.unsplash.com/photo-1603123852550-92d70bf1cb63?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
                     } 
                     alt={milestone.event} 
-                    className="rounded-2xl shadow-xl w-full" 
+                    className="rounded-2xl shadow-xl w-full h-80 object-cover" 
                   />
                 </div>
                 <div className="w-1/2 px-8">
