@@ -191,11 +191,11 @@ const Company = () => {
                 <div className="w-1/2 px-8">
                   <img 
                     src={
-                      index === 0 ? 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80' :
-                      index === 1 ? 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80' :
-                      index === 2 ? 'https://images.unsplash.com/photo-1497436072909-f5e4be1713c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80' :
-                      index === 3 ? 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80' :
-                      'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
+                      index === 0 ? 'https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80' :
+                      index === 1 ? 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80' :
+                      index === 2 ? 'https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80' :
+                      index === 3 ? 'https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80' :
+                      'https://images.unsplash.com/photo-1603123852550-92d70bf1cb63?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
                     } 
                     alt={milestone.event} 
                     className="rounded-2xl shadow-xl w-full" 
