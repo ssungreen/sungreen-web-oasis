@@ -189,7 +189,17 @@ const Company = () => {
           <div className="space-y-12">
             {milestones.map((milestone, index) => <div key={index} className={`flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
                 <div className="w-1/2 px-8">
-                  <img src={index % 2 === 0 ? 'https://images.unsplash.com/photo-1497436072909-f5e4be1713c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80' : 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'} alt={milestone.event} className="rounded-2xl shadow-xl w-full" />
+                  <img 
+                    src={
+                      index === 0 ? 'https://images.unsplash.com/photo-1497436072909-f5e4be1713c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80' :
+                      index === 1 ? 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80' :
+                      index === 2 ? 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80' :
+                      index === 3 ? 'https://images.unsplash.com/photo-1581092918484-8313427143cc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80' :
+                      'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
+                    } 
+                    alt={milestone.event} 
+                    className="rounded-2xl shadow-xl w-full" 
+                  />
                 </div>
                 <div className="w-1/2 px-8">
                   <Card className="border-0 shadow-2xl bg-gradient-to-br from-white to-slate-50">
