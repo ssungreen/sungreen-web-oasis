@@ -3,35 +3,74 @@ import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Globe, Factory, Leaf, Users, Sun, Wind, Zap, Building2, FileCheck, Award, Target, TrendingUp, CheckCircle, ArrowRight, Phone, Mail } from 'lucide-react';
-
 const BusinessRE100 = () => {
-  const renewableEnergySources = [
-    { icon: <Sun className="h-12 w-12" />, title: '태양광', description: '태양광 발전' },
-    { icon: <Wind className="h-12 w-12" />, title: '풍력', description: '풍력 발전' },
-    { icon: <Zap className="h-12 w-12" />, title: '수력', description: '수력 발전' },
-    { icon: <Leaf className="h-12 w-12" />, title: '바이오매스', description: '바이오매스' },
-    { icon: <Globe className="h-12 w-12" />, title: '지열', description: '지열 발전' }
-  ];
-
-  const processSteps = [
-    { step: 1, title: '신청', description: 'RE100 참여 신청서 제출', icon: <FileCheck className="h-8 w-8" /> },
-    { step: 2, title: '검토', description: '참여 자격 및 계획 검토', icon: <Building2 className="h-8 w-8" /> },
-    { step: 3, title: '승인', description: 'RE100 참여 기업 승인', icon: <Award className="h-8 w-8" /> },
-    { step: 4, title: '이행', description: '재생에너지 전환 이행', icon: <Target className="h-8 w-8" /> },
-    { step: 5, title: '평가', description: '이행 결과 평가 및 인증', icon: <TrendingUp className="h-8 w-8" /> }
-  ];
-
-  const certificationBenefits = [
-    { title: '브랜드 가치 향상', description: '친환경 기업 이미지로 브랜드 가치 제고' },
-    { title: '글로벌 경쟁력 강화', description: '국제 RE100 이니셔티브 참여로 글로벌 경쟁력 확보' },
-    { title: '투자 유치 용이', description: 'ESG 경영으로 투자자들의 관심 증대' },
-    { title: '규제 리스크 최소화', description: '탄소중립 정책 대응으로 규제 리스크 해소' },
-    { title: '운영비 절감', description: '장기적으로 안정적인 에너지 비용 확보' },
-    { title: '사회적 책임 이행', description: '기업의 사회적 책임 이행으로 신뢰도 증진' }
-  ];
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-green-50">
+  const renewableEnergySources = [{
+    icon: <Sun className="h-12 w-12" />,
+    title: '태양광',
+    description: '태양광 발전'
+  }, {
+    icon: <Wind className="h-12 w-12" />,
+    title: '풍력',
+    description: '풍력 발전'
+  }, {
+    icon: <Zap className="h-12 w-12" />,
+    title: '수력',
+    description: '수력 발전'
+  }, {
+    icon: <Leaf className="h-12 w-12" />,
+    title: '바이오매스',
+    description: '바이오매스'
+  }, {
+    icon: <Globe className="h-12 w-12" />,
+    title: '지열',
+    description: '지열 발전'
+  }];
+  const processSteps = [{
+    step: 1,
+    title: '신청',
+    description: 'RE100 참여 신청서 제출',
+    icon: <FileCheck className="h-8 w-8" />
+  }, {
+    step: 2,
+    title: '검토',
+    description: '참여 자격 및 계획 검토',
+    icon: <Building2 className="h-8 w-8" />
+  }, {
+    step: 3,
+    title: '승인',
+    description: 'RE100 참여 기업 승인',
+    icon: <Award className="h-8 w-8" />
+  }, {
+    step: 4,
+    title: '이행',
+    description: '재생에너지 전환 이행',
+    icon: <Target className="h-8 w-8" />
+  }, {
+    step: 5,
+    title: '평가',
+    description: '이행 결과 평가 및 인증',
+    icon: <TrendingUp className="h-8 w-8" />
+  }];
+  const certificationBenefits = [{
+    title: '브랜드 가치 향상',
+    description: '친환경 기업 이미지로 브랜드 가치 제고'
+  }, {
+    title: '글로벌 경쟁력 강화',
+    description: '국제 RE100 이니셔티브 참여로 글로벌 경쟁력 확보'
+  }, {
+    title: '투자 유치 용이',
+    description: 'ESG 경영으로 투자자들의 관심 증대'
+  }, {
+    title: '규제 리스크 최소화',
+    description: '탄소중립 정책 대응으로 규제 리스크 해소'
+  }, {
+    title: '운영비 절감',
+    description: '장기적으로 안정적인 에너지 비용 확보'
+  }, {
+    title: '사회적 책임 이행',
+    description: '기업의 사회적 책임 이행으로 신뢰도 증진'
+  }];
+  return <div className="min-h-screen bg-gradient-to-br from-slate-50 to-green-50">
       <Header />
       
       {/* Hero Section */}
@@ -77,8 +116,7 @@ const BusinessRE100 = () => {
           </div>
           
           <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-8">
-            {renewableEnergySources.map((source, index) => (
-              <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-0 bg-white">
+            {renewableEnergySources.map((source, index) => <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-0 bg-white">
                 <CardContent className="p-8 text-center">
                   <div className="text-green-600 mb-6 flex justify-center group-hover:scale-110 transition-transform">
                     {source.icon}
@@ -86,8 +124,7 @@ const BusinessRE100 = () => {
                   <h4 className="text-xl font-bold text-slate-900 mb-2">{source.title}</h4>
                   <p className="text-slate-600">{source.description}</p>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -103,8 +140,7 @@ const BusinessRE100 = () => {
           <div className="relative">
             <div className="absolute top-12 left-0 w-full h-1 bg-green-200"></div>
             <div className="grid md:grid-cols-5 gap-8 relative">
-              {processSteps.map((step, index) => (
-                <div key={step.step} className="text-center">
+              {processSteps.map((step, index) => <div key={step.step} className="text-center">
                   <div className="bg-green-600 text-white rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-6 relative z-10 group hover:bg-green-700 transition-colors">
                     <div className="text-center">
                       <div className="text-sm font-bold">STEP</div>
@@ -113,8 +149,7 @@ const BusinessRE100 = () => {
                   </div>
                   <h4 className="text-xl font-bold text-slate-900 mb-3">{step.title}</h4>
                   <p className="text-slate-600 text-sm leading-relaxed">{step.description}</p>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
         </div>
@@ -229,8 +264,7 @@ const BusinessRE100 = () => {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {certificationBenefits.map((benefit, index) => (
-              <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-0 bg-white">
+            {certificationBenefits.map((benefit, index) => <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-0 bg-white">
                 <CardContent className="p-8">
                   <div className="bg-gradient-to-r from-green-500 to-blue-600 text-white rounded-lg w-12 h-12 flex items-center justify-center mb-6">
                     <CheckCircle className="h-6 w-6" />
@@ -238,8 +272,7 @@ const BusinessRE100 = () => {
                   <h4 className="text-xl font-bold text-slate-900 mb-3">{benefit.title}</h4>
                   <p className="text-slate-600 leading-relaxed">{benefit.description}</p>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -303,7 +336,7 @@ const BusinessRE100 = () => {
                 <Phone className="h-16 w-16 text-green-600 mx-auto mb-6" />
                 <h4 className="text-2xl font-bold text-slate-900 mb-4">전화 상담</h4>
                 <p className="text-lg text-slate-600 mb-6">RE100 전문가와 직접 상담하세요</p>
-                <p className="text-2xl font-bold text-green-600">1588-0000</p>
+                <p className="text-2xl font-bold text-green-600">031-944-0912</p>
                 <p className="text-slate-500 mt-2">평일 09:00 - 18:00</p>
               </div>
             </Card>
@@ -313,7 +346,7 @@ const BusinessRE100 = () => {
                 <Mail className="h-16 w-16 text-blue-600 mx-auto mb-6" />
                 <h4 className="text-2xl font-bold text-slate-900 mb-4">이메일 문의</h4>
                 <p className="text-lg text-slate-600 mb-6">상세한 자료 요청 및 문의사항</p>
-                <p className="text-xl font-bold text-blue-600">re100@company.co.kr</p>
+                <p className="text-xl font-bold text-blue-600">sungreen0912@gmail.com</p>
                 <p className="text-slate-500 mt-2">24시간 접수 가능</p>
               </div>
             </Card>
@@ -322,8 +355,6 @@ const BusinessRE100 = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default BusinessRE100;
