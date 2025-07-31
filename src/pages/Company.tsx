@@ -268,7 +268,7 @@ const Company = () => {
                   <Phone className="h-6 w-6 text-emerald-600" />
                   <div>
                     <div className="font-semibold text-slate-900">TEL</div>
-                    <div className="text-slate-700">031-940-7690</div>
+                    <div className="text-slate-700">031-944-0912</div>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4 p-4 bg-slate-50 rounded-xl">

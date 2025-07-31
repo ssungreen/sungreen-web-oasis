@@ -311,7 +311,7 @@ const FusionSupport = () => {
                     </Link>
                   </Button>
                   <div className="text-purple-100">
-                    <span className="text-lg">📞 031-940-7690</span>
+                    <span className="text-lg">📞 031-944-0912</span>
                   </div>
                 </div>
               </CardContent>

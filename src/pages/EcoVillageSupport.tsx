@@ -295,7 +295,7 @@ const EcoVillageSupport = () => {
                     </Link>
                   </Button>
                   <div className="text-green-100">
-                    <span className="text-lg">📞 031-940-7690</span>
+                    <span className="text-lg">📞 031-944-0912</span>
                   </div>
                 </div>
               </CardContent>

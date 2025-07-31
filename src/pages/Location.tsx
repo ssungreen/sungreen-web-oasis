@@ -138,7 +138,7 @@ const Location = () => {
               전문 상담사가 준비하여 더욱 자세한 안내를 도와드리겠습니다.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="tel:031-940-7690" className="bg-emerald-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-emerald-700 transition-colors flex items-center justify-center space-x-2">
+              <a href="tel:031-944-0912" className="bg-emerald-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-emerald-700 transition-colors flex items-center justify-center space-x-2">
                 <Phone className="h-5 w-5" />
                 <span>전화 상담</span>
               </a>

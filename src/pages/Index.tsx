@@ -310,7 +310,7 @@ const Index = () => {
                 <ArrowRight className="ml-3 h-6 w-6" />
               </Button>
             </Link>
-            <a href="tel:031-940-7690">
+            <a href="tel:031-944-0912">
               <Button variant="outline" size="lg" className="border-2 border-slate-200 text-slate-900 bg-white/90 hover:bg-white hover:text-slate-800 px-10 py-6 text-lg font-semibold rounded-xl backdrop-blur-sm transition-all duration-300">📞 전화상담: 031-944-0912</Button>
             </a>
           </div>
