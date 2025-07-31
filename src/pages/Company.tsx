@@ -11,7 +11,7 @@ const Company = () => {
     { year: '2023', event: '사업 확장', description: '정부지원사업 대폭 확대 및 기업 고객 전담팀 신설' },
     { year: '2022', event: '기술 혁신', description: '스마트 모니터링 시스템 도입 및 AI 기반 발전량 예측 서비스 개시' },
     { year: '2021', event: '품질 인증', description: '한국에너지공단 우수 시공업체 선정 및 ISO 9001 품질경영시스템 인증' },
-    { year: '2020', event: '회사 설립', description: '주식회사 썬그린에너지 설립 (대표이사 박이준)' }
+    { year: '2020', event: '회사 설립', description: '주식회사 썬그린에너지 설립 (대표이사 박이순)' }
   ];
 
   const businessAreas = [
@@ -117,7 +117,7 @@ const Company = () => {
                   </div>
                   <div className="flex items-center">
                     <span className="font-semibold text-slate-900 w-32">대표이사</span>
-                    <span>박이준</span>
+                    <span>박이순</span>
                   </div>
                   <div className="flex items-center">
                     <span className="font-semibold text-slate-900 w-32">설립일</span>
