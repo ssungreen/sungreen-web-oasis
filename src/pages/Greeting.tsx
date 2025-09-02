@@ -95,7 +95,7 @@ const Greeting = () => {
                 <div className="bg-white p-6 rounded-2xl shadow-xl border border-slate-200 text-center">
                   <Heart className="h-12 w-12 text-emerald-600 mx-auto mb-4" />
                   <div className="text-3xl font-bold text-slate-900 mb-2">24H</div>
-                  <div className="text-sm text-slate-600">A/S 지원</div>
+                  <div className="text-sm text-slate-600">A/S 접수지원</div>
                 </div>
               </div>
             </div>
