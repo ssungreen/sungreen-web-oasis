@@ -166,8 +166,8 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-900">본사 주소</h4>
-                      <p className="text-gray-600">경기도 파주시 문산읍 당동리 산42-2</p>
-                      <p className="text-gray-600 text-sm">우편번호: 10929</p>
+                      <p className="text-gray-600">경기도 파주시 조리읍 뇌조로74번길 25-66</p>
+                      <p className="text-gray-600 text-sm">우편번호: 10950</p>
                     </div>
                   </div>
                   
@@ -178,7 +178,7 @@ const Contact = () => {
                     <div>
                       <h4 className="font-semibold text-gray-900">전화번호</h4>
                       <p className="text-gray-600">031-944-0912</p>
-                      <p className="text-gray-600">팩스: 031-940-7692</p>
+                      <p className="text-gray-600">팩스: 031-946-6335</p>
                       <p className="text-sm text-gray-500">상담시간: 평일 09:00 ~ 18:00</p>
                     </div>
                   </div>
@@ -200,8 +200,7 @@ const Contact = () => {
                     <div>
                       <h4 className="font-semibold text-gray-900">운영시간</h4>
                       <p className="text-gray-600">평일: 09:00 ~ 18:00</p>
-                      <p className="text-gray-600">토요일: 09:00 ~ 15:00</p>
-                      <p className="text-gray-600">일요일/공휴일: 휴무</p>
+                      <p className="text-gray-600">토요일/일요일/공휴일: 휴무</p>
                     </div>
                   </div>
                 </CardContent>
@@ -269,8 +268,7 @@ const Contact = () => {
                   Q. A/S는 어떻게 받을 수 있나요?
                 </h3>
                 <p className="text-gray-600">
-                  A. 설치 완료 후 15년간 무상 A/S를 제공하며, 24시간 모니터링 시스템으로 
-                  문제 발생 시 즉시 대응해드립니다.
+                  A. 계약서에 명시되어있으며, 회사로 연락주시면 A/S접수해 드리겠습니다.
                 </p>
               </CardContent>
             </Card>

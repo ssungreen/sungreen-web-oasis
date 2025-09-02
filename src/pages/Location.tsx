@@ -71,8 +71,7 @@ const Location = () => {
                       <div className="font-semibold text-slate-900 mb-2">운영시간</div>
                       <div className="text-slate-700">
                         평일 09:00 - 18:00<br />
-                        토요일 09:00 - 13:00<br />
-                        일요일 및 공휴일 휴무
+                        토요일 / 일요일 / 공휴일 휴무
                       </div>
                     </div>
                   </div>

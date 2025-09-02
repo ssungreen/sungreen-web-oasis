@@ -53,7 +53,7 @@ const Company = () => {
     icon: CheckCircle
   }, {
     number: '24시간',
-    label: 'A/S 지원',
+    label: 'A/S 접수지원',
     icon: Shield
   }];
   return <div className="min-h-screen bg-white">
@@ -187,16 +187,19 @@ const Company = () => {
           </div>
 
           <div className="space-y-12">
-            {milestones.map((milestone, index) => <div key={index} className={`flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
+            {milestones.map((milestone, index) => {
+          const milestoneImages = [
+            'https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+            'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+            'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+            'https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+            'https://images.unsplash.com/photo-1603123852550-92d70bf1cb63?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
+          ];
+
+          return <div key={index} className={`flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
                 <div className="w-1/2 px-8">
                   <img 
-                    src={
-                      index === 0 ? 'https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80' :
-                      index === 1 ? 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80' :
-                      index === 2 ? 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80' :
-                      index === 3 ? 'https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80' :
-                      'https://images.unsplash.com/photo-1603123852550-92d70bf1cb63?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
-                    } 
+                    src={milestoneImages[index]} 
                     alt={milestone.event} 
                     className="rounded-2xl shadow-xl w-full h-80 object-cover" 
                   />
@@ -212,7 +215,7 @@ const Company = () => {
                     </CardContent>
                   </Card>
                 </div>
-              </div>)}
+              </div>})}
           </div>
         </div>
       </section>
