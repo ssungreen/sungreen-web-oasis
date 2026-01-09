@@ -177,7 +177,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-900">전화번호</h4>
-                      <p className="text-gray-600">031-944-0912</p>
+                      <p className="text-gray-600">031-946-6333</p>
                       <p className="text-gray-600">팩스: 031-946-6335</p>
                       <p className="text-sm text-gray-500">상담시간: 평일 09:00 ~ 18:00</p>
                     </div>
@@ -189,7 +189,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-900">이메일</h4>
-                      <p className="text-gray-600">sungreen7690@naver.com</p>
+                      <p className="text-gray-600">sungreen0912@gmail.com</p>
                     </div>
                   </div>
 

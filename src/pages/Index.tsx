@@ -48,7 +48,7 @@ const Index = () => {
   }, {
     icon: Star,
     title: '프리미엄 품질',
-    description: '독일, 일본 최고급 부품만을 사용한 시공'
+    description: '한화 / 현대 모듈 사용'
   }, {
     icon: Clock,
     title: '신속한 시공',
@@ -80,16 +80,17 @@ const Index = () => {
                 정부 인증 태양광 전문기업
               </div>
 
-              <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
+              <h1 className="text-5xl lg:text-7xl font-bold leading-tight break-keep text-balance">
                 미래를 위한 선택,
-                <br />
+                <br className="hidden sm:block" />
                 <span className="bg-gradient-to-r from-emerald-400 via-green-400 to-teal-400 bg-clip-text text-transparent">
                   신재생에너지
                 </span>
               </h1>
 
-              <p className="text-xl lg:text-2xl text-slate-300 leading-relaxed max-w-2xl">
+              <p className="text-xl lg:text-2xl text-slate-300 leading-relaxed max-w-2xl break-keep">
                 썬그린에너지와 함께 깨끗하고 경제적인 태양광 에너지로
+                <br className="hidden sm:block" />
                 <span className="text-emerald-400 font-semibold"> 지속가능한 미래</span>를 만들어보세요
               </p>
             </div>
@@ -131,7 +132,7 @@ const Index = () => {
                   <img src="/sungreen-logo.png" alt="Logo" className="w-full h-auto object-contain" />
                 </div>
                 <h3 className="text-3xl font-bold mb-3">프리미엄 시공</h3>
-                <p className="text-slate-300 text-lg">최고급 독일/일본 부품 사용</p>
+                <p className="text-slate-300 text-lg">한화 / 현대 모듈 사용</p>
               </div>
               <div className="grid grid-cols-2 gap-6">
                 {achievements.map((item, index) => <div key={index} className="text-center p-4 bg-white/5 rounded-xl border border-white/10">
@@ -149,10 +150,10 @@ const Index = () => {
     <section className="py-24 bg-gradient-to-b from-slate-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
-          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6 break-keep text-balance">
             왜 <span className="text-emerald-600">썬그린에너지</span>인가?
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto break-keep">
             20년 노하우와 프리미엄 기술로 최고의 태양광 솔루션을 제공합니다
           </p>
         </div>
@@ -177,8 +178,8 @@ const Index = () => {
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
-          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">주요 사업분야</h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6 break-keep">주요 사업분야</h2>
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto break-keep">
             주택부터 대규모 상업시설까지, 모든 규모의 태양광 프로젝트를 성공적으로 완수합니다
           </p>
         </div>
@@ -232,15 +233,15 @@ const Index = () => {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold mb-6 break-keep text-balance">
             업계 <span className="text-amber-400">최고 수준</span>의 서비스
           </h2>
-          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-300 max-w-3xl mx-auto break-keep">
             20년 축적된 노하우와 최신 기술로 고객 만족을 넘어 감동을 전합니다
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           <div className="text-center space-y-6 p-8 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 hover:bg-white/15 transition-all duration-300">
             <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mx-auto shadow-lg">
               <Shield className="h-10 w-10 text-white" />
@@ -257,7 +258,7 @@ const Index = () => {
             </div>
             <h3 className="text-2xl font-bold">최고 효율</h3>
             <p className="text-slate-300 leading-relaxed">
-              독일 SMA, 일본 교세라 등 세계 최고급 브랜드만을 사용한 프리미엄 시공
+              한화 / 현대 모듈 사용
             </p>
           </div>
 
@@ -271,15 +272,6 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="text-center space-y-6 p-8 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 hover:bg-white/15 transition-all duration-300">
-            <div className="w-20 h-20 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto shadow-lg">
-              <Award className="h-10 w-10 text-white" />
-            </div>
-            <h3 className="text-2xl font-bold">평생 보장</h3>
-            <p className="text-slate-300 leading-relaxed">
-              20년 장기 A/S와 실시간 모니터링으로 평생 안심 서비스
-            </p>
-          </div>
         </div>
       </div>
     </section>
@@ -288,10 +280,10 @@ const Index = () => {
     <section className="py-24 bg-gradient-to-r from-amber-500 via-orange-500 to-emerald-500 relative overflow-hidden">
       {/* CTA Background Overlay Removed */}
       <div className="relative max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl lg:text-6xl font-bold text-white mb-8">
+        <h2 className="text-4xl lg:text-6xl font-bold text-white mb-8 break-keep text-balance">
           지금 바로 시작하세요!
         </h2>
-        <p className="text-xl lg:text-2xl text-white/90 mb-12 leading-relaxed">
+        <p className="text-xl lg:text-2xl text-white/90 mb-12 leading-relaxed break-keep">
           전문가 상담부터 시공, 사후관리까지 모든 과정을 책임지는 썬그린에너지와 함께
           <br className="hidden sm:block" />
           <span className="font-bold">에너지 독립</span>을 실현하세요
@@ -303,8 +295,8 @@ const Index = () => {
               <ArrowRight className="ml-3 h-6 w-6" />
             </Button>
           </Link>
-          <a href="tel:031-944-0912">
-            <Button variant="outline" size="lg" className="border-2 border-slate-200 text-slate-900 bg-white/90 hover:bg-white hover:text-slate-800 px-10 py-6 text-lg font-semibold rounded-xl backdrop-blur-sm transition-all duration-300">📞 전화상담: 031-944-0912</Button>
+          <a href="tel:031-946-6333">
+            <Button variant="outline" size="lg" className="border-2 border-slate-200 text-slate-900 bg-white/90 hover:bg-white hover:text-slate-800 px-10 py-6 text-lg font-semibold rounded-xl backdrop-blur-sm transition-all duration-300">📞 전화상담: 031-946-6333</Button>
           </a>
         </div>
       </div>
