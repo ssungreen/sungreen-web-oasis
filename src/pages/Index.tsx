@@ -228,11 +228,7 @@ const Index = () => {
 
     {/* Why Choose Us Section - 더욱 임팩트 있게 */}
     <section className="py-24 bg-gradient-to-br from-slate-900 to-emerald-900 text-white relative overflow-hidden">
-      <div className="absolute inset-0 opacity-10">
-        <div className="w-full h-full bg-cover bg-center" style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')"
-        }}></div>
-      </div>
+      {/* Background Overlay Removed */}
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
@@ -290,7 +286,7 @@ const Index = () => {
 
     {/* CTA Section - 더욱 강렬하게 */}
     <section className="py-24 bg-gradient-to-r from-amber-500 via-orange-500 to-emerald-500 relative overflow-hidden">
-      <div className="absolute inset-0 bg-black/10"></div>
+      {/* CTA Background Overlay Removed */}
       <div className="relative max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl lg:text-6xl font-bold text-white mb-8">
           지금 바로 시작하세요!
