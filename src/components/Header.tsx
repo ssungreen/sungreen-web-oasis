@@ -54,12 +54,12 @@ const Header = () => {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
-            <div className="bg-gradient-to-r from-amber-500 to-emerald-500 p-3 rounded-xl group-hover:scale-110 transition-transform duration-300 shadow-lg">
-              <Sun className="h-7 w-7 text-white" />
-            </div>
-            <div className="flex flex-col">
-              <span className="font-bold text-2xl text-slate-900 group-hover:text-emerald-600 transition-colors">썬그린에너지</span>
-              <span className="text-xs text-slate-600 font-medium">Sungreen Energy</span>
+            <div className="group-hover:scale-105 transition-transform duration-300">
+              <img
+                src="/sungreen-logo.png"
+                alt="주식회사 썬그린에너지"
+                className="h-12 w-auto object-contain"
+              />
             </div>
           </Link>
 
@@ -68,11 +68,10 @@ const Header = () => {
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
-                    isCompanyActive()
+                  <NavigationMenuTrigger className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${isCompanyActive()
                       ? 'text-emerald-600 bg-emerald-50'
                       : 'text-slate-700 hover:text-emerald-600 hover:bg-slate-50'
-                  }`}>
+                    }`}>
                     회사소개
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
@@ -82,11 +81,10 @@ const Header = () => {
                           <NavigationMenuLink key={item.name} asChild>
                             <Link
                               to={item.href}
-                              className={`block p-3 rounded-lg transition-colors ${
-                                isActive(item.href)
+                              className={`block p-3 rounded-lg transition-colors ${isActive(item.href)
                                   ? 'bg-emerald-50 text-emerald-600'
                                   : 'hover:bg-slate-50 text-slate-700'
-                              }`}
+                                }`}
                             >
                               <div className="font-medium">{item.name}</div>
                             </Link>
@@ -98,11 +96,10 @@ const Header = () => {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
-                    isBusinessActive()
+                  <NavigationMenuTrigger className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${isBusinessActive()
                       ? 'text-emerald-600 bg-emerald-50'
                       : 'text-slate-700 hover:text-emerald-600 hover:bg-slate-50'
-                  }`}>
+                    }`}>
                     사업분야
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
@@ -111,11 +108,10 @@ const Header = () => {
                         <NavigationMenuLink asChild>
                           <Link
                             to="/business"
-                            className={`block p-3 rounded-lg transition-colors ${
-                              location.pathname === '/business'
+                            className={`block p-3 rounded-lg transition-colors ${location.pathname === '/business'
                                 ? 'bg-emerald-50 text-emerald-600'
                                 : 'hover:bg-slate-50 text-slate-700'
-                            }`}
+                              }`}
                           >
                             <div className="font-medium">전체보기</div>
                           </Link>
@@ -124,11 +120,10 @@ const Header = () => {
                           <NavigationMenuLink key={item.name} asChild>
                             <Link
                               to={item.href}
-                              className={`block p-3 rounded-lg transition-colors ${
-                                isActive(item.href)
+                              className={`block p-3 rounded-lg transition-colors ${isActive(item.href)
                                   ? 'bg-emerald-50 text-emerald-600'
                                   : 'hover:bg-slate-50 text-slate-700'
-                              }`}
+                                }`}
                             >
                               <div className="font-medium">{item.name}</div>
                             </Link>
@@ -140,11 +135,10 @@ const Header = () => {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
-                    isGovernmentActive()
+                  <NavigationMenuTrigger className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${isGovernmentActive()
                       ? 'text-emerald-600 bg-emerald-50'
                       : 'text-slate-700 hover:text-emerald-600 hover:bg-slate-50'
-                  }`}>
+                    }`}>
                     정부지원사업
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
@@ -153,11 +147,10 @@ const Header = () => {
                         <NavigationMenuLink asChild>
                           <Link
                             to="/government"
-                            className={`block p-3 rounded-lg transition-colors ${
-                              location.pathname === '/government'
+                            className={`block p-3 rounded-lg transition-colors ${location.pathname === '/government'
                                 ? 'bg-emerald-50 text-emerald-600'
                                 : 'hover:bg-slate-50 text-slate-700'
-                            }`}
+                              }`}
                           >
                             <div className="font-medium">전체보기</div>
                           </Link>
@@ -166,11 +159,10 @@ const Header = () => {
                           <NavigationMenuLink key={item.name} asChild>
                             <Link
                               to={item.href}
-                              className={`block p-3 rounded-lg transition-colors ${
-                                isActive(item.href)
+                              className={`block p-3 rounded-lg transition-colors ${isActive(item.href)
                                   ? 'bg-emerald-50 text-emerald-600'
                                   : 'hover:bg-slate-50 text-slate-700'
-                              }`}
+                                }`}
                             >
                               <div className="font-medium">{item.name}</div>
                             </Link>
@@ -187,11 +179,10 @@ const Header = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
-                  isActive(item.href)
+                className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${isActive(item.href)
                     ? 'text-emerald-600 bg-emerald-50 border-b-2 border-emerald-600'
                     : 'text-slate-700 hover:text-emerald-600 hover:bg-slate-50'
-                }`}
+                  }`}
               >
                 {item.name}
               </Link>
@@ -226,11 +217,10 @@ const Header = () => {
                   <Link
                     key={item.name}
                     to={item.href}
-                    className={`block px-8 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
-                      isActive(item.href)
+                    className={`block px-8 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${isActive(item.href)
                         ? 'text-emerald-600 bg-emerald-50'
                         : 'text-slate-600 hover:text-emerald-600 hover:bg-slate-50'
-                    }`}
+                      }`}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {item.name}
@@ -243,11 +233,10 @@ const Header = () => {
                 <div className="px-4 py-3 text-base font-bold text-slate-900">사업분야</div>
                 <Link
                   to="/business"
-                  className={`block px-8 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
-                    location.pathname === '/business'
+                  className={`block px-8 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${location.pathname === '/business'
                       ? 'text-emerald-600 bg-emerald-50'
                       : 'text-slate-600 hover:text-emerald-600 hover:bg-slate-50'
-                  }`}
+                    }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   전체보기
@@ -256,11 +245,10 @@ const Header = () => {
                   <Link
                     key={item.name}
                     to={item.href}
-                    className={`block px-8 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
-                      isActive(item.href)
+                    className={`block px-8 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${isActive(item.href)
                         ? 'text-emerald-600 bg-emerald-50'
                         : 'text-slate-600 hover:text-emerald-600 hover:bg-slate-50'
-                    }`}
+                      }`}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {item.name}
@@ -273,11 +261,10 @@ const Header = () => {
                 <div className="px-4 py-3 text-base font-bold text-slate-900">정부지원사업</div>
                 <Link
                   to="/government"
-                  className={`block px-8 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
-                    location.pathname === '/government'
+                  className={`block px-8 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${location.pathname === '/government'
                       ? 'text-emerald-600 bg-emerald-50'
                       : 'text-slate-600 hover:text-emerald-600 hover:bg-slate-50'
-                  }`}
+                    }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   전체보기
@@ -286,11 +273,10 @@ const Header = () => {
                   <Link
                     key={item.name}
                     to={item.href}
-                    className={`block px-8 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
-                      isActive(item.href)
+                    className={`block px-8 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${isActive(item.href)
                         ? 'text-emerald-600 bg-emerald-50'
                         : 'text-slate-600 hover:text-emerald-600 hover:bg-slate-50'
-                    }`}
+                      }`}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {item.name}
@@ -302,11 +288,10 @@ const Header = () => {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`block px-4 py-3 text-base font-medium rounded-lg transition-all duration-200 ${
-                    isActive(item.href)
+                  className={`block px-4 py-3 text-base font-medium rounded-lg transition-all duration-200 ${isActive(item.href)
                       ? 'text-emerald-600 bg-emerald-50'
                       : 'text-slate-700 hover:text-emerald-600 hover:bg-slate-50'
-                  }`}
+                    }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}

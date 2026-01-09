@@ -3,7 +3,7 @@ import Footer from '@/components/Footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Home, CheckCircle, ArrowRight, Phone, FileText, Search, Wrench, Shield, Award, DollarSign } from 'lucide-react';
+import { Home, CheckCircle, ArrowRight, Phone, FileText, Search, Wrench, Shield, Award, DollarSign, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import {
   Table,
@@ -47,10 +47,10 @@ const HousingSupport = () => {
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      
+
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage: 'url(https://images.unsplash.com/photo-1518005020951-eccb494ad742?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80)',
@@ -58,7 +58,7 @@ const HousingSupport = () => {
         >
           <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 to-slate-700/60"></div>
         </div>
-        
+
         <div className="relative z-10 text-center text-white max-w-6xl mx-auto px-4">
           <div className="flex items-center justify-center mb-6">
             <Home className="h-12 w-12 text-blue-400 mr-4" />
@@ -78,184 +78,117 @@ const HousingSupport = () => {
       </section>
 
       {/* Main Content */}
-      <section className="py-20 bg-gradient-to-br from-slate-50 to-white">
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          {/* 사업 소개 */}
-          <div className="mb-16">
-            <Card className="border-0 shadow-xl">
-              <CardHeader className="text-center pb-8">
-                <CardTitle className="text-3xl font-bold text-slate-900 mb-4">주택지원사업이란?</CardTitle>
-                <p className="text-lg text-slate-600 max-w-4xl mx-auto leading-relaxed">
-                  소유자 거주용 주택에 설치하는 소규모 태양광 발전설비에 대해 <span className="text-blue-600 font-semibold">정부와 지자체가 설치비용을 지원</span>하는 사업입니다.<br />
-                  개인이 운영하는 주택의 <span className="text-emerald-600 font-semibold">지붕이나 옥상</span>에 설치할 수 있습니다.
+
+          {/* Section 1: Definition */}
+          <div className="bg-emerald-50 rounded-3xl p-10 shadow-sm border border-emerald-100 mb-16 items-center flex flex-col md:flex-row gap-8">
+            <div className="bg-emerald-600 text-white rounded-2xl px-6 py-4 text-3xl font-bold whitespace-nowrap text-center">
+              주택지원사업이란?
+            </div>
+            <p className="text-xl text-slate-700 leading-relaxed font-medium">
+              신재생에너지 설비를 저택에 설치할 경우 설치비의 일부를 정부가 보조 지원하는 사업으로,
+              자가소비 목적으로 신재생에너지 설비를 설치하고자 하는 주택 소유자에게 보조금을 지원하여
+              경제성을 확보하고 화석연료 대체 및 이산화탄소 배출을 줄이는 친환경 사업입니다.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12 mb-20">
+            {/* Section 2: Target & Scope */}
+            <div className="space-y-8">
+              <div className="bg-white rounded-2xl p-8 shadow-lg border border-slate-100">
+                <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center">
+                  <Users className="h-6 w-6 mr-3 text-emerald-600" /> 지원대상
+                </h3>
+                <p className="text-lg text-slate-700 font-medium leading-relaxed">
+                  기존 및 신축 단독주택 소유자 및 소유예정자, 공동주택 분양자 및 소유자
                 </p>
-              </CardHeader>
-            </Card>
-          </div>
-
-          {/* 지원혜택 */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">지원혜택</h2>
-            <Card className="border-0 shadow-xl">
-              <CardContent className="p-8">
-                <div className="text-center mb-8">
-                  <div className="inline-flex items-center bg-blue-500/10 px-6 py-3 rounded-full border border-blue-200">
-                    <span className="text-lg font-semibold text-blue-700">
-                      총 설치비용 최대 80% 지원 (시비 50%, 도비 30% → 자부담율 20%)
-                    </span>
-                  </div>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {benefits.map((benefit, index) => (
-                    <div key={index} className="flex items-center space-x-3 p-4 bg-slate-50 rounded-lg">
-                      <CheckCircle className="h-5 w-5 text-emerald-500 flex-shrink-0" />
-                      <span className="text-slate-700">{benefit}</span>
-                    </div>
+              </div>
+              <div className="bg-white rounded-2xl p-8 shadow-lg border border-slate-100">
+                <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center">
+                  <Search className="h-6 w-6 mr-3 text-emerald-600" /> 지원범위
+                </h3>
+                <ul className="grid grid-cols-2 gap-4">
+                  {['태양광', '태양열', '지열', '소형풍력'].map((item) => (
+                    <li key={item} className="bg-emerald-50 px-4 py-2 rounded-lg text-emerald-700 font-bold text-center">
+                      {item}
+                    </li>
                   ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Section 3: 2024 Standards */}
+            <div className="bg-slate-900 rounded-3xl p-10 shadow-xl text-white">
+              <h2 className="text-2xl font-bold mb-8 border-b border-white/20 pb-4">24년 주택지원사업 (태양광 3KW 기준)</h2>
+              <div className="space-y-6 text-lg">
+                <div className="flex justify-between items-center text-emerald-400">
+                  <span>정부지원</span>
+                  <span className="font-bold">50% 지원</span>
                 </div>
-              </CardContent>
-            </Card>
+                <div className="flex justify-between items-center">
+                  <span>지자체지원</span>
+                  <span className="text-slate-400">선택 사항(지자체별 상이)</span>
+                </div>
+                <div className="flex justify-between items-center border-t border-white/10 pt-4">
+                  <span>자부담</span>
+                  <span className="font-bold text-orange-400">자부담 연계 금융상품 이용가능</span>
+                </div>
+              </div>
+              <p className="mt-8 text-sm text-slate-400 leading-relaxed">
+                * 정부보조금은 신재생에너지 상생협력 지원금 등의 정책에 따라 변동될 수 있습니다.
+              </p>
+            </div>
           </div>
 
-          {/* 신청절차 */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">신청절차</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {processSteps.map((step, index) => (
-                <div key={step.step} className="relative">
-                  <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 h-full">
-                    <CardContent className="p-6 text-center">
-                      <div className="bg-blue-500 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-lg font-bold">
-                        {step.step}
-                      </div>
-                      <h3 className="text-lg font-semibold text-slate-900 mb-2">{step.title}</h3>
-                      <p className="text-sm text-slate-600">{step.description}</p>
-                    </CardContent>
-                  </Card>
-                  {index < processSteps.length - 1 && (
-                    <div className="hidden lg:block absolute top-1/2 -right-3 transform -translate-y-1/2">
-                      <ArrowRight className="h-6 w-6 text-blue-400" />
-                    </div>
-                  )}
+          {/* Section 4: Process */}
+          <div className="mb-20">
+            <h2 className="text-3xl font-bold text-slate-900 mb-12 text-center">신청 절차</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                { title: '1. 참여기업 선정 및 계약', desc: '주택소유자가 한국에너지공단 참여기업 선정' },
+                { title: '2. 사업신청서 접수', desc: '사업신청서 및 관련서류를 공단에 제출' },
+                { title: '3. 사업 승인', desc: '공단의 서류 검토 및 사업 승인' },
+                { title: '4. 설비 설치', desc: '승인된 계획에 따라 설비 설치 공사' },
+                { title: '5. 설치 확인', desc: '공단 또는 지자체의 설치 확인 및 검사' },
+                { title: '6. 보조금 지급', desc: '확인 완료 후 정부 및 지자체 보조금 지급' }
+              ].map((step, idx) => (
+                <div key={idx} className="bg-white p-6 rounded-2xl shadow-md border border-slate-100">
+                  <h4 className="font-bold text-emerald-600 mb-2">{step.title}</h4>
+                  <p className="text-slate-600 font-medium">{step.desc}</p>
                 </div>
               ))}
             </div>
           </div>
-
-          {/* 지역별 지원현황 */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">지역별 지원현황</h2>
-            <Card className="border-0 shadow-xl">
-              <CardContent className="p-8">
-                <p className="text-center text-slate-600 mb-6">
-                  주택용 태양광 발전설비 보조금 현황 (3kW 기준)
-                </p>
-                <div className="overflow-x-auto">
-                  <Table>
-                    <TableHeader>
-                      <TableRow>
-                        <TableHead className="text-center">지역</TableHead>
-                        <TableHead className="text-center">시/군</TableHead>
-                        <TableHead className="text-center">총 지원금액</TableHead>
-                        <TableHead className="text-center">지자체 지원</TableHead>
-                        <TableHead className="text-center">자부담</TableHead>
-                      </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                      {supportData.map((data, index) => (
-                        <TableRow key={index}>
-                          <TableCell className="text-center font-medium">{data.region}</TableCell>
-                          <TableCell className="text-center">{data.city}</TableCell>
-                          <TableCell className="text-center text-blue-600 font-semibold">{data.amount}</TableCell>
-                          <TableCell className="text-center text-emerald-600">{data.local}</TableCell>
-                          <TableCell className="text-center text-orange-600">{data.self}</TableCell>
-                        </TableRow>
-                      ))}
-                    </TableBody>
-                  </Table>
-                </div>
-                <p className="text-sm text-slate-500 mt-4 text-center">
-                  * 지자체별 지원금액은 변동될 수 있으며, 정확한 금액은 해당 지자체에 문의하시기 바랍니다.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* 기대효과 */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">기대효과</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <Card className="border-0 shadow-xl text-center">
-                <CardContent className="p-8">
-                  <div className="bg-green-500/10 p-4 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
-                    <DollarSign className="h-10 w-10 text-green-600" />
-                  </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-4">경제적 효과</h3>
-                  <p className="text-slate-600">
-                    3kW 기준 연간 약 700,000원 절약<br />
-                    전기료 절약 효과 기대
-                  </p>
-                </CardContent>
-              </Card>
-              
-              <Card className="border-0 shadow-xl text-center">
-                <CardContent className="p-8">
-                  <div className="bg-blue-500/10 p-4 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
-                    <Shield className="h-10 w-10 text-blue-600" />
-                  </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-4">환경 보호</h3>
-                  <p className="text-slate-600">
-                    연간 CO2 2톤 감축 효과<br />
-                    친환경 에너지 생산
-                  </p>
-                </CardContent>
-              </Card>
-              
-              <Card className="border-0 shadow-xl text-center">
-                <CardContent className="p-8">
-                  <div className="bg-purple-500/10 p-4 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
-                    <Award className="h-10 w-10 text-purple-600" />
-                  </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-4">에너지 자립</h3>
-                  <p className="text-slate-600">
-                    전력 자급자족 실현<br />
-                    에너지 독립성 확보
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-
-          {/* CTA */}
-          <div className="text-center">
-            <Card className="border-0 shadow-xl bg-gradient-to-r from-blue-500 to-emerald-500">
-              <CardContent className="p-12 text-white">
-                <h2 className="text-3xl font-bold mb-6">주택용 태양광 설치 문의</h2>
-                <p className="text-xl mb-8 text-blue-100">
-                  태양광 설치를 원하시면 전국 어디든 검정완료!
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                  <Button 
-                    size="lg" 
-                    className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold"
-                    asChild
-                  >
-                    <Link to="/contact">
-                      <Phone className="mr-2 h-5 w-5" />
-                      무료 상담 신청
-                    </Link>
-                  </Button>
-                  <div className="text-blue-100">
-                    <span className="text-lg">📞 031-944-0912</span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
         </div>
       </section>
 
+      {/* CTA */}
+      <div className="text-center">
+        <Card className="border-0 shadow-xl bg-gradient-to-r from-blue-500 to-emerald-500">
+          <CardContent className="p-12 text-white">
+            <h2 className="text-3xl font-bold mb-6">주택용 태양광 설치 문의</h2>
+            <p className="text-xl mb-8 text-blue-100">
+              태양광 설치를 원하시면 전국 어디든 검정완료!
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Button
+                size="lg"
+                className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold"
+                asChild
+              >
+                <Link to="/contact">
+                  <Phone className="mr-2 h-5 w-5" />
+                  무료 상담 신청
+                </Link>
+              </Button>
+              <div className="text-blue-100">
+                <span className="text-lg">📞 031-944-0912</span>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
       <Footer />
     </div>
   );

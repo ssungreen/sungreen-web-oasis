@@ -47,7 +47,7 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      
+
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-blue-600 to-green-600 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -80,7 +80,7 @@ const Contact = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <Label htmlFor="name">성명 *</Label>
-                      <Input 
+                      <Input
                         id="name"
                         name="name"
                         value={formData.name}
@@ -92,7 +92,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <Label htmlFor="phone">연락처 *</Label>
-                      <Input 
+                      <Input
                         id="phone"
                         name="phone"
                         value={formData.phone}
@@ -103,10 +103,10 @@ const Contact = () => {
                       />
                     </div>
                   </div>
-                  
+
                   <div>
                     <Label htmlFor="email">이메일</Label>
-                    <Input 
+                    <Input
                       id="email"
                       name="email"
                       type="email"
@@ -116,10 +116,10 @@ const Contact = () => {
                       className="mt-1"
                     />
                   </div>
-                  
+
                   <div>
                     <Label htmlFor="address">설치 주소 *</Label>
-                    <Input 
+                    <Input
                       id="address"
                       name="address"
                       value={formData.address}
@@ -129,10 +129,10 @@ const Contact = () => {
                       className="mt-1"
                     />
                   </div>
-                  
+
                   <div>
                     <Label htmlFor="message">상세 문의사항</Label>
-                    <Textarea 
+                    <Textarea
                       id="message"
                       name="message"
                       value={formData.message}
@@ -142,9 +142,9 @@ const Contact = () => {
                       className="mt-1"
                     />
                   </div>
-                  
-                  <Button 
-                    type="submit" 
+
+                  <Button
+                    type="submit"
                     className="w-full bg-gradient-to-r from-amber-500 to-green-500 hover:from-amber-600 hover:to-green-600 text-white font-semibold py-3"
                   >
                     견적 신청하기
@@ -170,7 +170,7 @@ const Contact = () => {
                       <p className="text-gray-600 text-sm">우편번호: 10950</p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start space-x-4">
                     <div className="bg-green-100 p-3 rounded-full">
                       <Phone className="h-6 w-6 text-green-600" />
@@ -182,17 +182,17 @@ const Contact = () => {
                       <p className="text-sm text-gray-500">상담시간: 평일 09:00 ~ 18:00</p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start space-x-4">
                     <div className="bg-amber-100 p-3 rounded-full">
                       <Mail className="h-6 w-6 text-amber-600" />
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-900">이메일</h4>
-                      <p className="text-gray-600">sungreen7690@gmail.com</p>
+                      <p className="text-gray-600">sungreen7690@naver.com</p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start space-x-4">
                     <div className="bg-purple-100 p-3 rounded-full">
                       <Clock className="h-6 w-6 text-purple-600" />
@@ -216,7 +216,7 @@ const Contact = () => {
                     </div>
                   </div>
                   <p className="mb-4 text-white/90">
-                    카카오톡 채널을 통해 실시간으로 상담받으세요. 
+                    카카오톡 채널을 통해 실시간으로 상담받으세요.
                     전문가가 즉시 답변해드립니다.
                   </p>
                   <Button className="bg-white text-gray-900 hover:bg-gray-100 font-semibold">
@@ -244,7 +244,7 @@ const Contact = () => {
                   Q. 태양광 설치에 얼마나 걸리나요?
                 </h3>
                 <p className="text-gray-600">
-                  A. 일반적으로 주택용은 1-2일, 상업용은 규모에 따라 1-2주 소요됩니다. 
+                  A. 일반적으로 주택용은 1-2일, 상업용은 규모에 따라 1-2주 소요됩니다.
                   정확한 일정은 현장 조사 후 안내해드립니다.
                 </p>
               </CardContent>
@@ -256,7 +256,7 @@ const Contact = () => {
                   Q. 정부 보조금은 얼마나 받을 수 있나요?
                 </h3>
                 <p className="text-gray-600">
-                  A. 지역과 설치 용량에 따라 차이가 있으며, 일반적으로 설치비의 20-40% 정도 지원받으실 수 있습니다. 
+                  A. 지역과 설치 용량에 따라 차이가 있으며, 일반적으로 설치비의 20-40% 정도 지원받으실 수 있습니다.
                   정확한 금액은 상담 시 안내해드립니다.
                 </p>
               </CardContent>
@@ -279,7 +279,7 @@ const Contact = () => {
                   Q. 현장 조사는 무료인가요?
                 </h3>
                 <p className="text-gray-600">
-                  A. 네, 현장 조사 및 견적은 무료로 제공해드립니다. 
+                  A. 네, 현장 조사 및 견적은 무료로 제공해드립니다.
                   전문가가 직접 방문하여 최적의 설치 방안을 제안해드립니다.
                 </p>
               </CardContent>

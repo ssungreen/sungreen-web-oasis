@@ -45,10 +45,10 @@ const EcoVillageSupport = () => {
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      
+
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage: 'url(https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80)',
@@ -56,7 +56,7 @@ const EcoVillageSupport = () => {
         >
           <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 to-slate-700/60"></div>
         </div>
-        
+
         <div className="relative z-10 text-center text-white max-w-6xl mx-auto px-4">
           <div className="flex items-center justify-center mb-6">
             <TreePine className="h-12 w-12 text-green-400 mr-4" />
@@ -76,230 +76,103 @@ const EcoVillageSupport = () => {
       </section>
 
       {/* Main Content */}
-      <section className="py-20 bg-gradient-to-br from-slate-50 to-white">
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          {/* 사업 소개 */}
-          <div className="mb-16">
-            <Card className="border-0 shadow-xl">
-              <CardHeader className="text-center pb-8">
-                <CardTitle className="text-3xl font-bold text-slate-900 mb-4">
-                  <TreePine className="inline-block h-8 w-8 text-green-600 mr-3" />
-                  에너지 자립마을 지원사업
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="text-center">
-                <div className="bg-green-50 p-8 rounded-lg border border-green-200 mb-8">
-                  <h3 className="text-2xl font-bold text-green-700 mb-4">
-                    에너지 자립마을(친환경 마을) 지원사업이란?
-                  </h3>
-                  <p className="text-lg text-slate-700 leading-relaxed">
-                    <span className="text-green-600 font-semibold">'에너지 자립마을'</span>은 지역(마을)에서 신재생에너지를 자체생산하여<br />
-                    마을공동체의 에너지자립률을 높이는 사업입니다.
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
 
-          {/* 추진목적 */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">추진목적</h2>
-            <Card className="border-0 shadow-xl">
-              <CardContent className="p-8">
-                <div className="text-center mb-8">
-                  <div className="bg-blue-500/10 p-6 rounded-lg border border-blue-200">
-                    <p className="text-lg text-slate-700 leading-relaxed">
-                      지자체와에서 신재생 참여형 에너지 자립 마을공급 최적화, 지원요금 높이고,<br />
-                      도시자즈 마을공급자적 형식 아래에너지자립(예정량) 설치 지원으로 경기요금 실현 및 마을참여형 추진
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* 지원혜택 */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">지원혜택</h2>
-            <Card className="border-0 shadow-xl">
-              <CardContent className="p-8">
-                <div className="text-center mb-8">
-                  <div className="bg-green-500/10 p-6 rounded-lg border border-green-200 mb-6">
-                    <h3 className="text-xl font-bold text-green-700 mb-4">
-                      총 설치비용 최대 80% 지원 (시비 50%, 도비 30% → 자부담율 20%)
-                    </h3>
-                  </div>
-                </div>
-                
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                  <div className="text-center">
-                    <div className="bg-blue-50 p-6 rounded-lg border border-blue-200">
-                      <h4 className="text-lg font-bold text-blue-700 mb-2">예산</h4>
-                      <div className="text-sm text-slate-600 space-y-1">
-                        <p>총 사업비 170,280만원</p>
-                        <p>시비 85,140만원 / 도비 51,084만원 / 자부담 34,056만원</p>
-                        <p>(23년 고압차 예산지원만큼 조성 99kW급 자가용 90kW / 마을공익시 9kW) 자부담율</p>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="text-center">
-                    <div className="bg-emerald-50 p-6 rounded-lg border border-emerald-200">
-                      <h4 className="text-lg font-bold text-emerald-700 mb-2">대상</h4>
-                      <p className="text-slate-600">
-                        • 자가소비 170,280만원<br />
-                        • 시비 85,140만원 / 도비 51,084만원 / 자부담 34,056만원<br />
-                        • 23년 고압차 예산지원만큼 조성 99kW급<br />
-                        (자가용 90kW / 마을공익 9kW) 자부담율
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="text-center">
-                    <div className="bg-purple-50 p-6 rounded-lg border border-purple-200">
-                      <h4 className="text-lg font-bold text-purple-700 mb-2">대상</h4>
-                      <p className="text-slate-600">
-                        • 자가소비 예산조성 신청가능 조건에서<br />
-                        • 주택 차량 시 설치 조건 검토를 위한<br />
-                        • 마을공동체 저자의 주민들
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {villageBenefits.map((benefit, index) => (
-                    <div key={index} className="flex items-center space-x-3 p-4 bg-slate-50 rounded-lg">
-                      <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
-                      <span className="text-slate-700">{benefit}</span>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* 진행과정 */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">진행과정</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
-              {processSteps.map((step, index) => (
-                <div key={step.step} className="relative">
-                  <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 h-full">
-                    <CardContent className="p-6 text-center">
-                      <div className="bg-green-500 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-lg font-bold">
-                        {step.step}
-                      </div>
-                      <h3 className="text-lg font-semibold text-slate-900 mb-2">{step.title}</h3>
-                      <p className="text-sm text-slate-600">{step.description}</p>
-                    </CardContent>
-                  </Card>
-                  {index < processSteps.length - 1 && (
-                    <div className="hidden lg:block absolute top-1/2 -right-3 transform -translate-y-1/2">
-                      <ArrowRight className="h-6 w-6 text-green-400" />
-                    </div>
-                  )}
-                </div>
-              ))}
+          {/* Section 1: Definition */}
+          <div className="bg-emerald-50 rounded-3xl p-10 shadow-sm border border-emerald-100 mb-16 items-center flex flex-col md:flex-row gap-8">
+            <div className="bg-emerald-600 text-white rounded-2xl px-6 py-4 text-3xl font-bold whitespace-nowrap text-center">
+              에너지자립마을이란?
             </div>
+            <p className="text-xl text-slate-700 leading-relaxed font-medium">
+              에너지 자립마을’은 지역(마을)에서 신재생에너지를 자체생산하여 마을공동체의 에너지 자립률을 높이는 사업입니다.
+            </p>
           </div>
 
-          {/* 에너지자립마을의 기대효과 */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">에너지자립마을의 기대효과</h2>
-            <div className="space-y-8">
-              {expectedEffects.map((effect, index) => {
-                const IconComponent = effect.icon;
-                return (
-                  <Card key={index} className="border-0 shadow-xl">
-                    <CardContent className="p-8">
-                      <div className="flex items-start space-x-6">
-                        <div className="bg-green-500/10 p-4 rounded-full">
-                          <div className="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-lg font-bold">
-                            {String(index + 1).padStart(2, '0')}
-                          </div>
-                        </div>
-                        <div className="flex-1">
-                          <h3 className="text-xl font-bold text-slate-900 mb-3">{effect.title}</h3>
-                          <p className="text-slate-600">{effect.description}</p>
-                        </div>
-                        <div className="hidden md:block">
-                          <IconComponent className="h-12 w-12 text-green-500" />
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* 신정자적 및 지원대상 */}
-          <div className="mb-16">
-            <Card className="border-0 shadow-xl bg-gradient-to-br from-green-50 to-emerald-50">
-              <CardContent className="p-12">
-                <div className="text-center mb-8">
-                  <h2 className="text-3xl font-bold text-green-700 mb-6">신정자적 및 지원대상</h2>
-                  <div className="bg-white p-8 rounded-lg shadow-lg">
-                    <h3 className="text-2xl font-bold text-slate-900 mb-4">마을공동체</h3>
-                    <p className="text-lg text-slate-700 mb-6">
-                      지능형모니터링시스템으로 마을공동체 예산지원, 사람들에 대한 농민안전, 주민도로 높이고,<br />
-                      도시자즈 마을공급자적 형식 아래에너지자립(예정량) 설치 지원으로 경기요금 실현 및 마을참여형 추진
-                    </p>
-                    
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 text-left">
-                      <div className="space-y-4">
-                        <h4 className="text-lg font-semibold text-slate-900">자체전력</h4>
-                        <ul className="space-y-2 text-slate-600">
-                          <li>• 지능형기관일체기출을 서비스배포전 마을 예산지원</li>
-                          <li>• 전기차 충전시설이나 지역, 식물원사를 마을공급에 활용</li>
-                          <li>• 주민자치 마을공동체 공익시설과 자원순환 마을조성</li>
-                        </ul>
-                      </div>
-                      
-                      <div className="space-y-4">
-                        <h4 className="text-lg font-semibold text-slate-900">자허쪽서</h4>
-                        <ul className="space-y-2 text-slate-600">
-                          <li>• 께 외지자습용선별용 마을 지도 지하 리무핌별의 별고 지원방향</li>
-                          <li>• 주민 비용을 회원입 최근 다원들이 일한 기여자료의 달산불전</li>
-                          <li>• 무역시간 작용이 기간에서 거 근접순삼공방과 무점기기 활성도</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* CTA */}
-          <div className="text-center">
-            <Card className="border-0 shadow-xl bg-gradient-to-r from-green-500 to-emerald-500">
-              <CardContent className="p-12 text-white">
-                <TreePine className="h-16 w-16 mx-auto mb-6 text-white" />
-                <h2 className="text-3xl font-bold mb-6">에너지자립마을 조성 문의</h2>
-                <p className="text-xl mb-8 text-green-100">
-                  지속가능한 친환경 마을을 만들어보세요<br />
-                  마을공동체와 함께하는 에너지 자립 실현
+          {/* Section 2: Purpose */}
+          <div className="mb-20">
+            <h2 className="text-3xl font-bold text-slate-900 mb-8 border-l-4 border-emerald-500 pl-4">추진목적</h2>
+            <Card className="border-0 shadow-lg bg-white">
+              <CardContent className="p-8">
+                <p className="text-lg text-slate-700 leading-relaxed font-medium">
+                  직접 재생에너지 생산에 참여해 에너지 사용을 최소화, 자립도를 높이고,
+                  도시가스 미공급지역 등에 신재생에너지(태양광) 설치 지원으로 전기요금 절감 및 마을 발전사업 추진
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                  <Button 
-                    size="lg" 
-                    className="bg-white text-green-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold"
-                    asChild
-                  >
-                    <Link to="/contact">
-                      <Phone className="mr-2 h-5 w-5" />
-                      무료 상담 신청
-                    </Link>
-                  </Button>
-                  <div className="text-green-100">
-                    <span className="text-lg">📞 031-944-0912</span>
-                  </div>
-                </div>
               </CardContent>
             </Card>
+          </div>
+
+          {/* Section 3: Support Ratio & Details */}
+          <div className="grid lg:grid-cols-2 gap-12 mb-20">
+            <div className="bg-white rounded-3xl p-10 shadow-xl border border-slate-100">
+              <h2 className="text-3xl font-bold text-slate-900 mb-8">지원비율</h2>
+              <div className="bg-emerald-600 text-white rounded-2xl p-8 text-center mb-6">
+                <div className="text-2xl font-bold mb-2">총 설치비용 최대 80% 지원</div>
+                <div className="text-emerald-100">(시비 50%, 도비 30% → 자부담율 20%)</div>
+              </div>
+              <div className="space-y-4 text-lg">
+                <div className="flex justify-between border-b pb-2">
+                  <span className="text-slate-500">총사업비</span>
+                  <span className="font-bold text-slate-900">170,280천원</span>
+                </div>
+                <div className="flex justify-between border-b pb-2">
+                  <span className="text-slate-500">시비</span>
+                  <span className="font-bold text-blue-600 font-mono">85,140천원</span>
+                </div>
+                <div className="flex justify-between border-b pb-2">
+                  <span className="text-slate-500">도비</span>
+                  <span className="font-bold text-emerald-600 font-mono">51,084천원</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-slate-500">자부담</span>
+                  <span className="font-bold text-orange-600 font-mono">34,056천원</span>
+                </div>
+                <p className="text-sm text-slate-400 mt-4">
+                  *각 년도별 사업비는 예산편성 등 상황에 따라 자부담률이 증가할 수 있음<br />
+                  (자가용 3KW 기준 / 1,135천원)
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-slate-900 rounded-3xl p-10 shadow-xl text-white">
+              <h2 className="text-3xl font-bold mb-8">주요 실적</h2>
+              <div className="bg-white/10 rounded-2xl p-8 border border-white/20">
+                <h3 className="text-2xl font-bold text-emerald-400 mb-4">23년 고양시 에너지자립마을 조성사업</h3>
+                <div className="text-4xl font-bold mb-6">99KW급</div>
+                <div className="space-y-4 text-slate-300">
+                  <div className="flex items-center">
+                    <CheckCircle className="h-5 w-5 mr-3 text-emerald-500" />
+                    <span>자가용 90KW</span>
+                  </div>
+                  <div className="flex items-center">
+                    <CheckCircle className="h-5 w-5 mr-3 text-emerald-500" />
+                    <span>마을발전소 9KW</span>
+                  </div>
+                </div>
+              </div>
+              <p className="mt-8 text-slate-400">썬그린에너지는 지역 공동체의 에너지 자립을 선도합니다.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-emerald-600">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl font-bold text-white mb-8">에너지자립마을 조성 문의</h2>
+          <p className="text-xl text-emerald-100 mb-8">
+            지속가능한 친환경 마을을 함께 만들어보세요. 전문 컨설턴트가 상담해 드립니다.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <Button size="lg" variant="secondary" className="bg-white text-emerald-700 hover:bg-emerald-50" asChild>
+              <Link to="/contact">
+                <Phone className="mr-2 h-5 w-5" />
+                무료 상담 신청
+              </Link>
+            </Button>
+            <div className="text-white text-2xl font-bold">
+              📞 031-944-0912
+            </div>
           </div>
         </div>
       </section>
