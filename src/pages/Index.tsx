@@ -121,10 +121,7 @@ const Index = () => {
             </div>
 
             <div className="flex flex-wrap items-center gap-8 pt-6">
-              <div className="flex items-center space-x-3">
-                <CheckCircle className="h-6 w-6 text-emerald-400" />
-                <span className="text-slate-300 font-medium">20년 무상 A/S</span>
-              </div>
+
               <div className="flex items-center space-x-3">
                 <CheckCircle className="h-6 w-6 text-emerald-400" />
                 <span className="text-slate-300 font-medium">정부 지원금 최대 활용</span>
