@@ -1,4 +1,5 @@
 # robots.txt for ssungreen.com
+# Optimized for Naver, Google, and AI Scraper Protection
 
 # BEGIN Cloudflare Managed content (AI Scraper Protection)
 User-Agent: *
