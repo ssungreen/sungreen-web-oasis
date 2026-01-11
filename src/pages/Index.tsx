@@ -61,7 +61,7 @@ const Index = () => {
 
     {/* Hero Section - 더욱 임팩트 있게 */}
     <section className="relative min-h-screen text-white overflow-hidden">
-      {/* Video Background */}
+      {/* Video Background - Cloudflare Deployment Fix v1 */}
       <video
         autoPlay
         muted
