@@ -8,6 +8,7 @@ interface SEOProps {
     ogDescription?: string;
     ogImage?: string;
     ogUrl?: string;
+    jsonLd?: object;
 }
 
 const SEO = ({
@@ -18,6 +19,7 @@ const SEO = ({
     ogDescription,
     ogImage = "https://ssungreen.com/sungreen-logo.png",
     ogUrl = window.location.href,
+    jsonLd,
 }: SEOProps) => {
     useEffect(() => {
         // Update Title - Prioritize Brand Name if not already there
@@ -58,7 +60,20 @@ const SEO = ({
         }
         canonical.setAttribute('href', ogUrl);
 
-    }, [title, description, keywords, ogTitle, ogDescription, ogImage, ogUrl]);
+        // Update JSON-LD
+        let script = document.querySelector('script[type="application/ld+json"]');
+        if (jsonLd) {
+            if (!script) {
+                script = document.createElement('script');
+                script.setAttribute('type', 'application/ld+json');
+                document.head.appendChild(script);
+            }
+            script.textContent = JSON.stringify(jsonLd);
+        } else if (script) {
+            script.remove();
+        }
+
+    }, [title, description, keywords, ogTitle, ogDescription, ogImage, ogUrl, jsonLd]);
 
     return null;
 };

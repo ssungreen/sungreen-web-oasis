@@ -57,7 +57,24 @@ const Index = () => {
     title: '신속한 시공',
     description: '평균 3일 내 완공, 최소한의 생활 불편'
   }];
+  const videoSchema = {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "썬그린에너지 - 신재생에너지 미래를 위한 선택",
+    "description": "썬그린에너지와 함께 깨끗하고 경제적인 태양광 에너지로 지속가능한 미래를 만들어보세요.",
+    "thumbnailUrl": [
+      "https://ssungreen.com/hero-poster.png"
+    ],
+    "uploadDate": "2026-01-12T00:00:00+09:00",
+    "duration": "PT0M24S",
+    "contentUrl": "https://ssungreen.com/hero-video.mp4"
+  };
+
   return <div className="min-h-screen bg-white">
+    <SEO
+      title="썬그린에너지 - 대한민국 1등 태양광 & RE100 전문기업"
+      jsonLd={videoSchema}
+    />
     <Header />
 
     {/* Hero Section - 더욱 임팩트 있게 */}
@@ -68,6 +85,7 @@ const Index = () => {
         muted
         loop
         playsInline
+        poster="/hero-poster.png"
         className="absolute inset-0 w-full h-full object-cover"
       >
         <source src={heroVideo} type="video/mp4" />
