@@ -2,18 +2,26 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Badge } from '@/components/ui/badge';
 import { Building, Users, Target, Heart } from 'lucide-react';
+import SEO from '@/components/SEO';
+
 const Greeting = () => {
-  return <div className="min-h-screen bg-white">
+  return (
+    <div className="min-h-screen bg-white">
+      <SEO
+        title="인사말 - 썬그린에너지"
+        description="전국 2,500건 이상의 시공 실적을 보유한 태양광 전문기업 썬그린에너지 대표이사의 인사말입니다. 고객 만족과 환경 보호를 최우선으로 생각합니다."
+        keywords="대표이사 인사말, 썬그린에너지 인사말, 태양광 시공 실적, 고객 만족 에너지 기업"
+      />
       <Header />
-      
+
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
-        backgroundImage: 'url(https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80)'
-      }}>
+          backgroundImage: 'url(https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80)'
+        }}>
           <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 to-slate-700/60"></div>
         </div>
-        
+
         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
           <Badge className="mb-6 px-6 py-3 bg-emerald-500/20 text-emerald-300 text-lg font-medium backdrop-blur-sm border border-emerald-400/30">
             GREETING
@@ -43,18 +51,18 @@ const Greeting = () => {
                     주식회사 썬그린에너지를 찾아주신 모든 분들께 진심으로 감사드립니다.
                   </p>
                   <p>
-                    저희 썬그린에너지는 2020년 설립 이래 <strong className="text-emerald-600">태양광 발전시설 시공 전문기업</strong>으로서 
+                    저희 썬그린에너지는 2020년 설립 이래 <strong className="text-emerald-600">태양광 발전시설 시공 전문기업</strong>으로서
                     친환경 에너지 보급의 선두주자 역할을 해왔습니다.
                   </p>
                   <p>
-                    기후변화와 환경보호에 대한 사회적 관심이 높아지는 가운데, 
-                    재생에너지의 중요성은 날로 커지고 있습니다. 
-                    저희는 이러한 시대적 요구에 부응하여 <strong className="text-emerald-600">최고 품질의 태양광 시설</strong>을 
+                    기후변화와 환경보호에 대한 사회적 관심이 높아지는 가운데,
+                    재생에너지의 중요성은 날로 커지고 있습니다.
+                    저희는 이러한 시대적 요구에 부응하여 <strong className="text-emerald-600">최고 품질의 태양광 시설</strong>을
                     설치·관리하며 고객 여러분의 에너지 자립과 경제적 이익 창출에 기여하고 있습니다.
                   </p>
                   <p>
-                    앞으로도 지속적인 기술 혁신과 품질 향상을 통해 
-                    <strong className="text-emerald-600">고객 만족</strong>과 <strong className="text-emerald-600">환경 보호</strong>라는 
+                    앞으로도 지속적인 기술 혁신과 품질 향상을 통해
+                    <strong className="text-emerald-600">고객 만족</strong>과 <strong className="text-emerald-600">환경 보호</strong>라는
                     두 마리 토끼를 모두 잡는 기업이 되겠습니다.
                   </p>
                   <p className="text-emerald-600 font-semibold text-xl">
@@ -62,7 +70,7 @@ const Greeting = () => {
                   </p>
                 </div>
               </div>
-              
+
               <div className="bg-gradient-to-r from-emerald-50 to-blue-50 p-8 rounded-2xl border border-emerald-200">
                 <div className="text-right">
                   <div className="text-2xl font-bold text-slate-900 mb-2">박이순</div>
@@ -70,12 +78,12 @@ const Greeting = () => {
                 </div>
               </div>
             </div>
-            
+
             <div className="space-y-8">
               <div className="relative">
                 <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="썬그린에너지 대표이사" className="rounded-3xl shadow-2xl" />
               </div>
-              
+
               <div className="grid grid-cols-2 gap-6">
                 <div className="bg-white p-6 rounded-2xl shadow-xl border border-slate-200 text-center">
                   <Building className="h-12 w-12 text-emerald-600 mx-auto mb-4" />
@@ -104,6 +112,8 @@ const Greeting = () => {
       </section>
 
       <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default Greeting;

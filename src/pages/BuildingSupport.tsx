@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Building, CheckCircle, ArrowRight, Phone, DollarSign, Zap, TrendingUp, Award, Target } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEO from '@/components/SEO';
 
 const BuildingSupport = () => {
   const processSteps = [

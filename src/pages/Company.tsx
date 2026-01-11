@@ -3,6 +3,8 @@ import Footer from '@/components/Footer';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Building, Users, Award, Target, Zap, Shield, Leaf, TrendingUp, MapPin, Phone, Mail, Factory, Calendar, CheckCircle } from 'lucide-react';
+import SEO from '@/components/SEO';
+
 const Company = () => {
   const milestones = [{
     year: '2025',

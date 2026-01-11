@@ -2,6 +2,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { FileText, DollarSign, Shield, TrendingUp, CheckCircle, ArrowRight } from 'lucide-react';
+import SEO from '@/components/SEO';
 
 const BusinessRPS = () => {
   const rpsFeatures = [
@@ -29,6 +30,11 @@ const BusinessRPS = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-emerald-50">
+      <SEO
+        title="RPS 사업 안내 - 썬그린에너지"
+        description="썬그린에너지가 제안하는 안정적인 태양광 수익 모델 RPS 사업. 발전 사업 허가부터 유지보수까지 원스톱 서비스를 제공합니다."
+        keywords="썬그린에너지 RPS, 태양광 발전수익, 태양광 비즈니스, 재생에너지 공급의무화, 태양광 시공"
+      />
       <Header />
 
       {/* Hero Section */}

@@ -13,6 +13,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import SEO from '@/components/SEO';
 
 const HousingSupport = () => {
   const processSteps = [

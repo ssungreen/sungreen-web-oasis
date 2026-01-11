@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Leaf, Factory, Zap, Target, CheckCircle, ArrowRight, Sun, Wind, Battery, Building, Globe, TrendingUp, Award, Users, BarChart3, Calendar, Phone } from 'lucide-react';
+import SEO from '@/components/SEO';
 const RE100 = () => {
   const benefits = [{
     icon: <Leaf className="h-8 w-8 text-emerald-600" />,

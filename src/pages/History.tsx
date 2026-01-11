@@ -3,12 +3,13 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import SEO from '@/components/SEO';
 
 const History = () => {
   const milestones = [
-    { 
-      year: '2024', 
-      event: '지속적 성장', 
+    {
+      year: '2024',
+      event: '지속적 성장',
       description: '태양광 시공 누적 2,500건 달성 및 RE100 컨설팅 서비스 확대',
       achievements: [
         '태양광 시공 누적 2,500건 달성',
@@ -18,9 +19,9 @@ const History = () => {
       ],
       image: 'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
     },
-    { 
-      year: '2023', 
-      event: '사업 확장', 
+    {
+      year: '2023',
+      event: '사업 확장',
       description: '정부지원사업 대폭 확대 및 기업 고객 전담팀 신설',
       achievements: [
         '정부지원사업 수행 건수 200% 증가',
@@ -30,9 +31,9 @@ const History = () => {
       ],
       image: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
     },
-    { 
-      year: '2022', 
-      event: '기술 혁신', 
+    {
+      year: '2022',
+      event: '기술 혁신',
       description: '스마트 모니터링 시스템 도입 및 AI 기반 발전량 예측 서비스 개시',
       achievements: [
         '스마트 모니터링 시스템 도입',
@@ -42,9 +43,9 @@ const History = () => {
       ],
       image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
     },
-    { 
-      year: '2021', 
-      event: '품질 인증', 
+    {
+      year: '2021',
+      event: '품질 인증',
       description: '한국에너지공단 우수 시공업체 선정 및 ISO 9001 품질경영시스템 인증',
       achievements: [
         '한국에너지공단 우수 시공업체 선정',
@@ -54,9 +55,9 @@ const History = () => {
       ],
       image: 'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
     },
-    { 
-      year: '2020', 
-      event: '회사 설립', 
+    {
+      year: '2020',
+      event: '회사 설립',
       description: '주식회사 썬그린에너지 설립 (대표이사 박이순)',
       achievements: [
         '주식회사 썬그린에너지 설립',
@@ -71,10 +72,10 @@ const History = () => {
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      
+
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage: 'url(https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80)',
@@ -82,7 +83,7 @@ const History = () => {
         >
           <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 to-slate-700/60"></div>
         </div>
-        
+
         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
           <Badge className="mb-6 px-6 py-3 bg-emerald-500/20 text-emerald-300 text-lg font-medium backdrop-blur-sm border border-emerald-400/30">
             HISTORY
@@ -115,7 +116,7 @@ const History = () => {
             {milestones.map((milestone, index) => (
               <div key={index} className={`flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
                 <div className="w-1/2 px-8">
-                  <img 
+                  <img
                     src={milestone.image}
                     alt={milestone.event}
                     className="rounded-2xl shadow-xl w-full"

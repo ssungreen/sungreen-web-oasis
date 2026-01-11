@@ -2,6 +2,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Award, Target, Lightbulb, Zap } from 'lucide-react';
+import SEO from '@/components/SEO';
 
 const LeadingBusiness = () => {
   const features = [
@@ -30,7 +31,7 @@ const LeadingBusiness = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
       <Header />
-      
+
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -50,8 +51,8 @@ const LeadingBusiness = () => {
           <div className="text-center mb-20">
             <h2 className="text-4xl font-bold text-slate-900 mb-6">사업 목표</h2>
             <p className="text-lg text-slate-600 max-w-4xl mx-auto leading-relaxed">
-              선도사업은 농촌 지역에 혁신적인 태양광 발전 시설을 구축하여 
-              전국적으로 확산 가능한 표준 모델을 만드는 것을 목표로 합니다. 
+              선도사업은 농촌 지역에 혁신적인 태양광 발전 시설을 구축하여
+              전국적으로 확산 가능한 표준 모델을 만드는 것을 목표로 합니다.
               최신 기술과 체계적인 운영 시스템을 통해 농촌 에너지 자립의 새로운 길을 제시합니다.
             </p>
           </div>

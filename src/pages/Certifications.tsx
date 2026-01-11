@@ -4,6 +4,7 @@ import Footer from '@/components/Footer';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { Award, Shield, CheckCircle } from 'lucide-react';
+import SEO from '@/components/SEO';
 
 const Certifications = () => {
   const certifications = [
@@ -53,10 +54,10 @@ const Certifications = () => {
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      
+
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage: 'url(https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80)',
@@ -64,7 +65,7 @@ const Certifications = () => {
         >
           <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 to-slate-700/60"></div>
         </div>
-        
+
         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
           <Badge className="mb-6 px-6 py-3 bg-emerald-500/20 text-emerald-300 text-lg font-medium backdrop-blur-sm border border-emerald-400/30">
             CERTIFICATIONS
@@ -77,7 +78,7 @@ const Certifications = () => {
           <p className="text-xl lg:text-2xl text-slate-200 max-w-3xl mx-auto leading-relaxed">
             정부 공인 전문업체로서의 신뢰성
           </p>
-          
+
           {/* Stats */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
             {certificationStats.map((stat, index) => (
@@ -135,7 +136,7 @@ const Certifications = () => {
               정부 공인 <span className="text-emerald-600">전문 업체</span>
             </h3>
             <p className="text-lg text-slate-700 leading-relaxed mb-8">
-              썬그린에너지는 정부에서 인증한 각종 자격과 면허를 보유한 전문 업체입니다. 
+              썬그린에너지는 정부에서 인증한 각종 자격과 면허를 보유한 전문 업체입니다.
               체계적인 품질관리와 전문성을 바탕으로 고객에게 최상의 서비스를 제공하고 있습니다.
             </p>
             <div className="flex items-center justify-center space-x-8 text-sm text-slate-600">

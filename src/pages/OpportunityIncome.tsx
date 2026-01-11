@@ -1,7 +1,10 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
-import { CheckCircle, Sun, Users, TrendingUp } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Leaf, CheckCircle, ArrowRight, Phone, TrendingUp, Award, Target, Users, Sun } from 'lucide-react';
+import SEO from '@/components/SEO';
 
 const OpportunityIncome = () => {
   const benefits = [

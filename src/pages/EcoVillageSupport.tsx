@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { TreePine, CheckCircle, ArrowRight, Phone, Users, Leaf, Home, Zap, DollarSign } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEO from '@/components/SEO';
 
 const EcoVillageSupport = () => {
   const processSteps = [
@@ -44,6 +45,11 @@ const EcoVillageSupport = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO
+        title="에코빌리지 조성 지원 - 썬그린에너지"
+        description="지속가능한 친환경 에너지 마을, 에코빌리지 조성을 위한 통합 지원 서비스를 제공합니다. 공동체 에너지 자립과 탄소 중립 마을 실현을 위해 썬그린에너지가 함께합니다."
+        keywords="에코빌리지 지원, 친환경 마을 조성, 에너지 자립 마을, 탄소중립 공동체, 썬그린에너지 에코 솔루션"
+      />
       <Header />
 
       {/* Hero Section */}

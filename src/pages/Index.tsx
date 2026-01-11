@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Link } from 'react-router-dom';
 import { Sun, Zap, Leaf, Shield, Users, Award, ArrowRight, CheckCircle, Building, Home, Factory, TrendingUp, Lightbulb, Star, Clock } from 'lucide-react';
 import heroVideo from '@/assets/hero-video.mp4';
+import SEO from '@/components/SEO';
 
 const Index = () => {
   const services = [{
@@ -92,6 +93,7 @@ const Index = () => {
               </div>
 
               <h1 className="text-5xl lg:text-7xl font-bold leading-tight break-keep text-balance">
+                <span className="text-emerald-400 block mb-2 text-3xl lg:text-4xl">썬그린에너지</span>
                 미래를 위한 선택,
                 <br className="hidden sm:block" />
                 <span className="bg-gradient-to-r from-emerald-400 via-green-400 to-teal-400 bg-clip-text text-transparent">

@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Zap, CheckCircle, ArrowRight, Phone, Battery, Cpu, Wifi, TrendingUp, Shield, Award } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEO from '@/components/SEO';
 
 const FusionSupport = () => {
   const processSteps = [
