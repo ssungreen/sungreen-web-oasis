@@ -58,8 +58,17 @@ const Index = () => {
     <Header />
 
     {/* Hero Section - 더욱 임팩트 있게 */}
-    <section className="relative min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-emerald-900 text-white overflow-hidden">
-      {/* Hero Content Overlay */}
+    <section className="relative min-h-screen text-white overflow-hidden">
+      {/* Video Background */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src="/hero-video.mp4" type="video/mp4" />
+      </video>
 
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-blue-900/70 to-emerald-900/80"></div>
