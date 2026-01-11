@@ -49,6 +49,15 @@ const SEO = ({
         updateMeta('twitter:description', ogDescription || description);
         updateMeta('twitter:image', ogImage);
 
+        // Update Canonical Tag
+        let canonical = document.querySelector('link[rel="canonical"]');
+        if (!canonical) {
+            canonical = document.createElement('link');
+            canonical.setAttribute('rel', 'canonical');
+            document.head.appendChild(canonical);
+        }
+        canonical.setAttribute('href', ogUrl);
+
     }, [title, description, keywords, ogTitle, ogDescription, ogImage, ogUrl]);
 
     return null;
