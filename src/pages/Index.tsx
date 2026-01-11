@@ -4,6 +4,8 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
 import { Sun, Zap, Leaf, Shield, Users, Award, ArrowRight, CheckCircle, Building, Home, Factory, TrendingUp, Lightbulb, Star, Clock } from 'lucide-react';
+import heroVideo from '@/assets/hero-video.mp4';
+
 const Index = () => {
   const services = [{
     icon: Home,
@@ -67,7 +69,7 @@ const Index = () => {
         playsInline
         className="absolute inset-0 w-full h-full object-cover"
       >
-        <source src="/hero-video.mp4" type="video/mp4" />
+        <source src={heroVideo} type="video/mp4" />
       </video>
 
       {/* Gradient Overlay */}
