@@ -73,6 +73,8 @@ const Index = () => {
   return <div className="min-h-screen bg-white">
     <SEO
       title="썬그린에너지 - 대한민국 1등 태양광 & RE100 전문기업"
+      description="대한민국 1등 태양광 전문기업 썬그린에너지(박이순 대표). 전국 2,500건 이상의 시공 실적과 최고의 기술력으로 고효율 태양광 솔루션을 제공합니다. 전국 어디서나 시공 가능."
+      keywords="썬그린에너지, 썬그린, 대한민국 태양광, 전국 태양광 시공, 박이순 대표, RE100 전문, 신재생에너지 1위, 태양광 발전소"
       jsonLd={videoSchema}
     />
     <Header />

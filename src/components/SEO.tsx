@@ -13,8 +13,8 @@ interface SEOProps {
 
 const SEO = ({
     title,
-    description = "썬그린에너지(SunGreen Energy) - 태양광 발전시설 설계, 시공, 유지보수 전문기업. 정부 인증 업체로 신뢰할 수 있는 태양광 솔루션을 제공합니다.",
-    keywords = "썬그린, 썬그린에너지, 썬그린 에너지, SunGreen, 태양광, RE100, 신재생에너지",
+    description = "대한민국 대표 태양광 전문기업 썬그린에너지(SunGreen Energy). 전국 2,500건 이상의 시공 실적과 최고의 기술력으로 주택용, 상업용 태양광 및 RE100 솔루션을 제공합니다.",
+    keywords = "썬그린에너지, 썬그린, SunGreen, 태양광 시공, 전국 태양광, RE100 컨설팅, 신재생에너지 No1, 박이순 대표",
     ogTitle,
     ogDescription,
     ogImage = "https://ssungreen.com/sungreen-logo.png",
