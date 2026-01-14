@@ -143,7 +143,7 @@ const EcoVillageSupport = () => {
             <div className="bg-slate-900 rounded-3xl p-10 shadow-xl text-white">
               <h2 className="text-3xl font-bold mb-8">주요 실적</h2>
               <div className="bg-white/10 rounded-2xl p-8 border border-white/20">
-                <h3 className="text-2xl font-bold text-emerald-400 mb-4">23년 고양시 에너지자립마을 조성사업</h3>
+                <h3 className="text-2xl font-bold text-emerald-400 mb-4">25년 고양시 에너지자립마을 조성사업</h3>
                 <div className="text-4xl font-bold mb-6">99KW급</div>
                 <div className="space-y-4 text-slate-300">
                   <div className="flex items-center">

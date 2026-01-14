@@ -151,7 +151,7 @@ const BuildingSupport = () => {
               <div className="space-y-6">
                 <div className="bg-white/10 p-6 rounded-xl border border-white/10">
                   <h4 className="text-emerald-400 font-bold text-lg mb-2">일반건물 (산업체)</h4>
-                  <p className="text-slate-300">2023년 기준 kW당 677,000원 지원</p>
+                  <p className="text-slate-300">2025년 기준 kW당 677,000원 지원</p>
                 </div>
                 <div className="bg-white/10 p-6 rounded-xl border border-white/10">
                   <h4 className="text-emerald-400 font-bold text-lg mb-2">저소득층 (사회복지시설)</h4>

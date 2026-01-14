@@ -61,7 +61,7 @@ const Location = () => {
                     <Phone className="h-6 w-6 text-emerald-600 flex-shrink-0" />
                     <div>
                       <div className="font-semibold text-slate-900 mb-2">전화번호</div>
-                      <div className="text-slate-700">031-946-6333</div>
+                      <div className="text-slate-700">031-944-0912</div>
                     </div>
                   </div>
 
@@ -69,7 +69,7 @@ const Location = () => {
                     <Mail className="h-6 w-6 text-emerald-600 flex-shrink-0" />
                     <div>
                       <div className="font-semibold text-slate-900 mb-2">이메일</div>
-                      <div className="text-slate-700">sungreen0912@gmail.com</div>
+                      <div className="text-slate-700">sungreen0912@naver.com</div>
                     </div>
                   </div>
 
@@ -141,11 +141,11 @@ const Location = () => {
               전문 상담사가 준비하여 더욱 자세한 안내를 도와드리겠습니다.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="tel:031-946-6333" className="bg-emerald-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-emerald-700 transition-colors flex items-center justify-center space-x-2">
+              <a href="tel:031-944-0912" className="bg-emerald-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-emerald-700 transition-colors flex items-center justify-center space-x-2">
                 <Phone className="h-5 w-5" />
                 <span>전화 상담</span>
               </a>
-              <a href="mailto:sungreen0912@gmail.com" className="bg-white text-emerald-600 border-2 border-emerald-600 px-8 py-4 rounded-xl font-semibold hover:bg-emerald-50 transition-colors flex items-center justify-center space-x-2">
+              <a href="mailto:sungreen0912@naver.com" className="bg-white text-emerald-600 border-2 border-emerald-600 px-8 py-4 rounded-xl font-semibold hover:bg-emerald-50 transition-colors flex items-center justify-center space-x-2">
                 <Mail className="h-5 w-5" />
                 <span>이메일 문의</span>
               </a>

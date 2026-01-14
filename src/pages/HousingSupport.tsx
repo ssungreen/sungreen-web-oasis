@@ -119,9 +119,9 @@ const HousingSupport = () => {
               </div>
             </div>
 
-            {/* Section 3: 2024 Standards */}
+            {/* Section 3: 2025 Standards */}
             <div className="bg-slate-900 rounded-3xl p-10 shadow-xl text-white">
-              <h2 className="text-2xl font-bold mb-8 border-b border-white/20 pb-4">24년 주택지원사업 (태양광 3KW 기준)</h2>
+              <h2 className="text-2xl font-bold mb-8 border-b border-white/20 pb-4">25년 주택지원사업 (태양광 3KW 기준)</h2>
               <div className="space-y-6 text-lg">
                 <div className="flex justify-between items-center text-emerald-400">
                   <span>정부지원</span>

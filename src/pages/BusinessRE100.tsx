@@ -347,7 +347,7 @@ const BusinessRE100 = () => {
               <Mail className="h-16 w-16 text-blue-600 mx-auto mb-6" />
               <h4 className="text-2xl font-bold text-slate-900 mb-4">이메일 문의</h4>
               <p className="text-lg text-slate-600 mb-6">상세한 자료 요청 및 문의사항</p>
-              <p className="text-xl font-bold text-blue-600">sungreen0912@gmail.com</p>
+              <p className="text-xl font-bold text-blue-600">sungreen0912@naver.com</p>
               <p className="text-slate-500 mt-2">24시간 접수 가능</p>
             </div>
           </Card>

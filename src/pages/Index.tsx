@@ -55,7 +55,7 @@ const Index = () => {
   }, {
     icon: Clock,
     title: '신속한 시공',
-    description: '평균 3일 내 완공, 최소한의 생활 불편'
+    description: '빠르고 정확한 시공, 최소한의 생활 불편'
   }];
   const videoSchema = {
     "@context": "https://schema.org",
@@ -150,7 +150,7 @@ const Index = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <CheckCircle className="h-6 w-6 text-emerald-400" />
-                <span className="text-slate-300 font-medium">3일 신속 시공</span>
+                <span className="text-slate-300 font-medium">빠르고 정확한 시공</span>
               </div>
             </div>
           </div>
@@ -325,8 +325,8 @@ const Index = () => {
               <ArrowRight className="ml-3 h-6 w-6" />
             </Button>
           </Link>
-          <a href="tel:031-946-6333">
-            <Button variant="outline" size="lg" className="border-2 border-slate-200 text-slate-900 bg-white/90 hover:bg-white hover:text-slate-800 px-10 py-6 text-lg font-semibold rounded-xl backdrop-blur-sm transition-all duration-300">📞 전화상담: 031-946-6333</Button>
+          <a href="tel:031-944-0912">
+            <Button variant="outline" size="lg" className="border-2 border-slate-200 text-slate-900 bg-white/90 hover:bg-white hover:text-slate-800 px-10 py-6 text-lg font-semibold rounded-xl backdrop-blur-sm transition-all duration-300">📞 전화상담: 031-944-0912</Button>
           </a>
         </div>
       </div>
