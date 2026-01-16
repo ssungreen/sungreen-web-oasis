@@ -3,8 +3,9 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
-import { Sun, Zap, Leaf, Shield, Users, Award, ArrowRight, CheckCircle, Building, Home, Factory, TrendingUp, Lightbulb, Star, Clock } from 'lucide-react';
+import { Sun, Zap, Leaf, Shield, Users, Award, ArrowRight, CheckCircle, Building, Home, Factory, TrendingUp, Lightbulb, Star, Clock, ChevronDown } from 'lucide-react';
 import heroVideo from '@/assets/hero-video.mp4';
+import logoImage from '@/assets/sungreen-up-down-logo.png';
 import SEO from '@/components/SEO';
 
 const Index = () => {
@@ -80,7 +81,7 @@ const Index = () => {
     <Header />
 
     {/* Hero Section - 더욱 임팩트 있게 */}
-    <section className="relative min-h-screen text-white overflow-hidden">
+    <section className="relative min-h-[90vh] text-white overflow-hidden">
       {/* Video Background - Cloudflare Deployment Fix v1 */}
       <video
         autoPlay
@@ -103,7 +104,7 @@ const Index = () => {
         <div className="absolute bottom-40 left-1/4 w-1.5 h-1.5 bg-blue-400 rounded-full animate-pulse delay-2000"></div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 lg:py-40">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-10 animate-fade-in">
             <div className="space-y-6">
@@ -159,7 +160,14 @@ const Index = () => {
             <div className="bg-white/10 backdrop-blur-xl rounded-3xl p-8 space-y-8 border border-white/20 shadow-2xl">
               <div className="text-center">
                 <div className="inline-flex items-center justify-center w-32 h-32 bg-white rounded-full mb-6 shadow-lg overflow-hidden p-3">
-                  <img src="/sungreen-up-down-logo.png" alt="Logo" className="w-full h-auto object-contain" />
+                  <img
+                    src={logoImage}
+                    alt="썬그린에너지 로고"
+                    className="w-full h-auto object-contain"
+                    loading="eager"
+                    fetchPriority="high"
+                    decoding="async"
+                  />
                 </div>
                 <h3 className="text-3xl font-bold mb-3">프리미엄 시공</h3>
                 <p className="text-slate-300 text-lg">한화 / 현대 모듈 사용</p>
@@ -172,6 +180,14 @@ const Index = () => {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Scroll Down Indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="flex flex-col items-center gap-2 opacity-80 hover:opacity-100 transition-opacity cursor-pointer">
+          <span className="text-sm text-white/80 font-medium">Scroll</span>
+          <ChevronDown className="h-6 w-6 text-white" />
         </div>
       </div>
     </section>
