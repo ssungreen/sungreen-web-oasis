@@ -158,8 +158,8 @@ const Index = () => {
           <div className="relative animate-slide-in-right">
             <div className="bg-white/10 backdrop-blur-xl rounded-3xl p-8 space-y-8 border border-white/20 shadow-2xl">
               <div className="text-center">
-                <div className="inline-flex items-center justify-center w-20 h-20 bg-white rounded-full mb-6 shadow-lg overflow-hidden p-2">
-                  <img src="/sungreen-logo.png" alt="Logo" className="w-full h-auto object-contain" />
+                <div className="inline-flex items-center justify-center w-32 h-32 bg-white rounded-full mb-6 shadow-lg overflow-hidden p-3">
+                  <img src="/sungreen-up-down-logo.png" alt="Logo" className="w-full h-auto object-contain" />
                 </div>
                 <h3 className="text-3xl font-bold mb-3">프리미엄 시공</h3>
                 <p className="text-slate-300 text-lg">한화 / 현대 모듈 사용</p>
