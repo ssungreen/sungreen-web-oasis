@@ -43,7 +43,7 @@ const Index = () => {
   const benefits = [{
     icon: TrendingUp,
     title: '높은 투자 수익률',
-    description: '최신 고효율 모듈로 최대 20년 안정적 수익 보장'
+    description: '최신 고효율 모듈로 "최대 20년이상" 안정적 수익 보장'
   }, {
     icon: Lightbulb,
     title: '스마트 모니터링',
@@ -55,7 +55,7 @@ const Index = () => {
   }, {
     icon: Clock,
     title: '신속한 시공',
-    description: '빠르고 정확한 시공, 최소한의 생활 불편'
+    description: '빠르고 정확한 시공, 일상 방해 최소화'
   }];
   const videoSchema = {
     "@context": "https://schema.org",
@@ -109,7 +109,7 @@ const Index = () => {
             <div className="space-y-6">
               <div className="inline-flex items-center px-4 py-2 bg-emerald-500/20 border border-emerald-400/30 rounded-full text-emerald-300 text-sm font-medium backdrop-blur-sm">
                 <Star className="h-4 w-4 mr-2" />
-                정부 인증 태양광 전문기업
+                "에너지공단 참여기업" 태양광 전문업체
               </div>
 
               <h1 className="text-5xl lg:text-7xl font-bold leading-tight break-keep text-balance">
@@ -278,7 +278,7 @@ const Index = () => {
             </div>
             <h3 className="text-2xl font-bold">정부 인증 업체</h3>
             <p className="text-slate-300 leading-relaxed">
-              한국에너지공단 인증 및 다수의 정부 지원사업 수행으로 검증된 신뢰성
+              에너지공단 참여기업 및 다수의 정부 지원사업 수행으로 검증된 신뢰성
             </p>
           </div>
 

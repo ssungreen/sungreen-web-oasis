@@ -51,13 +51,13 @@ const Greeting = () => {
                     주식회사 썬그린에너지를 찾아주신 모든 분들께 진심으로 감사드립니다.
                   </p>
                   <p>
-                    저희 썬그린에너지는 2020년 설립 이래 <strong className="text-emerald-600">태양광 발전시설 시공 전문기업</strong>으로서
+                    주식회사 썬그린에너지는 2020년 설립 이래 <strong className="text-emerald-600">태양광 발전시설 시공 전문기업</strong>으로서
                     친환경 에너지 보급의 선두주자 역할을 해왔습니다.
                   </p>
                   <p>
                     기후변화와 환경보호에 대한 사회적 관심이 높아지는 가운데,
                     재생에너지의 중요성은 날로 커지고 있습니다.
-                    저희는 이러한 시대적 요구에 부응하여 <strong className="text-emerald-600">최고 품질의 태양광 시설</strong>을
+                    당사는 이러한 시대적 요구에 부응하여 <strong className="text-emerald-600">최고 품질의 태양광 시설</strong>을
                     설치·관리하며 고객 여러분의 에너지 자립과 경제적 이익 창출에 기여하고 있습니다.
                   </p>
                   <p>
@@ -97,8 +97,8 @@ const Greeting = () => {
                 </div>
                 <div className="bg-white p-6 rounded-2xl shadow-xl border border-slate-200 text-center">
                   <Target className="h-12 w-12 text-emerald-600 mx-auto mb-4" />
-                  <div className="text-3xl font-bold text-slate-900 mb-2">4년+</div>
-                  <div className="text-sm text-slate-600">사업 경력</div>
+                  <div className="text-3xl font-bold text-slate-900 mb-2">20년+</div>
+                  <div className="text-sm text-slate-600">동종업계경력</div>
                 </div>
                 <div className="bg-white p-6 rounded-2xl shadow-xl border border-slate-200 text-center">
                   <Heart className="h-12 w-12 text-emerald-600 mx-auto mb-4" />

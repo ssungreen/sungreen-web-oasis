@@ -50,8 +50,7 @@ const History = () => {
       achievements: [
         '한국에너지공단 우수 시공업체 선정',
         'ISO 9001 품질경영시스템 인증',
-        '누적 시공 1,000건 돌파',
-        '24시간 A/S 서비스 체계 구축'
+        '누적 시공 1,000건 돌파'
       ],
       image: 'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
     },
