@@ -44,10 +44,10 @@ const Footer = () => {
           <h4 className="font-semibold text-lg mb-4">빠른 링크</h4>
           <ul className="space-y-2">
             <li><Link to="/company" className="text-slate-300 hover:text-amber-500 transition-colors">회사소개</Link></li>
-            <li><Link to="/business" className="text-slate-300 hover:text-amber-500 transition-colors">사업분야</Link></li>
-            <li><Link to="/cases" className="text-slate-300 hover:text-amber-500 transition-colors">설치사례</Link></li>
-            <li><Link to="/re100" className="text-slate-300 hover:text-amber-500 transition-colors">RE100 안내</Link></li>
+            <li><Link to="/business" className="text-slate-300 hover:text-amber-500 transition-colors">경기도지원사업</Link></li>
             <li><Link to="/government" className="text-slate-300 hover:text-amber-500 transition-colors">정부지원사업</Link></li>
+            <li><Link to="/re100" className="text-slate-300 hover:text-amber-500 transition-colors">RE100 안내</Link></li>
+            <li><Link to="/cases" className="text-slate-300 hover:text-amber-500 transition-colors">설치사례</Link></li>
             <li><Link to="/contact" className="text-slate-300 hover:text-amber-500 transition-colors">문의하기</Link></li>
           </ul>
         </div>
