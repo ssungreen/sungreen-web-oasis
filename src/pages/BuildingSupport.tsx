@@ -3,7 +3,7 @@ import Footer from '@/components/Footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Building, CheckCircle, ArrowRight, Phone, DollarSign, Zap, TrendingUp, Award, Target } from 'lucide-react';
+import { Building, CheckCircle, ArrowRight, Phone, DollarSign, Zap, TrendingUp, Award, Target, FileText, ShieldCheck, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from '@/components/SEO';
 
@@ -18,16 +18,16 @@ const BuildingSupport = () => {
 
   const supportDetails = [
     {
-      title: '일반',
-      support: '설치비 kW당 677,000원',
-      capacity: '3kW ~ 1,000kW 미만',
-      amount: '최대 1,000,000원'
+      title: '일반건물',
+      support: '설치비 kW당 972,000원 ~ 1,009,000원 지원',
+      capacity: '최대 200kW 지원',
+      amount: '설치비의 약 50% 내외 지원'
     },
     {
-      title: '저소득',
-      support: 'kW당 1,355,000원 / 7kW이하 일괄 9,1,000,000원',
-      capacity: '3kW ~ 7kW',
-      amount: '최대 9,485,000원'
+      title: '축산농가·사회복지시설',
+      support: 'kW당 1,120,000원 ~ 1,167,000원 지원',
+      capacity: '최대 200kW 지원',
+      amount: '특수 목적 시설 우대 지원'
     }
   ];
 
@@ -95,7 +95,7 @@ const BuildingSupport = () => {
           </div>
           <h1 className="text-5xl lg:text-7xl font-bold mb-8 leading-tight">
             <span className="bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent">
-              건물지원사업
+              건물지원
             </span>
           </h1>
           <p className="text-xl lg:text-2xl text-slate-200 max-w-4xl mx-auto leading-relaxed">
@@ -151,15 +151,15 @@ const BuildingSupport = () => {
               <div className="space-y-6">
                 <div className="bg-white/10 p-6 rounded-xl border border-white/10">
                   <h4 className="text-emerald-400 font-bold text-lg mb-2">일반건물 (산업체)</h4>
-                  <p className="text-slate-300">2025년 기준 kW당 677,000원 지원</p>
+                  <p className="text-slate-300">kW당 972,000원 ~ 1,009,000원 지원 (설치비 50% 내외)</p>
                 </div>
                 <div className="bg-white/10 p-6 rounded-xl border border-white/10">
-                  <h4 className="text-emerald-400 font-bold text-lg mb-2">저소득층 (사회복지시설)</h4>
-                  <p className="text-slate-300">7kW이하 일괄 9,485,000원 지원</p>
+                  <h4 className="text-emerald-400 font-bold text-lg mb-2">축산농가 (특화지원)</h4>
+                  <p className="text-slate-300">kW당 1,120,000원 ~ 1,167,000원 지원 (우대 적용)</p>
                 </div>
                 <div className="bg-white/10 p-6 rounded-xl border border-white/10">
-                  <h4 className="text-emerald-400 font-bold text-lg mb-2">축산농가</h4>
-                  <p className="text-slate-300">축산 부문의 에너지 비용 절감 지원</p>
+                  <h4 className="text-emerald-400 font-bold text-lg mb-2">사회복지시설 (저소득)</h4>
+                  <p className="text-slate-300">최대 지원 단가 적용 및 사업비 자부담 최소화</p>
                 </div>
               </div>
             </div>
@@ -182,6 +182,41 @@ const BuildingSupport = () => {
                   <h4 className="text-xl font-bold text-slate-900 mb-2">ESG 경영 실천</h4>
                   <p className="text-slate-600 font-medium">탄소배출 감소를 통해 친환경 기업 이미지를 제고하고 ESG 경영 강화</p>
                 </div>
+              </div>
+            </div>
+          </div>
+
+          {/* 구비 서류 & A/S 가이드 */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
+            <div className="bg-slate-50 rounded-3xl p-10 border border-slate-200 shadow-sm">
+              <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                <FileText className="h-6 w-6 text-emerald-600" /> 신청 구비 서류
+              </h3>
+              <ul className="space-y-3 text-slate-600 font-medium">
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-500" /> 건축물 대장 (총괄/표제부)
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-500" /> 사업자등록증 사본 (법인/개인)
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-500" /> 소유주 인감증명서 또는 본인확인서
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-500" /> 전기사용량 확인 서류 (영수증 등)
+                </li>
+              </ul>
+            </div>
+            <div className="bg-blue-50 rounded-3xl p-10 border border-blue-200 shadow-sm">
+              <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                <ShieldCheck className="h-6 w-6 text-blue-600" /> 사후 관리 정책
+              </h3>
+              <p className="text-slate-700 leading-relaxed font-medium mb-4">
+                정부 지원사업 규정에 의거하여 완벽한 유지보수를 지원합니다.
+              </p>
+              <div className="bg-white/60 p-4 rounded-xl border border-blue-100">
+                <span className="text-blue-700 font-black text-lg">5년 무상 A/S 보장</span>
+                <p className="text-sm text-slate-500 mt-1">한국에너지공단 A/S 전담 업체로서 신속한 보수를 약속드립니다.</p>
               </div>
             </div>
           </div>

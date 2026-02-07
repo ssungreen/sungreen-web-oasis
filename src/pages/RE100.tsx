@@ -85,7 +85,7 @@ const RE100 = () => {
             <span className="text-emerald-600 block">지속가능한 미래</span>
           </h1>
           <p className="text-xl text-slate-600 mb-8 max-w-3xl mx-auto">
-            Renewable Energy 100% - 기업이 사용하는 전력을 100% 재생에너지로 전환하여
+            재생에너지(Renewable Energy) 100% - 기업이 사용하는 전력을 100% 재생에너지로 전환하여
             탄소중립을 실현하고 지속가능한 경영을 통해 미래 경쟁력을 확보하세요.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -3,7 +3,7 @@ import Footer from '@/components/Footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Home, CheckCircle, ArrowRight, Phone, FileText, Search, Wrench, Shield, Award, DollarSign, Users } from 'lucide-react';
+import { Home, CheckCircle, ArrowRight, Phone, FileText, Search, Wrench, Shield, Award, DollarSign, Users, ShieldCheck, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import {
   Table,
@@ -69,7 +69,7 @@ const HousingSupport = () => {
           </div>
           <h1 className="text-5xl lg:text-7xl font-bold mb-8 leading-tight">
             <span className="bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
-              주택지원사업
+              주택지원
             </span>
           </h1>
           <p className="text-xl lg:text-2xl text-slate-200 max-w-4xl mx-auto leading-relaxed">
@@ -159,6 +159,48 @@ const HousingSupport = () => {
                   <p className="text-slate-600 font-medium">{step.desc}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 구비 서류 & A/S 가이드 */}
+      <section className="pb-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-slate-50 rounded-3xl p-10 border border-slate-200">
+              <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                <FileText className="h-6 w-6 text-emerald-600" /> 준비 서류 안내
+              </h3>
+              <ul className="space-y-3 font-medium text-slate-600">
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-500" /> 신분증 사본 및 주민등록등본
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-500" /> 건축물 대장 (단독주택 확인)
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-500" /> 본인 명의 통장 사본
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-500" /> 한국에너지공단 표준 계약서
+                </li>
+              </ul>
+            </div>
+            <div className="bg-blue-50 rounded-3xl p-10 border border-blue-200">
+              <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                <ShieldCheck className="h-6 w-6 text-blue-600" /> 무상 A/S 정책
+              </h3>
+              <p className="text-slate-700 leading-relaxed font-medium mb-4">
+                정부 지침에 따른 확고한 사후관리 서비스를 약속합니다.
+              </p>
+              <div className="bg-white/60 p-5 rounded-2xl border border-blue-100">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-blue-700 font-bold">5년 무상 보증</span>
+                  <Badge className="bg-blue-100 text-blue-700 border-none">정부 규정 준수</Badge>
+                </div>
+                <p className="text-sm text-slate-500">설치 시공 품질 및 부품 결함에 대해 5년간 책임지고 관리해 드립니다.</p>
+              </div>
             </div>
           </div>
         </div>

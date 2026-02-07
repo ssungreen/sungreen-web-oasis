@@ -22,6 +22,11 @@ import HousingSupport from "./pages/HousingSupport";
 import BuildingSupport from "./pages/BuildingSupport";
 import FusionSupport from "./pages/FusionSupport";
 import EcoVillageSupport from "./pages/EcoVillageSupport";
+import GyeonggiHousingSupport from "./pages/GyeonggiHousingSupport";
+import GyeonggiHousingBusiness from "./pages/GyeonggiHousingBusiness";
+import HousingSolarIntro from "./pages/HousingSolarIntro";
+import HousingSolarProcess from "./pages/HousingSolarProcess";
+import ApartmentRE100 from "./pages/ApartmentRE100";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
@@ -43,7 +48,6 @@ const App = () => (
           <Route path="/business" element={<Business />} />
           <Route path="/business/opportunity-income" element={<OpportunityIncome />} />
           <Route path="/business/leading" element={<LeadingBusiness />} />
-          <Route path="/business/rps" element={<BusinessRPS />} />
           <Route path="/business/re100" element={<BusinessRE100 />} />
           <Route path="/cases" element={<Cases />} />
           <Route path="/re100" element={<RE100 />} />
@@ -51,7 +55,13 @@ const App = () => (
           <Route path="/government/housing" element={<HousingSupport />} />
           <Route path="/government/building" element={<BuildingSupport />} />
           <Route path="/government/fusion" element={<FusionSupport />} />
-          <Route path="/government/eco-village" element={<EcoVillageSupport />} />
+          <Route path="/government/rps" element={<BusinessRPS />} />
+          <Route path="/business/eco-village" element={<EcoVillageSupport />} />
+          <Route path="/business/apartment-re100" element={<ApartmentRE100 />} />
+          <Route path="/business/housing-intro" element={<HousingSolarIntro />} />
+          <Route path="/business/housing-process" element={<HousingSolarProcess />} />
+          <Route path="/business/housing-business" element={<GyeonggiHousingBusiness />} />
+          <Route path="/business/housing-support" element={<GyeonggiHousingSupport />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

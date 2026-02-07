@@ -81,7 +81,7 @@ const BusinessRE100 = () => {
           <Badge className="bg-white/20 text-white border-white/30 mb-6 px-6 py-2 text-lg">
             BUSINESS ENTERPRISE
           </Badge>
-          <h1 className="text-6xl font-bold mb-6">RENEWABLE ENERGY</h1>
+          <h1 className="text-6xl font-bold mb-6">재생에너지(RENEWABLE ENERGY)</h1>
           <h2 className="text-4xl font-bold mb-8 text-green-100">100% BUSINESS</h2>
           <p className="text-xl text-green-100 max-w-4xl mx-auto leading-relaxed">
             RE100은 기업이 사용하는 전력의 100%를 재생에너지로 조달하겠다는
@@ -100,7 +100,7 @@ const BusinessRE100 = () => {
           </div>
           <h3 className="text-3xl font-bold text-slate-900 mb-6">RE100이란 무엇인가?</h3>
           <p className="text-lg text-slate-600 max-w-4xl mx-auto leading-relaxed">
-            RE100(Renewable Energy 100%)은 2014년 영국의 기후그룹(The Climate Group)과
+            RE100(재생에너지(Renewable Energy) 100%)은 2014년 영국의 기후그룹(The Climate Group)과
             CDP(Carbon Disclosure Project)가 공동으로 출범시킨 글로벌 재생에너지 이니셔티브입니다.
             참여 기업들은 2050년까지 사업장에서 사용하는 전력의 100%를 재생에너지로 전환하겠다고 공약합니다.
           </p>

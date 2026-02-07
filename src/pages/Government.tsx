@@ -8,18 +8,8 @@ import { Link } from 'react-router-dom';
 import SEO from '@/components/SEO';
 const Government = () => {
   const supportPrograms = [{
-    id: 'housing',
-    title: '주택지원사업',
-    subtitle: 'HOUSING SUPPORT PROJECT',
-    description: '소유자 거주용 단독 주택용 태양광사업',
-    icon: Home,
-    color: 'from-blue-500 to-blue-600',
-    benefits: ['설치비 80% 지원 (시비 50%, 도비 30%)', '자부담율 20%', '설치용량 3kW 이상 ~ 9kW 이하', '한국에너지공단 우수 시공업체'],
-    process: ['사업신청', '현장조사', '설계승인', '설치공사', '준공검사', '사용승인'],
-    image: 'https://images.unsplash.com/photo-1518005020951-eccb494ad742?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
-  }, {
     id: 'building',
-    title: '건물지원사업',
+    title: '건물지원',
     subtitle: 'BUILDING SUPPORT PROJECT',
     description: '상업시설이나 다른 용도용 건물지원사업',
     icon: Building,
@@ -28,25 +18,35 @@ const Government = () => {
     process: ['사업신청', '서류검토', '현장조사', '설계승인', '설치공사', '준공검사'],
     image: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
   }, {
+    id: 'housing',
+    title: '주택지원',
+    subtitle: 'HOUSING SUPPORT PROJECT',
+    description: '소유자 거주용 단독 주택용 태양광사업',
+    icon: Home,
+    color: 'from-blue-500 to-blue-600',
+    benefits: ['설치비 80% 지원 (시비 50%, 도비 30%)', '자부담율 20%', '설치용량 3kW 이상 ~ 9kW 이하', '한국에너지공단 우수 시공업체'],
+    process: ['사업신청', '현장조사', '설계승인', '설치공사', '준공검사', '사용승인'],
+    image: 'https://images.unsplash.com/photo-1518005020951-eccb494ad742?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+  }, {
     id: 'fusion',
-    title: '융복합지원사업',
+    title: '융복합지원',
     subtitle: 'FUSION SUPPORT PROJECT',
     description: '차세대 기술과 에너지 ESS 융합 솔루션사업',
     icon: Zap,
     color: 'from-purple-500 to-purple-600',
     benefits: ['ESS 연계 시스템', '스마트 모니터링', '에너지 저장 기능', '효율성 극대화'],
     process: ['기술검토', '시스템 설계', '융합 솔루션', '설치 및 연동', '성능 테스트', '운영 최적화'],
-    image: 'https://images.unsplash.com/photo-1581092795442-beb3b8f887df?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+    image: 'https://images.unsplash.com/photo-1558449028-b53a39d100fc?auto=format&fit=crop&w=800&q=80'
   }, {
-    id: 'eco-village',
-    title: '에너지자립마을지원사업',
-    subtitle: 'ECO-VILLAGE SUPPORT PROJECT',
-    description: '에너지자립마을에 대한 정보를 확인하세요',
-    icon: TreePine,
-    color: 'from-green-500 to-green-600',
-    benefits: ['마을 단위 에너지 자립', '친환경 마을 조성', '지역사회 상생', '지속가능한 발전'],
-    process: ['마을 계획', '주민 동의', '설계 및 승인', '단계별 시공', '연계 시스템', '운영 관리'],
-    image: 'https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+    id: 'rps',
+    title: 'RPS 사업',
+    subtitle: 'RENEWABLE PORTFOLIO STANDARD',
+    description: '신재생에너지 공급의무화 제도 기반 발전 사업',
+    icon: Zap,
+    color: 'from-amber-500 to-amber-600',
+    benefits: ['안정적인 수익 창출', 'FIT(고정가격매입) 제도 활용', '장기 유지보수 지원', '최적의 투자 솔루션'],
+    process: ['사업검토', '인허가', '발전소 준공', 'REC 판매', '유지관리'],
+    image: 'https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=800&q=80'
   }];
   return <div className="min-h-screen bg-white">
     <Header />

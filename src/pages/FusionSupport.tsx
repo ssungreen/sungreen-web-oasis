@@ -3,7 +3,7 @@ import Footer from '@/components/Footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Zap, CheckCircle, ArrowRight, Phone, Battery, Cpu, Wifi, TrendingUp, Shield, Award } from 'lucide-react';
+import { Zap, CheckCircle, ArrowRight, Phone, Battery, Cpu, Wifi, TrendingUp, Shield, Award, FileText, ShieldCheck, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from '@/components/SEO';
 
@@ -32,12 +32,12 @@ const FusionSupport = () => {
       content: '신재생에너지에서 생산된 전력량을 자가소비하거나 마을공동체 발전사업으로 활용합니다.'
     },
     {
-      title: '지원혜택',
-      content: '총 설치비용 최대 80% 지원 (시비 50%, 도비 30% → 자부담율 20%)'
+      title: '예산 규모 (연간)',
+      content: '총 사업비 약 17억 280만원 규모 (경기도 지원사업 기준)'
     },
     {
-      title: '예산',
-      content: '총 사업비 170,280만원\n(시비 85,140만원 / 도비 51,084만원 / 자부담 34,056만원)\n(25년 고압차 예산지원만큼 조성 99kW급 자가용 90kW / 마을공익시 9kW) 자부담율'
+      title: '재원 분담',
+      content: '시비 50% (85,140만원) + 도비 30% (51,084만원) + 자부담 20% (34,056만원)'
     }
   ];
 
@@ -98,7 +98,7 @@ const FusionSupport = () => {
           </div>
           <h1 className="text-5xl lg:text-7xl font-bold mb-8 leading-tight">
             <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-              융복합지원사업
+              융복합지원
             </span>
           </h1>
           <p className="text-xl lg:text-2xl text-slate-200 max-w-4xl mx-auto leading-relaxed">
@@ -178,6 +178,44 @@ const FusionSupport = () => {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+
+          {/* 구비 서류 & A/S 가이드 Section */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
+            <div className="bg-white rounded-3xl p-10 shadow-lg border border-slate-100">
+              <h3 className="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-2">
+                <FileText className="h-6 w-6 text-purple-600" /> 사업 참여 신청 서류
+              </h3>
+              <ul className="space-y-4">
+                {[
+                  '참여 신청서 및 자부담금 이체 확인서',
+                  '신청인 신분증 사본 및 인감증명서',
+                  '건축물 대장 또는 등기부 등본 (설치지 확인용)',
+                  '한전 사이버 지점 고객 정보 활용 동의서',
+                  '토지/건물 사용 동의서 (소유주가 다를 경우)'
+                ].map((item, idx) => (
+                  <li key={idx} className="flex items-center gap-3 text-slate-600 font-medium font-bold">
+                    <CheckCircle className="h-5 w-5 text-purple-500 shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="bg-slate-900 rounded-3xl p-10 shadow-xl text-white">
+              <h3 className="text-2xl font-bold mb-8 flex items-center gap-2">
+                <ShieldCheck className="h-6 w-6 text-emerald-400" /> 전문 사후관리 (A/S)
+              </h3>
+              <div className="space-y-6 font-medium">
+                <p className="text-slate-300 leading-relaxed">
+                  융복합 시스템의 복합적인 특성을 고려하여 통합 유지보수 환경을 제공합니다.
+                </p>
+                <div className="bg-white/10 p-6 rounded-2xl border border-white/20">
+                  <span className="text-emerald-400 font-black text-2xl block mb-2">5년 무상 통합 A/S</span>
+                  <p className="text-sm text-slate-400">태양광, ESS, 모니터링 시스템 일체에 대한 정기 점검 및 수리를 보장합니다.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
