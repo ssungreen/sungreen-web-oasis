@@ -139,7 +139,7 @@ const OpportunityIncome = () => {
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-blue-400 shrink-0 mt-1" />
-                    <span className="font-bold text-blue-100 italic">총사업비 80% 지원 (도비 30%, 시군비 50%)</span>
+                    <span className="font-bold text-blue-100 italic">총사업비 70% 지원 (도비 30%, 시군비 40%)</span>
                   </li>
                 </ul>
               </div>

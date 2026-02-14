@@ -133,32 +133,48 @@ const BuildingSupport = () => {
               </div>
               <div className="bg-white rounded-2xl p-8 shadow-lg border border-slate-100">
                 <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center">
-                  <Zap className="h-6 w-6 mr-3 text-emerald-600" /> 지원범위
+                  <Zap className="h-6 w-6 mr-3 text-emerald-600" /> 지원내용
                 </h3>
-                <ul className="grid grid-cols-2 gap-4">
-                  {['태양광', '태양열', '지열', '연료전지 등'].map((item) => (
-                    <li key={item} className="bg-emerald-50 px-4 py-2 rounded-lg text-emerald-700 font-bold text-center">
-                      {item}
-                    </li>
-                  ))}
+                <ul className="space-y-3">
+                  <li className="bg-emerald-50 px-6 py-3 rounded-xl text-emerald-700 font-bold text-center leading-relaxed">
+                    해당 건물의 자가소비에 한하여 지원
+                  </li>
+                  <li className="bg-red-50 px-6 py-3 rounded-xl text-red-600 font-bold text-center leading-relaxed border border-red-100">
+                    전력거래, 판매는 지원불가
+                  </li>
                 </ul>
               </div>
             </div>
 
             {/* Section 3: Support Categories */}
             <div className="bg-slate-900 rounded-3xl p-10 shadow-xl text-white">
-              <h2 className="text-2xl font-bold mb-8 border-b border-white/20 pb-4">지원 부문 및 금액</h2>
+              <h2 className="text-2xl font-bold mb-8 border-b border-white/20 pb-4">지원 부문</h2>
+
               <div className="space-y-6">
+                {/* Highlighted Self-Burden Block */}
+                <div className="bg-gradient-to-r from-emerald-900/40 to-slate-800 p-6 rounded-xl border border-emerald-500/30 flex items-center justify-between group hover:border-emerald-500/50 transition-colors">
+                  <div className="flex items-center gap-3">
+                    <div className="p-2 bg-emerald-500/20 rounded-lg">
+                      <CheckCircle className="h-6 w-6 text-emerald-400" />
+                    </div>
+                    <div>
+                      <span className="text-lg font-bold text-emerald-100 block">지원 자부담 비율</span>
+                      <span className="text-sm text-slate-400">정부지원금 외 본인 부담금</span>
+                    </div>
+                  </div>
+                  <span className="text-3xl font-black text-emerald-400">60%</span>
+                </div>
+
                 <div className="bg-white/10 p-6 rounded-xl border border-white/10">
-                  <h4 className="text-emerald-400 font-bold text-lg mb-2">일반건물 (산업체)</h4>
-                  <p className="text-slate-300">kW당 972,000원 ~ 1,009,000원 지원 (설치비 50% 내외)</p>
+                  <h4 className="text-emerald-400 font-bold text-lg mb-2">일반건물</h4>
+                  <p className="text-slate-300">kW당 972,000원 ~ 1,009,000원 지원</p>
                 </div>
                 <div className="bg-white/10 p-6 rounded-xl border border-white/10">
-                  <h4 className="text-emerald-400 font-bold text-lg mb-2">축산농가 (특화지원)</h4>
+                  <h4 className="text-emerald-400 font-bold text-lg mb-2">축사 및 축산시설</h4>
                   <p className="text-slate-300">kW당 1,120,000원 ~ 1,167,000원 지원 (우대 적용)</p>
                 </div>
                 <div className="bg-white/10 p-6 rounded-xl border border-white/10">
-                  <h4 className="text-emerald-400 font-bold text-lg mb-2">사회복지시설 (저소득)</h4>
+                  <h4 className="text-emerald-400 font-bold text-lg mb-2">RE100기업, 산단기업</h4>
                   <p className="text-slate-300">최대 지원 단가 적용 및 사업비 자부담 최소화</p>
                 </div>
               </div>
@@ -194,16 +210,16 @@ const BuildingSupport = () => {
               </h3>
               <ul className="space-y-3 text-slate-600 font-medium">
                 <li className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-500" /> 건축물 대장 (총괄/표제부)
+                  <CheckCircle2 className="h-4 w-4 text-emerald-500" /> 건물 등기부등본 및 건축물대장
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle2 className="h-4 w-4 text-emerald-500" /> 사업자등록증 사본 (법인/개인)
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-500" /> 소유주 인감증명서 또는 본인확인서
+                  <CheckCircle2 className="h-4 w-4 text-emerald-500" /> 본인서명사실확인서 또는 법인인감증명서
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-500" /> 전기사용량 확인 서류 (영수증 등)
+                  <CheckCircle2 className="h-4 w-4 text-emerald-500" /> 한전 전기사용량(신청지점 직전월까지 1년) 증빙자료
                 </li>
               </ul>
             </div>

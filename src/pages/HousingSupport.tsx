@@ -125,7 +125,7 @@ const HousingSupport = () => {
               <div className="space-y-6 text-lg">
                 <div className="flex justify-between items-center text-emerald-400">
                   <span>정부지원</span>
-                  <span className="font-bold">50% 지원</span>
+                  <span className="font-bold">40% 지원</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span>지자체지원</span>

@@ -221,8 +221,8 @@ const GyeonggiHousingSupport = () => {
                                     '건축물 대장 (단독/공동주택 확인용)',
                                     '신청자 신분증 사본',
                                     '본인 명의 예금 통장 사본 (보조금 전용)',
-                                    '본인서명사실확인서 또는 인감증명서',
-                                    '건강보험 자격득실확인서 (최근 1개월 이내)'
+                                    '본인서명사실확인서',
+                                    '한전고객정보내역 최근 1년치'
                                 ].map((item, idx) => (
                                     <li key={idx} className="flex items-center gap-3 text-slate-600 font-medium">
                                         <CheckCircle2 className="h-5 w-5 text-emerald-500 shrink-0" />
@@ -246,12 +246,7 @@ const GyeonggiHousingSupport = () => {
                                             썬그린에너지의 전문 기술팀이 상시 대기하여 신속하게 조치합니다.
                                         </p>
                                     </div>
-                                    <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-                                        <p className="text-xl font-bold text-blue-100 mb-2">실시간 모니터링 지원</p>
-                                        <p className="text-blue-50/80 leading-relaxed font-medium">
-                                            발전 현황을 실시간으로 확인하고 이상 징후 발생 시 선제적인 장애 대응 서비스를 제공합니다.
-                                        </p>
-                                    </div>
+
                                 </div>
                             </div>
                             <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>

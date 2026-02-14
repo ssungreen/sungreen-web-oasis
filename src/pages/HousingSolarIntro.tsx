@@ -39,12 +39,7 @@ const HousingSolarIntro = () => {
             icon: <Home className="h-10 w-10 text-emerald-600" />,
             image: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=800&auto=format&fit=crop"
         },
-        {
-            title: '부착형',
-            description: '주택 외벽에 태양광 패널을 부착하는 방식으로, 건축물과 조화를 이루며 설치합니다.',
-            icon: <Building2 className="h-10 w-10 text-blue-600" />,
-            image: "https://images.unsplash.com/photo-1613665813446-82a78c468a1d?q=80&w=800&auto=format&fit=crop"
-        },
+
         {
             title: '토지형',
             description: '주택 주변의 여유 부지에 태양광 패널을 설치하는 방식입니다. 주로 마당 공간이 있는 경우 권장합니다.',
@@ -64,7 +59,7 @@ const HousingSolarIntro = () => {
         { title: '구조물 설치공사', icon: <Wrench className="h-6 w-6" /> },
         { title: '모듈 설치', icon: <Layers className="h-6 w-6" /> },
         { title: '인버터 설치', icon: <RefreshCcw className="h-6 w-6" /> },
-        { title: '접속함 및 계량기 설치', icon: <PlugZap className="h-6 w-6" /> },
+        { title: '접속함 설치', icon: <PlugZap className="h-6 w-6" /> },
         { title: '사용전 점검', icon: <ClipboardCheck className="h-6 w-6" /> },
     ];
 
@@ -157,7 +152,7 @@ const HousingSolarIntro = () => {
                     {/* Types Section */}
                     <div className="mb-24">
                         <h2 className="text-3xl font-bold text-slate-900 mb-12 text-center">주택태양광 종류</h2>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
                             {types.map((type, idx) => (
                                 <Card key={idx} className="overflow-hidden border-slate-100 shadow-lg hover:shadow-xl transition-shadow group">
                                     <div className="relative h-48 overflow-hidden">

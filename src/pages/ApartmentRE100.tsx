@@ -117,10 +117,10 @@ const ApartmentRE100 = () => {
                                     <div className="p-2 bg-emerald-600 rounded-lg text-white">
                                         <Home className="h-6 w-6" />
                                     </div>
-                                    <h2 className="text-2xl font-bold text-slate-900">사업 대상</h2>
+                                    <h2 className="text-2xl font-bold text-slate-900">사업대상</h2>
                                 </div>
                                 <div className="space-y-4">
-                                    <p className="text-xl font-bold text-slate-900 mb-2">경기도 소재 주택</p>
+                                    <p className="text-xl font-bold text-slate-900 mb-2">경기도 내 기축 아파트 단지</p>
                                     <p className="text-slate-600 leading-relaxed">
                                         건축법 시행령 제3조의 5 별표 1의<br />
                                         <span className="font-bold text-emerald-600">‘공동주택’ 및 ‘단독주택’</span>

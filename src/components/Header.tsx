@@ -3,14 +3,7 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Sun, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from '@/components/ui/navigation-menu';
+
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -88,169 +81,165 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-1">
-            <NavigationMenu>
-              <NavigationMenuList>
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${isCompanyActive()
-                    ? 'text-emerald-600 bg-emerald-50'
-                    : 'text-slate-700 hover:text-emerald-600 hover:bg-slate-50'
-                    }`}>
-                    회사소개
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <div className="w-80 p-4 bg-white shadow-lg border border-slate-200 rounded-lg z-50">
-                      <div className="grid gap-3">
-                        {companySubMenu.map((item) => (
-                          <NavigationMenuLink key={item.name} asChild>
-                            <Link
-                              to={item.href}
-                              className={`block p-3 rounded-lg transition-colors ${isActive(item.href)
-                                ? 'bg-emerald-50 text-emerald-600'
-                                : 'hover:bg-slate-50 text-slate-700'
-                                }`}
-                            >
-                              <div className="font-medium">{item.name}</div>
-                            </Link>
-                          </NavigationMenuLink>
-                        ))}
+            {/* 회사소개 */}
+            <div className="relative group">
+              <button className={`flex items-center px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${isCompanyActive()
+                ? 'text-emerald-600 bg-emerald-50'
+                : 'text-slate-700 hover:text-emerald-600 hover:bg-slate-50'
+                }`}>
+                회사소개
+                <ChevronDown className="ml-1 h-3 w-3 transition-transform duration-200 group-hover:rotate-180" />
+              </button>
+              <div className="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <div className="w-48 p-2 bg-white shadow-xl border border-slate-200 rounded-xl overflow-hidden">
+                  <div className="grid gap-1">
+                    {companySubMenu.map((item) => (
+                      <Link
+                        key={item.name}
+                        to={item.href}
+                        className={`block px-4 py-2.5 rounded-lg text-sm transition-colors ${isActive(item.href)
+                          ? 'bg-emerald-50 text-emerald-600 font-bold'
+                          : 'hover:bg-slate-50 text-slate-700 font-medium'
+                          }`}
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 경기도지원사업 */}
+            <div className="relative group">
+              <button className={`flex items-center px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${isGyeonggiActive()
+                ? 'text-emerald-600 bg-emerald-50'
+                : 'text-slate-700 hover:text-emerald-600 hover:bg-slate-50'
+                }`}>
+                경기도지원사업
+                <ChevronDown className="ml-1 h-3 w-3 transition-transform duration-200 group-hover:rotate-180" />
+              </button>
+              <div className="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <div className="w-[520px] p-6 bg-white shadow-xl border border-slate-200 rounded-xl">
+                  <div className="grid grid-cols-2 gap-8">
+                    {/* Housing Support Group */}
+                    <div>
+                      <div className="text-[13px] font-black text-slate-900 mb-4 px-3 border-b border-slate-100 pb-2">
+                        {gyeonggiBusinessMenu.housing.title}
                       </div>
-                    </div>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${isGyeonggiActive()
-                    ? 'text-emerald-600 bg-emerald-50'
-                    : 'text-slate-700 hover:text-emerald-600 hover:bg-slate-50'
-                    }`}>
-                    경기도지원사업
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <div className="w-[520px] p-6 bg-white shadow-xl border border-slate-200 rounded-xl z-50">
-                      <div className="grid grid-cols-2 gap-8">
-                        {/* Housing Support Group */}
-                        <div>
-                          <div className="text-sm font-black text-slate-900 mb-4 px-3 border-b border-slate-100 pb-2">
-                            {gyeonggiBusinessMenu.housing.title}
-                          </div>
-                          <div className="grid gap-1">
-                            {gyeonggiBusinessMenu.housing.items.map((item) => (
-                              <NavigationMenuLink key={item.name} asChild>
-                                <Link
-                                  to={item.href}
-                                  className={`block p-3 rounded-lg transition-colors text-[13px] ${isActive(item.href)
-                                    ? 'bg-emerald-50 text-emerald-600 font-bold'
-                                    : 'hover:bg-slate-50 text-slate-600 font-medium'
-                                    }`}
-                                >
-                                  {item.name}
-                                </Link>
-                              </NavigationMenuLink>
-                            ))}
-                          </div>
-                        </div>
-
-                        {/* RE100 Project Group */}
-                        <div>
-                          <div className="text-sm font-black text-slate-900 mb-4 px-3 border-b border-slate-100 pb-2">
-                            {gyeonggiBusinessMenu.re100.title}
-                          </div>
-                          <div className="grid gap-1">
-                            {gyeonggiBusinessMenu.re100.items.map((item) => (
-                              <NavigationMenuLink key={item.name} asChild>
-                                <Link
-                                  to={item.href}
-                                  className={`block p-3 rounded-lg transition-colors text-[13px] ${isActive(item.href)
-                                    ? 'bg-emerald-50 text-emerald-600 font-bold'
-                                    : 'hover:bg-slate-50 text-slate-600 font-medium'
-                                    }`}
-                                >
-                                  {item.name}
-                                </Link>
-                              </NavigationMenuLink>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${isGovernmentActive()
-                    ? 'text-emerald-600 bg-emerald-50'
-                    : 'text-slate-700 hover:text-emerald-600 hover:bg-slate-50'
-                    }`}>
-                    정부지원사업
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <div className="w-80 p-4 bg-white shadow-lg border border-slate-200 rounded-lg z-50">
-                      <div className="grid gap-3">
-                        <NavigationMenuLink asChild>
+                      <div className="grid gap-1">
+                        {gyeonggiBusinessMenu.housing.items.map((item) => (
                           <Link
-                            to="/government"
-                            className={`block p-3 rounded-lg transition-colors ${location.pathname === '/government'
-                              ? 'bg-emerald-50 text-emerald-600'
-                              : 'hover:bg-slate-50 text-slate-700'
+                            key={item.name}
+                            to={item.href}
+                            className={`block p-3 rounded-lg transition-colors text-[13px] ${isActive(item.href)
+                              ? 'bg-emerald-50 text-emerald-600 font-bold'
+                              : 'hover:bg-slate-50 text-slate-600 font-medium'
                               }`}
                           >
-                            <div className="font-medium">전체보기</div>
+                            {item.name}
                           </Link>
-                        </NavigationMenuLink>
-                        {governmentSubMenu.map((item) => (
-                          <NavigationMenuLink key={item.name} asChild>
-                            <Link
-                              to={item.href}
-                              className={`block p-3 rounded-lg transition-colors text-[13px] ${isActive(item.href)
-                                ? 'bg-emerald-50 text-emerald-600 font-bold'
-                                : 'hover:bg-slate-50 text-slate-600 font-medium'
-                                }`}
-                            >
-                              <div className="font-medium">{item.name}</div>
-                            </Link>
-                          </NavigationMenuLink>
                         ))}
                       </div>
                     </div>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
+                    {/* RE100 Project Group */}
+                    <div>
+                      <div className="text-[13px] font-black text-slate-900 mb-4 px-3 border-b border-slate-100 pb-2">
+                        {gyeonggiBusinessMenu.re100.title}
+                      </div>
+                      <div className="grid gap-1">
+                        {gyeonggiBusinessMenu.re100.items.map((item) => (
+                          <Link
+                            key={item.name}
+                            to={item.href}
+                            className={`block p-3 rounded-lg transition-colors text-[13px] ${isActive(item.href)
+                              ? 'bg-emerald-50 text-emerald-600 font-bold'
+                              : 'hover:bg-slate-50 text-slate-600 font-medium'
+                              }`}
+                          >
+                            {item.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${isRE100Active()
-                    ? 'text-emerald-600 bg-emerald-50'
-                    : 'text-slate-700 hover:text-emerald-600 hover:bg-slate-50'
-                    }`}>
-                    RE100 안내
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <div className="w-80 p-4 bg-white shadow-lg border border-slate-200 rounded-lg z-50">
-                      <div className="grid gap-3">
-                        {re100SubMenu.map((item) => (
-                          <NavigationMenuLink key={item.name} asChild>
-                            <Link
-                              to={item.href}
-                              className={`block p-3 rounded-lg transition-colors ${isActive(item.href)
-                                ? 'bg-emerald-50 text-emerald-600'
-                                : 'hover:bg-slate-50 text-slate-700'
-                                }`}
-                            >
-                              <div className="font-medium">{item.name}</div>
-                            </Link>
-                          </NavigationMenuLink>
-                        ))}
-                      </div>
-                    </div>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-              </NavigationMenuList>
-            </NavigationMenu>
+            {/* 정부지원사업 */}
+            <div className="relative group">
+              <button className={`flex items-center px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${isGovernmentActive()
+                ? 'text-emerald-600 bg-emerald-50'
+                : 'text-slate-700 hover:text-emerald-600 hover:bg-slate-50'
+                }`}>
+                정부지원사업
+                <ChevronDown className="ml-1 h-3 w-3 transition-transform duration-200 group-hover:rotate-180" />
+              </button>
+              <div className="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <div className="w-48 p-2 bg-white shadow-xl border border-slate-200 rounded-xl overflow-hidden">
+                  <div className="grid gap-1">
+                    <Link
+                      to="/government"
+                      className={`block px-4 py-2.5 rounded-lg text-sm transition-colors ${location.pathname === '/government'
+                        ? 'bg-emerald-50 text-emerald-600 font-bold'
+                        : 'hover:bg-slate-50 text-slate-700 font-medium'
+                        }`}
+                    >
+                      전체보기
+                    </Link>
+                    {governmentSubMenu.map((item) => (
+                      <Link
+                        key={item.name}
+                        to={item.href}
+                        className={`block px-4 py-2.5 rounded-lg text-sm transition-colors ${isActive(item.href)
+                          ? 'bg-emerald-50 text-emerald-600 font-bold'
+                          : 'hover:bg-slate-50 text-slate-700 font-medium'
+                          }`}
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* RE100 안내 */}
+            <div className="relative group">
+              <button className={`flex items-center px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${isRE100Active()
+                ? 'text-emerald-600 bg-emerald-50'
+                : 'text-slate-700 hover:text-emerald-600 hover:bg-slate-50'
+                }`}>
+                RE100 안내
+                <ChevronDown className="ml-1 h-3 w-3 transition-transform duration-200 group-hover:rotate-180" />
+              </button>
+              <div className="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <div className="w-48 p-2 bg-white shadow-xl border border-slate-200 rounded-xl overflow-hidden">
+                  <div className="grid gap-1">
+                    {re100SubMenu.map((item) => (
+                      <Link
+                        key={item.name}
+                        to={item.href}
+                        className={`block px-4 py-2.5 rounded-lg text-sm transition-colors ${isActive(item.href)
+                          ? 'bg-emerald-50 text-emerald-600 font-bold'
+                          : 'hover:bg-slate-50 text-slate-700 font-medium'
+                          }`}
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
 
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
                 className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${isActive(item.href)
-                  ? 'text-emerald-600 bg-emerald-50 border-b-2 border-emerald-600'
+                  ? 'text-emerald-600 bg-emerald-50 font-bold'
                   : 'text-slate-700 hover:text-emerald-600 hover:bg-slate-50'
                   }`}
               >

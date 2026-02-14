@@ -141,18 +141,17 @@ const EcoVillageSupport = () => {
                   </div>
                   <div>
                     <h4 className="text-xl font-bold mb-2">마을 공동시설 상업용 태양광</h4>
-                    <p className="text-slate-300">발점소(10~99kW) 설치비 지원</p>
+                    <p className="text-slate-300">발전소(10~99kW) 설치비 지원</p>
                   </div>
                 </div>
 
                 <Card className="bg-emerald-500/10 border-emerald-500/20 mt-8">
                   <CardContent className="p-6">
-                    <p className="text-emerald-400 font-bold mb-2 uppercase tracking-widest text-xs">Funding Guide</p>
                     <div className="flex justify-between items-center">
                       <span className="text-white font-medium">지원 비율</span>
-                      <span className="text-2xl font-black text-emerald-400">총사업비의 80%</span>
+                      <span className="text-2xl font-black text-emerald-400">총사업비의 70%</span>
                     </div>
-                    <p className="text-sm text-slate-400 mt-2">※ 도비/시군비 80%, 자부담 20%</p>
+                    <p className="text-sm text-slate-400 mt-2">※ 도 30%, 시군 40%, 자부담 30%</p>
                   </CardContent>
                 </Card>
               </div>
