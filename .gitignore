@@ -26,3 +26,7 @@ dist-ssr
 .vercel
 
 .wrangler
+
+# Local development (D1/R2 emulation)
+.local-dev.db
+.local-uploads/
