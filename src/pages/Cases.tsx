@@ -5,7 +5,7 @@ import SEO from '@/components/SEO';
 import CaseCard from '@/components/cases/CaseCard';
 import CaseUploadForm from '@/components/cases/CaseUploadForm';
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { PlusCircle, Loader2 } from 'lucide-react';
 
 interface CaseData {
@@ -83,6 +83,9 @@ const Cases = () => {
                 <DialogContent className="sm:max-w-[600px]">
                   <DialogHeader>
                     <DialogTitle>새 설치사례 등록</DialogTitle>
+                    <DialogDescription>
+                      새로운 설치 사례의 정보를 입력하고 사진을 업로드해주세요.
+                    </DialogDescription>
                   </DialogHeader>
                   <CaseUploadForm
                     onSuccess={() => {
