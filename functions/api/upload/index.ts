@@ -38,6 +38,10 @@ export const onRequestPut: PagesFunction<Env> = async (context) => {
 
         return Response.json({ url: publicUrl, filename: filename });
     } catch (err) {
-        return new Response(`Error uploading file: ${err}`, { status: 500 });
+        return Response.json({
+            error: "Upload failed",
+            details: err instanceof Error ? err.message : String(err),
+            stack: err instanceof Error ? err.stack : undefined
+        }, { status: 500 });
     }
 };

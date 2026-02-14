@@ -2,16 +2,16 @@ name = "sungreen-web-oasis"
 compatibility_date = "2024-09-23"
 pages_build_output_dir = "dist"
 
-# D1 Database Binding (Dashboard 설정을 우선 사용하기 위해 주석 처리)
-# [[d1_databases]]
-# binding = "DB"
-# database_name = "sungreen-db"
-# database_id = "6dad2a0a-6f16-455c-ac9b-2c058fec3049"
+# D1 Database Binding
+[[d1_databases]]
+binding = "DB"
+database_name = "sungreen-db"
+database_id = "6dad2a0a-6f16-455c-ac9b-2c058fec3049"
 
-# R2 Storage Binding (Dashboard 설정을 우선 사용하기 위해 주석 처리)
-# [[r2_buckets]]
-# binding = "BUCKET"
-# bucket_name = "sungreen-cases"
+# R2 Storage Binding
+[[r2_buckets]]
+binding = "BUCKET"
+bucket_name = "sungreen-cases"
 
 
 [vars]
