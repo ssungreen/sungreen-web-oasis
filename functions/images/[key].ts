@@ -5,7 +5,7 @@ interface Env {
 }
 
 export const onRequestGet: PagesFunction<Env> = async (context) => {
-    const key = context.params.key as string;
+    const key = decodeURIComponent(context.params.key as string);
 
     if (!key) {
         return new Response("Image key required", { status: 400 });
