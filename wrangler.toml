@@ -8,11 +8,8 @@ binding = "DB"
 database_name = "sungreen-db"
 database_id = "6dad2a0a-6f16-455c-ac9b-2c058fec3049"
 
-# R2 Storage Binding
-[[r2_buckets]]
-binding = "BUCKET"
-bucket_name = "sungreen-cases"
+# R2 binding is configured in the Cloudflare Pages dashboard
+# (Settings > Functions > Bindings > BUCKET -> sungreen-cases)
 
 [vars]
-# Environment variables for the frontend/functions
 ENVIRONMENT = "production"
