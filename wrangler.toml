@@ -6,7 +6,7 @@ pages_build_output_dir = "dist"
 [[d1_databases]]
 binding = "DB"
 database_name = "sungreen-db"
-database_id = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" # Placeholder: Replace with actual ID from Cloudflare Dashboard
+database_id = "6dad2a0a-6f16-455c-ac9b-2c058fec3049"
 
 # R2 Storage Binding
 [[r2_buckets]]
