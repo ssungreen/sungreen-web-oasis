@@ -8,8 +8,10 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from "@/components/ui/alert-dialog";
-import { PlusCircle, Loader2, Camera } from 'lucide-react';
+import { PlusCircle, Loader2, Camera, ChevronLeft, ChevronRight } from 'lucide-react';
 import { toast } from 'sonner';
+
+const ITEMS_PER_PAGE = 12;
 
 interface CaseData {
   id: number;
@@ -28,6 +30,10 @@ const Cases = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [editingCase, setEditingCase] = useState<EditCaseData | null>(null);
   const [deletingCaseId, setDeletingCaseId] = useState<number | null>(null);
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const totalPages = Math.ceil(cases.length / ITEMS_PER_PAGE);
+  const paginatedCases = cases.slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE);
 
   const fetchCases = async () => {
     setLoading(true);
@@ -180,17 +186,55 @@ const Cases = () => {
               <Loader2 className="w-8 h-8 animate-spin text-primary" />
             </div>
           ) : cases.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {cases.map((item) => (
-                <CaseCard
-                  key={item.id}
-                  {...item}
-                  isAdmin={isAdmin}
-                  onEdit={handleEdit}
-                  onDelete={(id) => setDeletingCaseId(id)}
-                />
-              ))}
-            </div>
+            <>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {paginatedCases.map((item) => (
+                  <CaseCard
+                    key={item.id}
+                    {...item}
+                    isAdmin={isAdmin}
+                    onEdit={handleEdit}
+                    onDelete={(id) => setDeletingCaseId(id)}
+                  />
+                ))}
+              </div>
+
+              {/* Pagination */}
+              {totalPages > 1 && (
+                <div className="flex items-center justify-center gap-2 mt-12">
+                  <button
+                    onClick={() => { setCurrentPage(p => Math.max(1, p - 1)); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                    disabled={currentPage === 1}
+                    className="flex items-center gap-1 px-4 py-2 rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+                  >
+                    <ChevronLeft className="w-4 h-4" />
+                    이전
+                  </button>
+
+                  {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
+                    <button
+                      key={page}
+                      onClick={() => { setCurrentPage(page); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                      className={`w-10 h-10 rounded-lg font-medium transition-colors ${currentPage === page
+                          ? 'bg-emerald-500 text-white shadow-md'
+                          : 'text-slate-600 hover:bg-slate-100'
+                        }`}
+                    >
+                      {page}
+                    </button>
+                  ))}
+
+                  <button
+                    onClick={() => { setCurrentPage(p => Math.min(totalPages, p + 1)); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                    disabled={currentPage === totalPages}
+                    className="flex items-center gap-1 px-4 py-2 rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+                  >
+                    다음
+                    <ChevronRight className="w-4 h-4" />
+                  </button>
+                </div>
+              )}
+            </>
           ) : (
             <div className="text-center py-20 bg-white rounded-2xl shadow-sm border border-slate-100">
               <Camera className="h-16 w-16 text-slate-300 mx-auto mb-4" />
