@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { MapPin, Calendar, ArrowRight } from 'lucide-react';
+import { MapPin, Calendar, ArrowRight, Pencil, Trash2 } from 'lucide-react';
 
 interface CaseProps {
     id: number;
@@ -11,16 +11,25 @@ interface CaseProps {
     location: string;
     date: string;
     imageUrl: string;
+    isAdmin?: boolean;
+    onEdit?: (id: number) => void;
+    onDelete?: (id: number) => void;
 }
 
-const CaseCard: React.FC<CaseProps> = ({ id, title, description, location, date, imageUrl }) => {
+const CaseCard: React.FC<CaseProps> = ({ id, title, description, location, date, imageUrl, isAdmin, onEdit, onDelete }) => {
     const [imageError, setImageError] = useState(false);
     const navigate = useNavigate();
 
+    const handleClick = () => {
+        if (!isAdmin) {
+            navigate(`/cases/${id}`);
+        }
+    };
+
     return (
         <Card
-            className="overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer group h-full flex flex-col border-slate-200 hover:border-emerald-300"
-            onClick={() => navigate(`/cases/${id}`)}
+            className={`overflow-hidden hover:shadow-xl transition-all duration-300 group h-full flex flex-col border-slate-200 hover:border-emerald-300 ${!isAdmin ? 'cursor-pointer' : ''}`}
+            onClick={handleClick}
         >
             <div className="relative aspect-[4/3] overflow-hidden bg-slate-900">
                 {!imageError ? (
@@ -35,18 +44,42 @@ const CaseCard: React.FC<CaseProps> = ({ id, title, description, location, date,
                         <span className="text-sm">이미지 준비중</span>
                     </div>
                 )}
-                {/* Hover Overlay */}
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
-                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-2 text-white font-semibold text-lg bg-emerald-500/90 px-6 py-3 rounded-full">
-                        자세히 보기
-                        <ArrowRight className="w-5 h-5" />
+                {/* Hover Overlay - only when not admin */}
+                {!isAdmin && (
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
+                        <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-2 text-white font-semibold text-lg bg-emerald-500/90 px-6 py-3 rounded-full">
+                            자세히 보기
+                            <ArrowRight className="w-5 h-5" />
+                        </div>
                     </div>
-                </div>
+                )}
                 <div className="absolute top-3 right-3">
                     <Badge variant="secondary" className="bg-white/90 text-emerald-700 hover:bg-white font-medium">
                         시공사례
                     </Badge>
                 </div>
+
+                {/* Admin Action Buttons */}
+                {isAdmin && (
+                    <div className="absolute bottom-3 right-3 flex gap-2">
+                        <button
+                            onClick={(e) => { e.stopPropagation(); onEdit?.(id); }}
+                            className="flex items-center gap-1.5 px-3 py-2 bg-blue-500 hover:bg-blue-600 text-white text-sm font-medium rounded-lg shadow-lg transition-colors"
+                            title="수정"
+                        >
+                            <Pencil className="w-4 h-4" />
+                            수정
+                        </button>
+                        <button
+                            onClick={(e) => { e.stopPropagation(); onDelete?.(id); }}
+                            className="flex items-center gap-1.5 px-3 py-2 bg-red-500 hover:bg-red-600 text-white text-sm font-medium rounded-lg shadow-lg transition-colors"
+                            title="삭제"
+                        >
+                            <Trash2 className="w-4 h-4" />
+                            삭제
+                        </button>
+                    </div>
+                )}
             </div>
 
             <CardHeader className="p-4 pb-2">
@@ -75,4 +108,3 @@ const CaseCard: React.FC<CaseProps> = ({ id, title, description, location, date,
 };
 
 export default CaseCard;
-

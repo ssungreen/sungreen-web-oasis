@@ -3,16 +3,19 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import SEO from '@/components/SEO';
 import CaseCard from '@/components/cases/CaseCard';
-import CaseUploadForm from '@/components/cases/CaseUploadForm';
+import CaseUploadForm, { EditCaseData } from '@/components/cases/CaseUploadForm';
 import { Badge } from '@/components/ui/badge';
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from "@/components/ui/alert-dialog";
 import { PlusCircle, Loader2, Camera } from 'lucide-react';
+import { toast } from 'sonner';
 
 interface CaseData {
   id: number;
   title: string;
   description: string;
+  content: string | null;
   location: string;
   date: string;
   imageUrl: string;
@@ -21,8 +24,10 @@ interface CaseData {
 const Cases = () => {
   const [cases, setCases] = useState<CaseData[]>([]);
   const [loading, setLoading] = useState(true);
-  const [isAdmin, setIsAdmin] = useState(false); // Simple admin toggle for demo/free-tier
+  const [isAdmin, setIsAdmin] = useState(false);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [editingCase, setEditingCase] = useState<EditCaseData | null>(null);
+  const [deletingCaseId, setDeletingCaseId] = useState<number | null>(null);
 
   const fetchCases = async () => {
     setLoading(true);
@@ -53,6 +58,48 @@ const Cases = () => {
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
+
+  const handleEdit = async (id: number) => {
+    try {
+      const res = await fetch(`/api/cases/${id}`);
+      if (res.ok) {
+        const data = await res.json();
+        setEditingCase(data);
+        setIsDialogOpen(true);
+      }
+    } catch (error) {
+      console.error("Failed to fetch case for editing", error);
+      toast.error("사례 데이터를 불러오는데 실패했습니다.");
+    }
+  };
+
+  const handleDelete = async () => {
+    if (!deletingCaseId) return;
+
+    try {
+      const res = await fetch(`/api/cases/${deletingCaseId}`, {
+        method: 'DELETE',
+      });
+      if (res.ok) {
+        toast.success("시공사례가 삭제되었습니다.");
+        fetchCases();
+      } else {
+        throw new Error("Failed to delete");
+      }
+    } catch (error) {
+      console.error("Failed to delete case", error);
+      toast.error("삭제 중 오류가 발생했습니다.");
+    } finally {
+      setDeletingCaseId(null);
+    }
+  };
+
+  const handleDialogClose = (open: boolean) => {
+    setIsDialogOpen(open);
+    if (!open) {
+      setEditingCase(null);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -97,27 +144,31 @@ const Cases = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Admin Controls */}
           {isAdmin && (
-            <div className="flex justify-end mb-8">
-              <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+            <div className="flex items-center justify-between mb-8 p-4 bg-amber-50 border border-amber-200 rounded-xl">
+              <div className="flex items-center gap-2 text-amber-700">
+                <span className="text-sm font-medium">🔑 관리자 모드</span>
+              </div>
+              <Dialog open={isDialogOpen} onOpenChange={handleDialogClose}>
                 <DialogTrigger asChild>
-                  <Button className="gap-2">
+                  <Button className="gap-2" onClick={() => setEditingCase(null)}>
                     <PlusCircle className="w-4 h-4" />
-                    사례 등록 (관리자)
+                    사례 등록
                   </Button>
                 </DialogTrigger>
                 <DialogContent className="sm:max-w-[900px]">
                   <DialogHeader>
-                    <DialogTitle>새 시공사례 등록</DialogTitle>
+                    <DialogTitle>{editingCase ? '시공사례 수정' : '새 시공사례 등록'}</DialogTitle>
                     <DialogDescription>
-                      새로운 시공 사례의 정보를 입력하고 사진을 업로드해주세요.
+                      {editingCase ? '시공 사례 내용을 수정하세요.' : '새로운 시공 사례의 정보를 입력하고 사진을 업로드해주세요.'}
                     </DialogDescription>
                   </DialogHeader>
                   <CaseUploadForm
+                    editData={editingCase}
                     onSuccess={() => {
-                      setIsDialogOpen(false);
+                      handleDialogClose(false);
                       fetchCases();
                     }}
-                    onCancel={() => setIsDialogOpen(false)}
+                    onCancel={() => handleDialogClose(false)}
                   />
                 </DialogContent>
               </Dialog>
@@ -134,6 +185,9 @@ const Cases = () => {
                 <CaseCard
                   key={item.id}
                   {...item}
+                  isAdmin={isAdmin}
+                  onEdit={handleEdit}
+                  onDelete={(id) => setDeletingCaseId(id)}
                 />
               ))}
             </div>
@@ -146,6 +200,27 @@ const Cases = () => {
           )}
         </div>
       </main>
+
+      {/* Delete Confirmation Dialog */}
+      <AlertDialog open={!!deletingCaseId} onOpenChange={(open) => !open && setDeletingCaseId(null)}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>시공사례를 삭제하시겠습니까?</AlertDialogTitle>
+            <AlertDialogDescription>
+              삭제된 시공사례는 복구할 수 없습니다. 정말 삭제하시겠습니까?
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel>취소</AlertDialogCancel>
+            <AlertDialogAction
+              onClick={handleDelete}
+              className="bg-red-500 hover:bg-red-600"
+            >
+              삭제
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
 
       <Footer />
     </div>
