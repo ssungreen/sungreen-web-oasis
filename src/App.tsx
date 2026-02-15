@@ -16,6 +16,7 @@ import LeadingBusiness from "./pages/LeadingBusiness";
 import BusinessRPS from "./pages/BusinessRPS";
 import BusinessRE100 from "./pages/BusinessRE100";
 import Cases from "./pages/Cases";
+import CaseDetail from "./pages/CaseDetail";
 import RE100 from "./pages/RE100";
 import Government from "./pages/Government";
 import HousingSupport from "./pages/HousingSupport";
@@ -50,6 +51,7 @@ const App = () => (
           <Route path="/business/leading" element={<LeadingBusiness />} />
           <Route path="/business/re100" element={<BusinessRE100 />} />
           <Route path="/cases" element={<Cases />} />
+          <Route path="/cases/:id" element={<CaseDetail />} />
           <Route path="/re100" element={<RE100 />} />
           <Route path="/government" element={<Government />} />
           <Route path="/government/housing" element={<HousingSupport />} />

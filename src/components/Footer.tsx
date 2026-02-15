@@ -47,7 +47,7 @@ const Footer = () => {
             <li><Link to="/business" className="text-slate-300 hover:text-amber-500 transition-colors">경기도지원사업</Link></li>
             <li><Link to="/government" className="text-slate-300 hover:text-amber-500 transition-colors">정부지원사업</Link></li>
             <li><Link to="/re100" className="text-slate-300 hover:text-amber-500 transition-colors">RE100 안내</Link></li>
-            <li><Link to="/cases" className="text-slate-300 hover:text-amber-500 transition-colors">설치사례</Link></li>
+            <li><Link to="/cases" className="text-slate-300 hover:text-amber-500 transition-colors">시공사례</Link></li>
             <li><Link to="/contact" className="text-slate-300 hover:text-amber-500 transition-colors">문의하기</Link></li>
           </ul>
         </div>

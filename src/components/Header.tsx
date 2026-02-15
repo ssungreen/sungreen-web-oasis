@@ -51,7 +51,7 @@ const Header = () => {
   ];
 
   const navigation = [
-    { name: '설치사례', href: '/cases' },
+    { name: '시공사례', href: '/cases' },
     { name: '문의하기', href: '/contact' },
   ];
 

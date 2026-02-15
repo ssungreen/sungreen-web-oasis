@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
+import { useNavigate } from 'react-router-dom';
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { MapPin, Calendar } from 'lucide-react';
+import { MapPin, Calendar, ArrowRight } from 'lucide-react';
 
 interface CaseProps {
     id: number;
@@ -10,52 +11,62 @@ interface CaseProps {
     location: string;
     date: string;
     imageUrl: string;
-    onClick?: () => void;
 }
 
-const CaseCard: React.FC<CaseProps> = ({ title, description, location, date, imageUrl, onClick }) => {
+const CaseCard: React.FC<CaseProps> = ({ id, title, description, location, date, imageUrl }) => {
     const [imageError, setImageError] = useState(false);
+    const navigate = useNavigate();
 
     return (
-        <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300 cursor-pointer group h-full flex flex-col" onClick={onClick}>
-            <div className="relative aspect-video overflow-hidden bg-gray-100">
+        <Card
+            className="overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer group h-full flex flex-col border-slate-200 hover:border-emerald-300"
+            onClick={() => navigate(`/cases/${id}`)}
+        >
+            <div className="relative aspect-[4/3] overflow-hidden bg-slate-900">
                 {!imageError ? (
                     <img
                         src={imageUrl}
                         alt={title}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
                         onError={() => setImageError(true)}
                     />
                 ) : (
-                    <div className="flex items-center justify-center h-full text-gray-400">
+                    <div className="flex items-center justify-center h-full text-slate-400">
                         <span className="text-sm">이미지 준비중</span>
                     </div>
                 )}
-                <div className="absolute top-2 right-2">
-                    <Badge variant="secondary" className="bg-white/90 text-primary hover:bg-white">
+                {/* Hover Overlay */}
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
+                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-2 text-white font-semibold text-lg bg-emerald-500/90 px-6 py-3 rounded-full">
+                        자세히 보기
+                        <ArrowRight className="w-5 h-5" />
+                    </div>
+                </div>
+                <div className="absolute top-3 right-3">
+                    <Badge variant="secondary" className="bg-white/90 text-emerald-700 hover:bg-white font-medium">
                         시공사례
                     </Badge>
                 </div>
             </div>
 
             <CardHeader className="p-4 pb-2">
-                <h3 className="text-lg font-bold text-gray-900 line-clamp-1 group-hover:text-primary transition-colors">
+                <h3 className="text-lg font-bold text-slate-900 line-clamp-1 group-hover:text-emerald-600 transition-colors">
                     {title}
                 </h3>
-                <div className="flex items-center text-xs text-gray-500 space-x-3 mt-1">
+                <div className="flex items-center text-xs text-slate-500 space-x-3 mt-1">
                     <div className="flex items-center">
-                        <MapPin className="w-3 h-3 mr-1" />
+                        <MapPin className="w-3 h-3 mr-1 text-emerald-500" />
                         {location}
                     </div>
                     <div className="flex items-center">
-                        <Calendar className="w-3 h-3 mr-1" />
+                        <Calendar className="w-3 h-3 mr-1 text-emerald-500" />
                         {date}
                     </div>
                 </div>
             </CardHeader>
 
             <CardContent className="p-4 pt-2 flex-grow">
-                <p className="text-sm text-gray-600 line-clamp-2">
+                <p className="text-sm text-slate-600 line-clamp-2">
                     {description}
                 </p>
             </CardContent>
@@ -64,3 +75,4 @@ const CaseCard: React.FC<CaseProps> = ({ title, description, location, date, ima
 };
 
 export default CaseCard;
+

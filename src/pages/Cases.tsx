@@ -83,7 +83,7 @@ const Cases = () => {
           </div>
           <h1 className="text-5xl lg:text-7xl font-bold mb-8 leading-tight">
             <span className="bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent">
-              설치사례
+              시공사례
             </span>
           </h1>
           <p className="text-xl lg:text-2xl text-slate-200 max-w-3xl mx-auto leading-relaxed">
@@ -107,9 +107,9 @@ const Cases = () => {
                 </DialogTrigger>
                 <DialogContent className="sm:max-w-[600px]">
                   <DialogHeader>
-                    <DialogTitle>새 설치사례 등록</DialogTitle>
+                    <DialogTitle>새 시공사례 등록</DialogTitle>
                     <DialogDescription>
-                      새로운 설치 사례의 정보를 입력하고 사진을 업로드해주세요.
+                      새로운 시공 사례의 정보를 입력하고 사진을 업로드해주세요.
                     </DialogDescription>
                   </DialogHeader>
                   <CaseUploadForm
@@ -140,7 +140,7 @@ const Cases = () => {
           ) : (
             <div className="text-center py-20 bg-white rounded-2xl shadow-sm border border-slate-100">
               <Camera className="h-16 w-16 text-slate-300 mx-auto mb-4" />
-              <p className="text-slate-500 text-lg">등록된 설치 사례가 없습니다.</p>
+              <p className="text-slate-500 text-lg">등록된 시공 사례가 없습니다.</p>
               <p className="text-slate-400 text-sm mt-2">관리자 권한(Ctrl+Shift+U)으로 첫 사례를 등록해보세요.</p>
             </div>
           )}

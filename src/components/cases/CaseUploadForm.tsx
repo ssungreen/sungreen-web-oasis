@@ -70,7 +70,7 @@ const CaseUploadForm: React.FC<CaseUploadFormProps> = ({ onSuccess, onCancel }) 
 
             if (!saveRes.ok) throw new Error("Failed to save case data");
 
-            toast.success("설치사례가 등록되었습니다!");
+            toast.success("시공사례가 등록되었습니다!");
             onSuccess();
         } catch (error) {
             console.error(error);
