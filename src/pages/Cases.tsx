@@ -30,6 +30,7 @@ const Cases = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [editingCase, setEditingCase] = useState<EditCaseData | null>(null);
   const [deletingCaseId, setDeletingCaseId] = useState<number | null>(null);
+  const [deleteConfirmText, setDeleteConfirmText] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
 
   const totalPages = Math.ceil(cases.length / ITEMS_PER_PAGE);
@@ -216,8 +217,8 @@ const Cases = () => {
                       key={page}
                       onClick={() => { setCurrentPage(page); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
                       className={`w-10 h-10 rounded-lg font-medium transition-colors ${currentPage === page
-                          ? 'bg-emerald-500 text-white shadow-md'
-                          : 'text-slate-600 hover:bg-slate-100'
+                        ? 'bg-emerald-500 text-white shadow-md'
+                        : 'text-slate-600 hover:bg-slate-100'
                         }`}
                     >
                       {page}
@@ -246,19 +247,31 @@ const Cases = () => {
       </main>
 
       {/* Delete Confirmation Dialog */}
-      <AlertDialog open={!!deletingCaseId} onOpenChange={(open) => !open && setDeletingCaseId(null)}>
+      <AlertDialog open={!!deletingCaseId} onOpenChange={(open) => { if (!open) { setDeletingCaseId(null); setDeleteConfirmText(''); } }}>
         <AlertDialogContent>
           <AlertDialogHeader>
             <AlertDialogTitle>시공사례를 삭제하시겠습니까?</AlertDialogTitle>
-            <AlertDialogDescription>
-              삭제된 시공사례는 복구할 수 없습니다. 정말 삭제하시겠습니까?
+            <AlertDialogDescription className="space-y-3">
+              <span className="block">삭제된 시공사례는 복구할 수 없습니다.</span>
+              <span className="block">계속하려면 아래에 <strong className="text-red-600">삭제</strong>를 입력하세요.</span>
             </AlertDialogDescription>
           </AlertDialogHeader>
+          <div className="px-0 py-2">
+            <input
+              type="text"
+              value={deleteConfirmText}
+              onChange={(e) => setDeleteConfirmText(e.target.value)}
+              placeholder="삭제"
+              className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-red-400 focus:border-red-400"
+              autoFocus
+            />
+          </div>
           <AlertDialogFooter>
-            <AlertDialogCancel>취소</AlertDialogCancel>
+            <AlertDialogCancel onClick={() => setDeleteConfirmText('')}>취소</AlertDialogCancel>
             <AlertDialogAction
               onClick={handleDelete}
-              className="bg-red-500 hover:bg-red-600"
+              disabled={deleteConfirmText !== '삭제'}
+              className="bg-red-500 hover:bg-red-600 disabled:opacity-40 disabled:cursor-not-allowed"
             >
               삭제
             </AlertDialogAction>
