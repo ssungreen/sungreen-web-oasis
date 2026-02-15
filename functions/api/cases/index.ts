@@ -28,8 +28,8 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
         }
 
         const { success } = await context.env.DB.prepare(
-            "INSERT INTO cases (title, description, location, date, imageUrl) VALUES (?, ?, ?, ?, ?)"
-        ).bind(data.title, data.description, data.location, data.date, data.imageUrl).run();
+            "INSERT INTO cases (title, description, location, date, imageUrl, content) VALUES (?, ?, ?, ?, ?, ?)"
+        ).bind(data.title, data.description, data.location, data.date, data.imageUrl, data.content || null).run();
 
         if (success) {
             return new Response("Case created successfully", { status: 201 });

@@ -11,6 +11,7 @@ interface CaseData {
     id: number;
     title: string;
     description: string;
+    content: string | null;
     location: string;
     date: string;
     imageUrl: string;
@@ -84,76 +85,106 @@ const CaseDetail = () => {
             />
             <Header />
 
-            {/* Hero Image Section */}
-            <section className="relative bg-slate-900">
-                <div className="max-w-6xl mx-auto">
-                    <div className="relative aspect-[16/9] md:aspect-[21/9] overflow-hidden">
-                        {!imageError ? (
-                            <img
-                                src={caseData.imageUrl}
-                                alt={caseData.title}
-                                className="w-full h-full object-contain"
-                                onError={() => setImageError(true)}
-                            />
-                        ) : (
-                            <div className="flex items-center justify-center h-full text-slate-400">
-                                <div className="text-center">
-                                    <Sun className="w-16 h-16 mx-auto mb-2" />
-                                    <span>이미지를 불러올 수 없습니다</span>
-                                </div>
-                            </div>
-                        )}
-                    </div>
-                </div>
-            </section>
-
-            {/* Content Section */}
-            <main className="py-12 lg:py-20">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Top Section: Image + Info Side by Side */}
+            <section className="bg-gradient-to-b from-slate-50 to-white py-8 lg:py-12">
+                <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                     {/* Back Button */}
                     <button
                         onClick={() => navigate('/cases')}
-                        className="inline-flex items-center text-sm text-slate-500 hover:text-emerald-600 transition-colors mb-8 group"
+                        className="inline-flex items-center text-sm text-slate-500 hover:text-emerald-600 transition-colors mb-6 group"
                     >
                         <ArrowLeft className="w-4 h-4 mr-2 transition-transform group-hover:-translate-x-1" />
                         시공사례 목록으로 돌아가기
                     </button>
 
-                    {/* Title & Meta */}
-                    <div className="mb-10">
-                        <Badge className="mb-4 bg-emerald-500/10 text-emerald-700 border border-emerald-200 hover:bg-emerald-500/20">
-                            시공사례
-                        </Badge>
-                        <h1 className="text-3xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">
-                            {caseData.title}
-                        </h1>
-                        <div className="flex flex-wrap items-center gap-4 text-slate-500">
-                            <div className="flex items-center gap-2 bg-slate-50 px-4 py-2 rounded-full">
-                                <MapPin className="w-4 h-4 text-emerald-500" />
-                                <span className="text-sm font-medium">{caseData.location}</span>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+                        {/* Left: Representative Image */}
+                        <div className="relative rounded-2xl overflow-hidden bg-slate-900 aspect-[4/3]">
+                            {!imageError ? (
+                                <img
+                                    src={caseData.imageUrl}
+                                    alt={caseData.title}
+                                    className="w-full h-full object-contain"
+                                    onError={() => setImageError(true)}
+                                />
+                            ) : (
+                                <div className="flex items-center justify-center h-full text-slate-400">
+                                    <div className="text-center">
+                                        <Sun className="w-16 h-16 mx-auto mb-2" />
+                                        <span>이미지를 불러올 수 없습니다</span>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+
+                        {/* Right: Project Info */}
+                        <div className="flex flex-col justify-center">
+                            <Badge className="mb-4 w-fit bg-emerald-500/10 text-emerald-700 border border-emerald-200 hover:bg-emerald-500/20">
+                                시공사례
+                            </Badge>
+                            <h1 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6 leading-tight">
+                                {caseData.title}
+                            </h1>
+
+                            <div className="space-y-3 mb-6">
+                                <div className="flex items-center gap-3 text-slate-600">
+                                    <div className="flex items-center justify-center w-10 h-10 rounded-full bg-emerald-50">
+                                        <MapPin className="w-5 h-5 text-emerald-600" />
+                                    </div>
+                                    <div>
+                                        <p className="text-xs text-slate-400">설치 위치</p>
+                                        <p className="font-medium">{caseData.location}</p>
+                                    </div>
+                                </div>
+                                <div className="flex items-center gap-3 text-slate-600">
+                                    <div className="flex items-center justify-center w-10 h-10 rounded-full bg-emerald-50">
+                                        <Calendar className="w-5 h-5 text-emerald-600" />
+                                    </div>
+                                    <div>
+                                        <p className="text-xs text-slate-400">시공일자</p>
+                                        <p className="font-medium">{caseData.date}</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div className="flex items-center gap-2 bg-slate-50 px-4 py-2 rounded-full">
-                                <Calendar className="w-4 h-4 text-emerald-500" />
-                                <span className="text-sm font-medium">{caseData.date}</span>
-                            </div>
+
+                            <div className="h-px bg-slate-200 my-4"></div>
+
+                            <p className="text-slate-600 leading-relaxed">
+                                {caseData.description}
+                            </p>
                         </div>
                     </div>
+                </div>
+            </section>
 
-                    {/* Divider */}
-                    <div className="h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent mb-10"></div>
-
-                    {/* Description */}
-                    <div className="prose prose-lg prose-slate max-w-none mb-12">
-                        <h2 className="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2">
-                            <Sun className="w-5 h-5 text-emerald-500" />
+            {/* Blog Content Section */}
+            {caseData.content && (
+                <section className="py-12 lg:py-16">
+                    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <h2 className="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-2">
+                            <Sun className="w-6 h-6 text-emerald-500" />
                             프로젝트 상세
                         </h2>
-                        <p className="text-slate-600 leading-relaxed text-lg whitespace-pre-wrap">
-                            {caseData.description}
-                        </p>
-                    </div>
+                        <div className="h-px bg-gradient-to-r from-emerald-200 via-slate-200 to-transparent mb-8"></div>
 
-                    {/* CTA Section */}
+                        {/* Rendered TipTap HTML Content */}
+                        <article
+                            className="prose prose-lg prose-slate max-w-none
+                prose-headings:text-slate-800 prose-headings:font-bold
+                prose-p:text-slate-600 prose-p:leading-relaxed
+                prose-img:rounded-xl prose-img:shadow-md prose-img:mx-auto
+                prose-blockquote:border-emerald-500 prose-blockquote:text-slate-500
+                prose-strong:text-slate-800
+                prose-a:text-emerald-600 prose-a:no-underline hover:prose-a:underline"
+                            dangerouslySetInnerHTML={{ __html: caseData.content }}
+                        />
+                    </div>
+                </section>
+            )}
+
+            {/* CTA Section */}
+            <section className="py-12 lg:py-16 bg-gradient-to-b from-white to-slate-50">
+                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="bg-gradient-to-br from-emerald-50 to-blue-50 rounded-2xl p-8 lg:p-12 text-center border border-emerald-100">
                         <Sun className="w-12 h-12 text-emerald-500 mx-auto mb-4" />
                         <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-3">
@@ -184,7 +215,7 @@ const CaseDetail = () => {
                         </div>
                     </div>
                 </div>
-            </main>
+            </section>
 
             <Footer />
         </div>

@@ -2,18 +2,18 @@ import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { toast } from "sonner";
 import { Loader2, Upload } from "lucide-react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
+import RichTextEditor from './RichTextEditor';
 
 const formSchema = z.object({
     title: z.string().min(2, "제목을 입력해주세요."),
     location: z.string().min(2, "위치를 입력해주세요."),
     date: z.string().min(1, "날짜를 선택해주세요."),
-    description: z.string().min(5, "설명을 입력해주세요."),
+    description: z.string().min(5, "요약 설명을 입력해주세요."),
 });
 
 interface CaseUploadFormProps {
@@ -23,6 +23,7 @@ interface CaseUploadFormProps {
 
 const CaseUploadForm: React.FC<CaseUploadFormProps> = ({ onSuccess, onCancel }) => {
     const [file, setFile] = useState<File | null>(null);
+    const [content, setContent] = useState('');
     const [isUploading, setIsUploading] = useState(false);
 
     const form = useForm<z.infer<typeof formSchema>>({
@@ -37,13 +38,13 @@ const CaseUploadForm: React.FC<CaseUploadFormProps> = ({ onSuccess, onCancel }) 
 
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
         if (!file) {
-            toast.error("사진을 선택해주세요.");
+            toast.error("대표 사진을 선택해주세요.");
             return;
         }
 
         setIsUploading(true);
         try {
-            // 1. Upload Image
+            // 1. Upload Representative Image
             const formData = new FormData();
             formData.append("file", file);
 
@@ -55,16 +56,16 @@ const CaseUploadForm: React.FC<CaseUploadFormProps> = ({ onSuccess, onCancel }) 
             if (!uploadRes.ok) throw new Error("Image upload failed");
 
             const { filename } = await uploadRes.json();
-            // Construct the URL based on the proxy function we created
             const imageUrl = `/images/${filename}`;
 
-            // 2. Save Data
+            // 2. Save Data with content
             const saveRes = await fetch('/api/cases', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     ...values,
                     imageUrl,
+                    content: content || null,
                 }),
             });
 
@@ -82,7 +83,7 @@ const CaseUploadForm: React.FC<CaseUploadFormProps> = ({ onSuccess, onCancel }) 
 
     return (
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 max-h-[70vh] overflow-y-auto pr-2">
                 <FormField
                     control={form.control}
                     name="title"
@@ -116,7 +117,7 @@ const CaseUploadForm: React.FC<CaseUploadFormProps> = ({ onSuccess, onCancel }) 
                         name="date"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>설치일자</FormLabel>
+                                <FormLabel>시공일자</FormLabel>
                                 <FormControl>
                                     <Input type="date" {...field} />
                                 </FormControl>
@@ -131,9 +132,9 @@ const CaseUploadForm: React.FC<CaseUploadFormProps> = ({ onSuccess, onCancel }) 
                     name="description"
                     render={({ field }) => (
                         <FormItem>
-                            <FormLabel>설명</FormLabel>
+                            <FormLabel>요약 설명 <span className="text-xs text-slate-400">(목록에 표시됩니다)</span></FormLabel>
                             <FormControl>
-                                <Textarea placeholder="설치 내용에 대한 설명을 입력하세요." {...field} />
+                                <Input placeholder="예: 경기도 용인시 전원주택에 3kW 태양광 설치" {...field} />
                             </FormControl>
                             <FormMessage />
                         </FormItem>
@@ -141,7 +142,7 @@ const CaseUploadForm: React.FC<CaseUploadFormProps> = ({ onSuccess, onCancel }) 
                 />
 
                 <FormItem>
-                    <FormLabel>사진 업로드</FormLabel>
+                    <FormLabel>대표 사진 <span className="text-xs text-slate-400">(목록 썸네일용)</span></FormLabel>
                     <div className="flex items-center gap-4">
                         <Input
                             type="file"
@@ -152,7 +153,12 @@ const CaseUploadForm: React.FC<CaseUploadFormProps> = ({ onSuccess, onCancel }) 
                     </div>
                 </FormItem>
 
-                <div className="flex justify-end gap-2 pt-4">
+                <FormItem>
+                    <FormLabel>상세 내용 <span className="text-xs text-slate-400">(이미지와 글을 자유롭게 작성하세요)</span></FormLabel>
+                    <RichTextEditor content={content} onChange={setContent} />
+                </FormItem>
+
+                <div className="flex justify-end gap-2 pt-4 sticky bottom-0 bg-white py-3 border-t">
                     <Button type="button" variant="outline" onClick={onCancel} disabled={isUploading}>
                         취소
                     </Button>

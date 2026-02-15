@@ -105,7 +105,7 @@ const Cases = () => {
                     사례 등록 (관리자)
                   </Button>
                 </DialogTrigger>
-                <DialogContent className="sm:max-w-[600px]">
+                <DialogContent className="sm:max-w-[900px]">
                   <DialogHeader>
                     <DialogTitle>새 시공사례 등록</DialogTitle>
                     <DialogDescription>
