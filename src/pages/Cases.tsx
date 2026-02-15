@@ -4,9 +4,10 @@ import Footer from '@/components/Footer';
 import SEO from '@/components/SEO';
 import CaseCard from '@/components/cases/CaseCard';
 import CaseUploadForm from '@/components/cases/CaseUploadForm';
+import { Badge } from '@/components/ui/badge';
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { PlusCircle, Loader2 } from 'lucide-react';
+import { PlusCircle, Loader2, Camera } from 'lucide-react';
 
 interface CaseData {
   id: number;
@@ -54,7 +55,7 @@ const Cases = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-50/50">
+    <div className="min-h-screen bg-white">
       <SEO
         title="시공 사례 - 썬그린에너지"
         description="전국 각지에 설치된 썬그린에너지의 태양광 발전 시설 시공 사례를 확인하세요."
@@ -62,17 +63,41 @@ const Cases = () => {
       />
       <Header />
 
-      <main className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-center mb-12">
-            <div className="text-center md:text-left mb-6 md:mb-0">
-              <h1 className="text-4xl font-bold text-gray-900 mb-4">설치사례</h1>
-              <p className="text-xl text-gray-600">
-                썬그린에너지가 함께한 성공적인 에너지 자립의 현장을 소개합니다.
-              </p>
-            </div>
+      {/* Hero Section */}
+      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: 'url(https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80)',
+          }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 to-slate-700/60"></div>
+        </div>
 
-            {isAdmin && (
+        <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
+          <div className="flex items-center justify-center mb-6">
+            <Camera className="h-10 w-10 text-emerald-400 mr-4" />
+            <Badge className="px-8 py-4 bg-emerald-500/20 text-emerald-300 text-xl font-medium backdrop-blur-sm border border-emerald-400/30">
+              INSTALLATION CASES
+            </Badge>
+          </div>
+          <h1 className="text-5xl lg:text-7xl font-bold mb-8 leading-tight">
+            <span className="bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent">
+              설치사례
+            </span>
+          </h1>
+          <p className="text-xl lg:text-2xl text-slate-200 max-w-3xl mx-auto leading-relaxed">
+            썬그린에너지가 함께한 성공적인 에너지 자립의 현장을 소개합니다
+          </p>
+        </div>
+      </section>
+
+      {/* Cases Content */}
+      <main className="py-20 bg-gradient-to-b from-slate-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Admin Controls */}
+          {isAdmin && (
+            <div className="flex justify-end mb-8">
               <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
                 <DialogTrigger asChild>
                   <Button className="gap-2">
@@ -96,8 +121,8 @@ const Cases = () => {
                   />
                 </DialogContent>
               </Dialog>
-            )}
-          </div>
+            </div>
+          )}
 
           {loading ? (
             <div className="flex justify-center py-20">
@@ -113,8 +138,10 @@ const Cases = () => {
               ))}
             </div>
           ) : (
-            <div className="text-center py-20 bg-white rounded-lg shadow-sm border border-gray-100">
-              <p className="text-gray-500">등록된 설치 사례가 없습니다.<br />관리자 권한(Ctrl+Shift+U)으로 첫 사례를 등록해보세요.</p>
+            <div className="text-center py-20 bg-white rounded-2xl shadow-sm border border-slate-100">
+              <Camera className="h-16 w-16 text-slate-300 mx-auto mb-4" />
+              <p className="text-slate-500 text-lg">등록된 설치 사례가 없습니다.</p>
+              <p className="text-slate-400 text-sm mt-2">관리자 권한(Ctrl+Shift+U)으로 첫 사례를 등록해보세요.</p>
             </div>
           )}
         </div>
